@@ -6,7 +6,7 @@ description: 'koiShot shortcut reference: global hotkeys and in-capture keys, al
 
 ## Global
 
-Available system-wide (customizable in Settings → Hotkeys):
+Available system-wide (customizable in Settings → Hotkeys — see [Settings & Tray](/en/guide/settings) for rebind details):
 
 | Shortcut | Action |
 | --- | --- |

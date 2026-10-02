@@ -19,7 +19,11 @@ Open Settings from the tray menu or the main window (`Alt + Q`). The current ver
 
 ## Hotkeys
 
-All global hotkeys are editable under Settings → Hotkeys: click "Edit", press the new combination, confirm — changes apply immediately. Conflicts with other actions are detected and reported. Combinations including `Ctrl` / `Alt` / `Shift` are recommended.
+All global hotkeys are editable under Settings → Hotkeys (defaults and actions: [Shortcuts](/en/guide/shortcuts)): click "Edit", press the new combination, confirm — changes apply immediately. Conflicts with other actions are detected and reported. A combination may also be taken by system shortcuts (e.g. macOS `Cmd + Shift + 3/4/5`, Windows `Win + Shift + S`) or global hotkeys of other background apps — just pick another one. Combinations including `Ctrl` / `Alt` / `Shift` are recommended.
+
+**Rebinding doesn't take effect?** Some apps (games, remote desktops, virtual machines) intercept keys exclusively, so global hotkeys never arrive — try a different combination or close the interfering app.
+
+**`F1`-style function keys conflict on macOS?** `F1`–`F12` act as media/system keys by default. To use them for capture, enable "Use F1, F2, etc. keys as standard function keys" in "System Settings → Keyboard", or switch to a combination with `Ctrl` / `Alt` / `Shift`.
 
 ## Tray
 
