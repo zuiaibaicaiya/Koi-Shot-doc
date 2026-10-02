@@ -32,12 +32,20 @@ description: koiShot 截图使用说明：框选、正方形选区、控件高�
 
 ## 确认截图
 
-框选完成后，选区下方弹出工具栏：
+框选完成后，选区下方弹出**工具栏**，当前选中的工具高亮显示，支持样式调节的工具下方会弹出属性面板。全部按钮如下：
 
-```
-画笔 矩形 圆形 箭头 荧光笔 马赛克 高斯模糊 文字 序号
-撤销 重做 ｜ 复制 保存 贴图 OCR 表格 长截图 录制GIF ｜ 取消
-```
+| 分组 | 按钮 | 作用 | 详细说明 |
+| --- | --- | --- | --- |
+| 标注工具 | 画笔 / 矩形 / 圆形 / 箭头 / 荧光笔 / 马赛克 / 高斯模糊 / 文字 / 序号 | 在截图上添加各类标注 | [标注与编辑](/zh/guide/features/annotation) |
+| 编辑 | 撤销 / 重做 | 回退或恢复上一步标注，快捷键 `Ctrl + Z` / `Ctrl + Shift + Z` | [撤销与重做](/zh/guide/features/annotation#撤销与重做) |
+| 输出 | 复制 | 截图复制到剪贴板，可直接粘贴 | [保存与输出](/zh/guide/features/output) |
+| 输出 | 保存 | 保存为 PNG 到指定文件夹 | [保存与输出](/zh/guide/features/output) |
+| 输出 | 贴图 | 截图钉在桌面置顶显示 | [贴图](/zh/guide/features/pin) |
+| 输出 | OCR | 截图中的文字识别为可复制文本 | [OCR 与表格识别](/zh/guide/features/ocr-table) |
+| 输出 | 表格 | 表格截图转换为 xlsx / CSV / TSV | [OCR 与表格识别](/zh/guide/features/ocr-table) |
+| 输出 | 长截图 | 滚动页面自动拼接长图 | [长截图与 GIF](/zh/guide/features/long-capture-gif) |
+| 输出 | 录制GIF | 框选区域录制 GIF 动图 | [长截图与 GIF](/zh/guide/features/long-capture-gif) |
+| 退出 | 取消 | 放弃本次截图（快捷键 `Esc`） | — |
 
 - 直接按 `Enter`：执行当前入口的默认动作（按 `F1` 进入时默认复制，按 `Alt + S` 进入时默认保存）；
 - 点击「取消」或按 `Esc`：放弃截图。
