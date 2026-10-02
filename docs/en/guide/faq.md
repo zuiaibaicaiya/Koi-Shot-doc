@@ -40,7 +40,11 @@ The engine and models ship with the installer and work out of the box. Run Setti
 
 ### OCR slow or memory heavy?
 
-Set environment variable `KOISHOT_OCR_PRELOAD=0` to disable engine warm-up (first recognition becomes slower).
+By default the engine warms up when a capture opens to keep first recognition fast. If it feels noticeably slow or memory use is high:
+
+1. Quit koiShot fully (tray icon → Quit) and start it again;
+2. Run Settings → OCR self-check to confirm the environment is healthy;
+3. If it persists, file an issue as described in [Still stuck?](#still-stuck) with the self-check result attached.
 
 ### Table results misaligned?
 

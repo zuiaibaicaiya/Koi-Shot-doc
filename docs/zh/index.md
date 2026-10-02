@@ -8,6 +8,9 @@ hero:
   tagline: 跨平台截图工具：截图标注、贴图、长截图、OCR 与表格识别、GIF 录制，识别全程本地离线
   actions:
     - theme: brand
+      text: ⬇️ 下载 koiShot
+      link: https://pan.baidu.com/s/1wRFvwskNjT-IGAc4YM4sHg?pwd=nrhi
+    - theme: alt
       text: 快速开始
       link: /zh/guide/start/introduction
     - theme: alt

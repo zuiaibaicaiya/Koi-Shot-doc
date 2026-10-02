@@ -42,9 +42,49 @@ If koiShot is already running (e.g. an upgrade), the wizard offers to close it a
 
 ## macOS
 
-1. Download the disk image `koiShot-<version>.dmg`;
-2. Open it and **drag koiShot into the Applications folder** as guided by the install screen;
-3. On first launch, grant "Screen Recording" when prompted (see [FAQ](/en/guide/faq)).
+1. Download the disk image `koiShot-<version>.dmg` and double-click to open it;
+2. **Drag koiShot into the Applications folder** as guided by the install screen:
+
+![macOS install screen: drag koiShot to the Applications folder on the right](/images/install/macos-dmg-install.png)
+
+3. Launch koiShot from Launchpad or the Applications folder.
+
+### "Unidentified Developer" on First Open
+
+macOS blocks apps that are not notarized — this is expected. Pick either way to allow it:
+
+- Click **Done** on the dialog, then open **System Settings → Privacy & Security**, find the notice about koiShot near the bottom and click **Open Anyway**;
+- Or **right-click koiShot → Open** in the Applications folder, then click **Open** in the dialog. This is needed only once.
+
+### No koiShot in the Dock — That's Normal
+
+koiShot is a **pure tray app**: it does not appear in the Dock or in the `⌘ + Tab` switcher. It lives only as a tray icon in the **top-right menu bar**. If you see that icon, the app is running.
+
+### System Permissions
+
+macOS capture relies on two independent permissions that must be granted manually:
+
+| Permission | Where | If missing |
+| --- | --- | --- |
+| Screen Recording | System Settings → Privacy & Security → Screen Recording | Captures are all black, with no error |
+| Accessibility | System Settings → Privacy & Security → Accessibility | Element highlight on hover doesn't appear; silently falls back to plain selection |
+
+Find koiShot in the list and turn on its switch:
+
+![Enable koiShot in the Screen Recording permission list](/images/install/macos-permission-screen-recording.png)
+
+![Enable koiShot in the Accessibility permission list](/images/install/macos-permission-accessibility.png)
+
+After ticking them, **quit and restart koiShot** (tray icon → Quit). See the [FAQ](/en/guide/faq) for details.
+
+### Start at Login
+
+To start koiShot automatically at login: open **System Settings → General → Login Items**, click "+" and add koiShot. It stays in the menu bar tray without popping up any window.
+
+### Upgrade & Uninstall
+
+- **Upgrade**: download the new DMG and **drag koiShot into Applications** to overwrite it — your settings are kept. If a permission stops working after the upgrade, re-tick it in the two panes above;
+- **Uninstall**: quit koiShot from the tray icon menu first, then drag it from Applications to the Trash.
 
 ## Linux
 

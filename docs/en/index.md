@@ -8,6 +8,9 @@ hero:
   tagline: Cross-platform screenshot tool — capture & annotation, pin to desktop, long screenshots, OCR & table recognition, GIF recording, all local and offline
   actions:
     - theme: brand
+      text: ⬇️ Download koiShot
+      link: https://pan.baidu.com/s/1wRFvwskNjT-IGAc4YM4sHg?pwd=nrhi
+    - theme: alt
       text: Get Started
       link: /en/guide/start/introduction
     - theme: alt
