@@ -1,0 +1,12 @@
+[
+  {
+    "type": "file",
+    "name": "introduction",
+    "label": "产品介绍"
+  },
+  {
+    "type": "file",
+    "name": "getting-started",
+    "label": "获取与安装"
+  }
+]

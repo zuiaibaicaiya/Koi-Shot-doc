@@ -1,0 +1,279 @@
+/*
+ * koiShot 品牌色（与桌面应用主题色一致）
+ * 色值出处：TZShot src/widgets/koishot_theme.cpp paletteFor(Mode)
+ *   accent         #3B82F6（深浅主题相同）
+ *   accentHover    #2563EB（浅色）/ #4C8DFF（深色）
+ *   accentPressed  #1D4ED8（浅色）
+ *   accentSoft     #EFF6FF（浅色）
+ *   focusRing      #60A5FA
+ */
+
+:root {
+  --rp-c-brand: #3b82f6;
+  --rp-c-brand-light: #60a5fa;
+  --rp-c-brand-lighter: #eff6ff;
+  --rp-c-brand-dark: #2563eb;
+  --rp-c-brand-darker: #1d4ed8;
+  --rp-c-brand-tint: rgba(59, 130, 246, 0.16);
+
+  --rp-home-hero-secondary-color: #2563eb;
+}
+
+/* 深色模式：链接与悬停亮档换为应用深色主题的 accentHover #4C8DFF */
+.dark {
+  --rp-c-brand: #3b82f6;
+  --rp-c-brand-light: #4c8dff;
+  --rp-c-brand-dark: #4c8dff;
+  --rp-c-brand-darker: #3b82f6;
+  --rp-c-brand-lighter: rgba(59, 130, 246, 0.24);
+
+  --rp-home-hero-secondary-color: #4c8dff;
+}
+
+html:not(.dark) {
+  --rp-home-background-bg:
+    radial-gradient(
+      80% 60% at 100% 0%,
+      rgba(96, 165, 250, 0.28) 0%,
+      rgba(255, 255, 255, 0) 70%
+    ),
+    radial-gradient(
+      70% 70% at 50% 0%,
+      rgba(59, 130, 246, 0.18) 0%,
+      rgba(255, 255, 255, 0) 60%
+    ),
+    radial-gradient(
+      90% 70% at 0% 0%,
+      rgba(147, 197, 253, 0.35) 0%,
+      rgba(255, 255, 255, 0) 65%
+    ),
+    radial-gradient(
+      100% 50% at 50% 100%,
+      rgba(96, 165, 250, 0.08) 0%,
+      rgba(255, 255, 255, 0) 50%
+    ),
+    #fff;
+}
+
+html.dark {
+  --rp-home-background-bg:
+    radial-gradient(
+      80% 60% at 100% 0%,
+      rgba(76, 141, 255, 0.45) 0%,
+      rgba(59, 130, 246, 0.15) 40%,
+      rgba(18, 18, 18, 0) 75%
+    ),
+    radial-gradient(
+      70% 70% at 50% 0%,
+      rgba(59, 130, 246, 0.3) 0%,
+      rgba(18, 18, 18, 0) 60%
+    ),
+    radial-gradient(
+      90% 70% at 0% 0%,
+      rgba(96, 165, 250, 0.25) 0%,
+      rgba(18, 18, 18, 0) 65%
+    ),
+    radial-gradient(
+      100% 50% at 50% 100%,
+      rgba(76, 141, 255, 0.1) 0%,
+      rgba(18, 18, 18, 0) 50%
+    ),
+    #121212;
+}
+
+/* 首页「适用人群」板块 */
+.koishot-audience {
+  max-width: 72rem;
+  margin: 1rem auto 4rem;
+  padding: 0 10px;
+}
+
+.koishot-audience__title {
+  margin: 0;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.koishot-audience__subtitle {
+  margin: 0.5rem 0 0;
+  text-align: center;
+  color: var(--rp-c-text-2);
+}
+
+.koishot-audience__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 2rem;
+}
+
+.koishot-audience__card {
+  flex: 1 1 calc(50% - 15px);
+  min-width: min(100%, 300px);
+  padding: 20px 24px;
+  border: 1px solid var(--rp-c-divider-light);
+  border-radius: var(--rp-radius);
+  background: var(--rp-home-feature-bg);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.koishot-audience__card:hover {
+  border-color: var(--rp-c-brand-light);
+  box-shadow: var(--rp-shadow-2);
+}
+
+.koishot-audience__card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--rp-c-text-1);
+}
+
+.koishot-audience__icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.koishot-audience__list {
+  margin: 12px 0 0;
+  padding-left: 1.2em;
+  color: var(--rp-c-text-2);
+}
+
+.koishot-audience__list li {
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
+/* 「应用场景」对比板块（文档页复用） */
+.koishot-roles {
+  margin: 1rem 0 2rem;
+}
+
+.koishot-roles__intro {
+  margin: 0 0 1.25rem;
+  color: var(--rp-c-text-2);
+}
+
+.koishot-roles__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.koishot-roles__card {
+  flex: 1 1 calc(50% - 15px);
+  min-width: min(100%, 300px);
+  padding: 18px 20px;
+  border: 1px solid var(--rp-c-divider-light);
+  border-radius: var(--rp-radius);
+  background: var(--rp-home-feature-bg);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.koishot-roles__card:hover {
+  border-color: var(--rp-c-brand-light);
+  box-shadow: var(--rp-shadow-2);
+}
+
+.koishot-roles__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.koishot-roles__icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.koishot-roles__name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--rp-c-text-1);
+}
+
+.koishot-roles__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.koishot-roles__tag {
+  padding: 2px 12px;
+  border: 1px solid var(--rp-c-brand);
+  border-radius: 999px;
+  color: var(--rp-c-brand);
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.koishot-roles__scene {
+  margin: 12px 0 0;
+  color: var(--rp-c-text-2);
+  line-height: 1.65;
+}
+
+/* 全局页脚 */
+.koishot-footer {
+  margin-top: 4rem;
+  padding: 2rem 1.5rem 1.5rem;
+  border-top: 1px solid var(--rp-c-divider-light);
+  background: var(--rp-home-feature-bg);
+}
+
+.koishot-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 3rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.koishot-footer__name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--rp-c-text-1);
+}
+
+.koishot-footer__description {
+  margin: 0.5rem 0 0;
+  max-width: 32rem;
+  color: var(--rp-c-text-2);
+  line-height: 1.6;
+}
+
+.koishot-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  align-items: center;
+}
+
+.koishot-footer__link {
+  color: var(--rp-c-text-2);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.koishot-footer__link:hover {
+  color: var(--rp-c-brand);
+}
+
+.koishot-footer__copyright {
+  margin: 1.5rem auto 0;
+  max-width: 72rem;
+  color: var(--rp-c-text-3, var(--rp-c-text-2));
+  font-size: 0.85rem;
+}

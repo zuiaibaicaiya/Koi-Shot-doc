@@ -1,0 +1,32 @@
+[
+  {
+    "type": "file",
+    "name": "capture",
+    "label": "截图"
+  },
+  {
+    "type": "file",
+    "name": "annotation",
+    "label": "标注与编辑"
+  },
+  {
+    "type": "file",
+    "name": "pin",
+    "label": "贴图"
+  },
+  {
+    "type": "file",
+    "name": "output",
+    "label": "保存与输出"
+  },
+  {
+    "type": "file",
+    "name": "long-capture-gif",
+    "label": "长截图与 GIF"
+  },
+  {
+    "type": "file",
+    "name": "ocr-table",
+    "label": "OCR 与表格识别"
+  }
+]

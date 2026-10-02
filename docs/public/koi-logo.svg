@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="512" height="512" role="img" aria-label="K Logo">
+  <!-- 浅灰圆角底板 -->
+  <rect x="100" y="100" width="824" height="824" rx="210" fill="#F9F9F9" stroke="#E3E6EB" stroke-width="8"/>
+
+  <!-- 左上角括弧 -->
+  <path d="M543 158 H692 A173 173 0 0 1 842 417 L760 444 L768 331 A76 76 0 0 0 692 255 H540 Z"
+        fill="#B3D1FB"
+        transform="translate(1024,0) scale(-1,1)"/>
+
+  <!-- 右下角括弧 -->
+  <path d="M543 158 H692 A173 173 0 0 1 842 417 L760 444 L768 331 A76 76 0 0 0 692 255 H540 Z"
+        fill="#B3D1FB"
+        transform="translate(0,1024) scale(1,-1)"/>
+
+  <!-- 中央大写 K -->
+  <path transform="translate(268 720) scale(0.28418 -0.28418)"
+        d="M81 0 387 1466H689L559 843L1237 1466H1641L983 891L1466 0H1125L763 698L478 449L384 0Z"
+        fill="#3389FF"/>
+</svg>

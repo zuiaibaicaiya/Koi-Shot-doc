@@ -1,0 +1,32 @@
+[
+  {
+    "type": "file",
+    "name": "capture",
+    "label": "Capture"
+  },
+  {
+    "type": "file",
+    "name": "annotation",
+    "label": "Annotation"
+  },
+  {
+    "type": "file",
+    "name": "pin",
+    "label": "Pin to Desktop"
+  },
+  {
+    "type": "file",
+    "name": "output",
+    "label": "Saving & Output"
+  },
+  {
+    "type": "file",
+    "name": "long-capture-gif",
+    "label": "Long Screenshot & GIF"
+  },
+  {
+    "type": "file",
+    "name": "ocr-table",
+    "label": "OCR & Tables"
+  }
+]

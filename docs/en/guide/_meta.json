@@ -1,0 +1,32 @@
+[
+  {
+    "type": "dir-section-header",
+    "name": "start",
+    "label": "Getting Started"
+  },
+  {
+    "type": "dir-section-header",
+    "name": "features",
+    "label": "Features"
+  },
+  {
+    "type": "file",
+    "name": "settings",
+    "label": "Settings & Tray"
+  },
+  {
+    "type": "file",
+    "name": "shortcuts",
+    "label": "Shortcuts"
+  },
+  {
+    "type": "file",
+    "name": "roles",
+    "label": "Use Cases"
+  },
+  {
+    "type": "file",
+    "name": "faq",
+    "label": "FAQ"
+  }
+]
