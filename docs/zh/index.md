@@ -4,11 +4,11 @@ pageType: home
 
 hero:
   name: koiShot
-  text: 截图 · 贴图 · 识别，一款全搞定
-  tagline: 跨平台截图工具：截图标注、贴图、长截图、OCR 与表格识别、GIF 录制，识别全程本地离线
+  text: 跨平台截图 · 贴图 · 识别，一款全搞定
+  tagline: 支持 Windows / macOS / Linux：截图标注、贴图、长截图、OCR 与表格识别、GIF 录制，识别全程本地离线
   actions:
     - theme: brand
-      text: ⬇️ 下载 koiShot
+      text: 下载 koiShot
       link: https://pan.baidu.com/s/1wRFvwskNjT-IGAc4YM4sHg?pwd=nrhi
     - theme: alt
       text: 快速开始
@@ -20,6 +20,10 @@ hero:
     src: /koi-logo.svg
     alt: koiShot
 features:
+  - title: 跨平台支持
+    details: Windows、macOS、Linux 三大平台全支持，一套体验无缝切换，界面语言与主题跟随系统。
+    icon: 💻
+    link: /zh/guide/start/getting-started
   - title: 截图与标注
     details: 多屏框选、控件高亮点选、放大镜取色；矩形、箭头、序号、马赛克等全套标注工具。
     icon: 🖼️
@@ -36,10 +40,6 @@ features:
     details: 本地离线识别，截图转文字、截图转 Excel（xlsx / CSV / TSV），不上传任何图片。
     icon: 🔍
     link: /zh/guide/features/ocr-table
-  - title: 全局快捷键
-    details: F1 截图、Alt+S 保存、Alt+P 贴图，全部支持自定义改键、冲突检测。
-    icon: ⌨️
-    link: /zh/guide/shortcuts
   - title: 中英文 / 深浅主题
     details: 界面语言默认跟随系统，主题浅色 / 深色 / 跟随系统即时切换。
     icon: 🎨

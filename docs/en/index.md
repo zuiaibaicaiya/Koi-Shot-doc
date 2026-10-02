@@ -4,11 +4,11 @@ pageType: home
 
 hero:
   name: koiShot
-  text: Capture, pin & recognize — all in one
-  tagline: Cross-platform screenshot tool — capture & annotation, pin to desktop, long screenshots, OCR & table recognition, GIF recording, all local and offline
+  text: Cross-platform capture, pin & recognize — all in one
+  tagline: Available on Windows / macOS / Linux — capture & annotation, pin to desktop, long screenshots, OCR & table recognition, GIF recording, all local and offline
   actions:
     - theme: brand
-      text: ⬇️ Download koiShot
+      text: Download koiShot
       link: https://pan.baidu.com/s/1wRFvwskNjT-IGAc4YM4sHg?pwd=nrhi
     - theme: alt
       text: Get Started
@@ -20,6 +20,10 @@ hero:
     src: /koi-logo.svg
     alt: koiShot
 features:
+  - title: Cross-Platform
+    details: Works on Windows, macOS and Linux with a consistent experience; UI language and theme follow your system.
+    icon: 💻
+    link: /en/guide/start/getting-started
   - title: Capture & Annotate
     details: Multi-screen selection, UI-element click-to-select, magnifier; full annotation toolkit with arrows, badges and mosaic.
     icon: 🖼️
@@ -36,10 +40,6 @@ features:
     details: Local offline recognition; screenshot to text or Excel (xlsx / CSV / TSV) — images never leave your machine.
     icon: 🔍
     link: /en/guide/features/ocr-table
-  - title: Global Hotkeys
-    details: F1 capture, Alt+S save, Alt+P pin — all customizable with conflict detection.
-    icon: ⌨️
-    link: /en/guide/shortcuts
   - title: i18n & Themes
     details: English & Chinese UI, light/dark/system themes, applied instantly.
     icon: 🎨
