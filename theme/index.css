@@ -150,6 +150,30 @@ html.dark {
   line-height: 1.6;
 }
 
+/* 首页「应用场景」板块 */
+.koishot-home-roles {
+  max-width: 72rem;
+  margin: 1rem auto 4rem;
+  padding: 0 10px;
+}
+
+.koishot-home-roles__title {
+  margin: 0;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.koishot-home-roles__subtitle {
+  margin: 0.5rem 0 0;
+  text-align: center;
+  color: var(--rp-c-text-2);
+}
+
+.koishot-home-roles .koishot-roles {
+  margin: 2rem 0 0;
+}
+
 /* 「应用场景」对比板块（文档页复用） */
 .koishot-roles {
   margin: 1rem 0 2rem;

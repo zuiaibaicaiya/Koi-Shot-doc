@@ -21,11 +21,6 @@
   },
   {
     "type": "file",
-    "name": "roles",
-    "label": "应用场景"
-  },
-  {
-    "type": "file",
     "name": "faq",
     "label": "常见问题"
   }
