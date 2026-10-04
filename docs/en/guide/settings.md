@@ -15,6 +15,7 @@ Open Settings from the tray menu or the main window (`Alt + Q`). The current ver
 | Save path | Default save location (a `koiShot` folder under Pictures), browse to change |
 | Open folder after save | Auto-open the folder after saving (off by default) |
 | GIF size preset | High quality / Balanced (default) / Small size |
+| GIF frame rate | 5–30 fps (default 15); higher = smoother but larger files |
 | OCR self-check | Verify models & environment; open models directory |
 
 ## Hotkeys
