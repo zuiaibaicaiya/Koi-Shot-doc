@@ -68,6 +68,6 @@ Clicking elsewhere, clicking a swatch or switching tools commits instead of disc
 | `Esc` | Close the OCR / table result window |
 | Double-click a line (OCR) | Copy just that line |
 
-::::tip
+:::tip
 All global hotkeys can be rebound and take effect immediately; a conflict message means the combination is already taken by koiShot or another app.
-::::
+:::

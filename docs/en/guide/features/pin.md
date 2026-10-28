@@ -87,10 +87,10 @@ The selection is textual, like Word or a browser — a **contiguous run of text*
 
 While editing a text annotation, `Esc` only exits the editor — it will not close the pin.
 
-::::tip
+:::tip
 Save annotated image → for showing the highlighted result; right-click "Save original" → for delivering the clean screenshot. One pin, two outputs.
-::::
+:::
 
-::::tip
+:::tip
 Pins stay on top. If a pin blocks your work, lower its opacity with `Alt` + wheel instead of moving it around. Rotation / mirroring is not supported in the current version.
-::::
+:::

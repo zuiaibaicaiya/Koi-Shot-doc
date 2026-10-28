@@ -85,6 +85,6 @@ The toolbar flips above the selection when there is no room below, and is clampe
 - Clicking Copy / Save / Pin finishes the capture with that action;
 - Cancel or `Esc` discards it (while editing a text annotation, `Esc` only exits the editor).
 
-::::tip
+:::tip
 Annotation details: [Annotation](/en/guide/features/annotation). OCR, tables, long capture, GIF and video each have their own section; paths, file names and formats: [Saving & output](/en/guide/features/output).
-::::
+:::

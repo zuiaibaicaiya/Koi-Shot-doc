@@ -42,9 +42,9 @@ If the combination is already used by another koiShot action, the dialog says so
 
 **`F1`-style function keys conflict on macOS?** `F1`–`F12` act as system keys by default. Enable "Use F1, F2, etc. keys as standard function keys" in System Settings → Keyboard, or use a combination with `Ctrl` / `Alt` / `Shift`.
 
-::::tip
+:::tip
 Prefer combinations with `Ctrl` / `Alt` / `Shift` to avoid clashes with the system and other apps.
-::::
+:::
 
 ## Annotation
 

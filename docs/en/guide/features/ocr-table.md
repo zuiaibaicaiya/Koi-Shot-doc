@@ -56,9 +56,9 @@ Three recovery strategies are tried in order of authority; the first one that pr
 
 The feature aims to give you a **usable first draft** for three things: **text, merges and size** (column widths and row heights follow the source image). Font family/size, exact colours, formula semantics and conditional formats are out of scope.
 
-::::tip
+:::tip
 The cleaner the table and its rules, the better the result. Complex backgrounds (dark themes, gradients, colour blocks) are normalised before line detection, but always verify before exporting; skewed or perspective-distorted tables should be captured straight on.
-::::
+:::
 
 ## Quick troubleshooting
 

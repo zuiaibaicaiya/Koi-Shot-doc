@@ -86,6 +86,6 @@ Choose video when you need **audio**, a **longer clip** or **better quality**.
 | Region | Locked once recording starts (encoding resolution is fixed) |
 | Capture | Native capture on macOS (30 fps); otherwise a compatible fallback (~10 fps) |
 
-::::tip
+:::tip
 Smaller regions and shorter clips give sharper, smaller results. Use GIF for a few seconds of looping demo; use video when you need narration, audio, or more than 30 seconds.
-::::
+:::

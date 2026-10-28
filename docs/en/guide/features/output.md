@@ -52,6 +52,6 @@ Every saved file uses `name_date_time` (24-hour clock). Saving several files wit
 - GIF recordings are **GIF**;
 - Table recognition exports **xlsx** (with real merged cells) and **CSV** (UTF-8 BOM), and can copy the whole grid as **TSV** (see [OCR & tables](/en/guide/features/ocr-table)).
 
-::::tip
+:::tip
 If you usually paste right after capturing, leave "Open folder after save" off; if you archive everything, turn it on to confirm the location after each save.
-::::
+:::
