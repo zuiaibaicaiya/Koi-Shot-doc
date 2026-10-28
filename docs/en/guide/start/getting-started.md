@@ -1,99 +1,111 @@
 ---
-description: 'Get koiShot: Windows setup wizard and macOS DMG drag-to-install — no build required, OCR included.'
+description: 'Get koiShot: Windows installer, macOS DMG and Linux .deb. No build required, OCR included.'
 ---
 
 # Get Started
 
-Download the installer for your platform from the project releases page. No build or extra setup needed — all runtime libraries and the OCR engine ship inside the installer.
+Download the package for your platform from the release page. Nothing to build or configure — runtime libraries and the OCR engine are bundled, so it works right after installation.
 
 ## Windows
 
-1. Download the setup wizard `koiShot-<version>-setup.exe` and run it;
-2. Follow the **setup wizard** (Simplified Chinese) to finish installation — no admin rights required;
-3. Keep "Run koiShot" checked on the final page and click **Finish**. koiShot starts and lives in the system tray.
+1. Download `koiShot-<version>-setup.exe` and run it;
+2. Follow the **Simplified Chinese installer**; no administrator rights required;
+3. Keep "Run koiShot" checked on the last page and click Finish — koiShot starts and stays in the system tray.
 
-### Wizard Steps
+### Installer steps
 
-**Install location**: by default koiShot installs to the current user's local programs folder (`%LOCALAPPDATA%\Programs\koiShot`). On first install the wizard asks for the install scope — "install for the current user" is the default and needs no admin rights.
+**Install location**: defaults to the per-user program directory (`%LOCALAPPDATA%\Programs\koiShot`) and can be changed. The installer asks for the install scope first and defaults to "install for the current user only".
 
 **Additional tasks**:
 
-![Select additional tasks](/images/install/windows-wizard-tasks.png)
+![Additional tasks](/images/install/windows-wizard-tasks.png)
 
-- **Create a desktop shortcut**: unchecked by default;
-- **Start koiShot with Windows**: checked by default. koiShot then starts with the system and stays in the tray; the setting is removed automatically on uninstall.
+- **Create a desktop shortcut**: off by default;
+- **Start koiShot at login**: on by default. koiShot starts with Windows and stays in the tray; the setting is removed on uninstall.
 
-**Ready to install**: review the summary and click **Install**:
+**Ready to install**:
 
 ![Ready to install](/images/install/windows-wizard-ready.png)
 
-If koiShot is already running (e.g. an upgrade), the wizard offers to close it automatically before continuing:
+If koiShot is running (for example during an upgrade), the installer offers to close it automatically:
 
-![Close running koiShot](/images/install/windows-wizard-close-apps.png)
+![Closing a running koiShot](/images/install/windows-wizard-close-apps.png)
 
-**Finished**:
+**Finish**:
 
-![Installation finished](/images/install/windows-wizard-finish.png)
+![Finish](/images/install/windows-wizard-finish.png)
 
-### Upgrade & Uninstall
+### Upgrade & uninstall
 
-- **Upgrade**: run the new setup package directly — no need to uninstall first; the wizard keeps your existing configuration;
-- **Uninstall**: use Windows "Settings → Apps → Installed apps", or the uninstall entry in the koiShot Start-menu group. The autostart entry and related files are removed automatically.
+- **Upgrade**: run the new installer over the old one — no need to uninstall first; existing settings are kept;
+- **Uninstall**: use Settings → Apps on Windows, or the uninstall entry in the koiShot start-menu folder. Autostart entries and files are removed automatically.
 
 ## macOS
 
-1. Download the disk image `koiShot-<version>.dmg` and double-click to open it;
-2. **Drag koiShot into the Applications folder** as guided by the install screen:
+1. Download `koiShot-<version>.dmg` and open it;
+2. Drag **koiShot into the Applications folder** as the window shows:
 
-![macOS install screen: drag koiShot to the Applications folder on the right](/images/install/macos-dmg-install.png)
+![macOS installer: drag koiShot into Applications](/images/install/macos-dmg-install.png)
 
-3. Launch koiShot from Launchpad or the Applications folder.
+3. Launch koiShot from Launchpad or Applications.
 
-### "Unidentified Developer" on First Open
+### "Cannot verify the developer" on first launch
 
-macOS blocks apps that are not notarized — this is expected. Pick either way to allow it:
+macOS blocks un-notarized apps; this is expected. Pick either:
 
-- Click **Done** on the dialog, then open **System Settings → Privacy & Security**, find the notice about koiShot near the bottom and click **Open Anyway**;
-- Or **right-click koiShot → Open** in the Applications folder, then click **Open** in the dialog. This is needed only once.
+- Click "Done" in the dialog, open **System Settings → Privacy & Security**, and click **Open Anyway** next to the koiShot notice;
+- Or right-click koiShot in Applications → **Open**, then confirm. One time only.
 
-### No koiShot in the Dock — That's Normal
+### No Dock icon is normal
 
-koiShot is a **pure tray app**: it does not appear in the Dock or in the `⌘ + Tab` switcher. It lives only as a tray icon in the **top-right menu bar**. If you see that icon, the app is running.
+koiShot is **tray-only**: no Dock icon, no `⌘ + Tab` entry — just the tray icon in the **menu bar**. If you see the menu-bar icon, the app is running.
 
-### System Permissions
+### System permissions
 
-macOS capture relies on two independent permissions that must be granted manually:
+Three independent permissions are involved:
 
-| Permission | Where | If missing |
+| Permission | Where | Symptom when missing |
 | --- | --- | --- |
-| Screen Recording | System Settings → Privacy & Security → Screen Recording | Captures are all black, with no error |
-| Accessibility | System Settings → Privacy & Security → Accessibility | Element highlight on hover doesn't appear; silently falls back to plain selection |
+| Screen Recording | System Settings → Privacy & Security → Screen Recording | Screenshots are completely black, with no error |
+| Accessibility | System Settings → Privacy & Security → Accessibility | Hover highlight (UI-element selection) never appears; silently falls back to plain selection |
+| Microphone | System Settings → Privacy & Security → Microphone | MP4 recordings have no audio; video is fine |
 
-Find koiShot in the list and turn on its switch:
+Enable the switches for koiShot:
 
-![Enable koiShot in the Screen Recording permission list](/images/install/macos-permission-screen-recording.png)
+![Enable koiShot under Screen Recording](/images/install/macos-permission-screen-recording.png)
 
-![Enable koiShot in the Accessibility permission list](/images/install/macos-permission-accessibility.png)
+![Enable koiShot under Accessibility](/images/install/macos-permission-accessibility.png)
 
-After ticking them, **quit and restart koiShot** (tray icon → Quit). See the [FAQ](/en/guide/faq) for details.
+Then **quit and relaunch koiShot** (tray icon → Quit). The microphone is only requested when "Record microphone audio" is enabled and you actually record; if denied, koiShot records silently. See [FAQ](/en/guide/faq).
 
-### Start at Login
+### Start at login
 
-To start koiShot automatically at login: open **System Settings → General → Login Items**, click "+" and add koiShot. It stays in the menu bar tray without popping up any window.
+- Installs made with the official packaging script register a **launch agent**, so koiShot starts silently at login; the same script can remove it.
+- Manual drag-and-drop installs: open **System Settings → General → Login Items** and add koiShot.
 
-### Upgrade & Uninstall
+### Upgrade & uninstall
 
-- **Upgrade**: download the new DMG and **drag koiShot into Applications** to overwrite it — your settings are kept. If a permission stops working after the upgrade, re-tick it in the two panes above;
-- **Uninstall**: quit koiShot from the tray icon menu first, then drag it from Applications to the Trash.
+- **Upgrade**: drag the new koiShot into Applications to overwrite; settings are kept. Re-check the permissions above if capture stops working;
+- **Uninstall**: quit from the tray menu, then move koiShot from Applications to the Trash.
 
 ## Linux
 
-Download the program package, unzip and run the `koiShot` executable (an X11 session is recommended).
+A Debian/Ubuntu `.deb` package is provided (`koishot_<version>-1_amd64.deb`):
 
-## First Launch
+```bash
+sudo dpkg -i koishot_<version>-1_amd64.deb
+```
 
-The app starts **minimized to the system tray**:
+- Launch koiShot from the application menu, or run `koiShot`;
+- Qt runtime libraries and OCR models are bundled — no system Qt6 required;
+- A user-level service restarts the app after an unexpected exit;
+- Uninstall with `sudo dpkg -r koishot` (add `purge` to remove configuration).
 
-1. Click the tray icon to start a capture;
-2. Open Settings to review save path, language and hotkeys;
-3. Optionally run "Self-check" under Settings → OCR to confirm the recognition environment (usually nothing to do).
+## First launch
+
+koiShot **only lives in the system tray** after launch and shows no window (there is no persistent main window):
+
+1. Left-click the tray icon to start a capture;
+2. Check save path, UI language, theme and hotkeys in Settings (all 5 global actions can be rebound);
+3. Optionally run Settings → OCR self-check → "Run self-check" to confirm the recognition environment (usually unnecessary);
+4. For recordings with audio, verify the microphone switch under Settings → General → Recording (MP4) and grant the microphone permission.

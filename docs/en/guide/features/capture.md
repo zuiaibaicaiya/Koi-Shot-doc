@@ -1,51 +1,90 @@
 ---
-description: 'koiShot capture guide: region selection, square selection, element highlight, magnifier and toolbar.'
+description: 'koiShot capture guide: region selection, square selection, UI-element highlight, magnifier, shortcut hint panel and the capture toolbar.'
 ---
 
 # Capture
 
-## Start a Capture
+## Starting a capture
 
-- Press `F1` (capture) or `Alt + S` (capture and save);
-- Click the tray icon and choose "Capture";
-- Or use the button in the main window.
+Any of these:
 
-The screen dims and the **full screen under the mouse is preselected** as the initial region. A shortcut hint panel in the bottom-left corner lists the available actions.
+- Press `F1` (capture) / `Alt + S` (capture & save) / `Alt + R` (region video recording);
+- **Left-click** the tray icon — starts a capture immediately;
+- Tray right-click menu → Capture / Capture & save;
+- Launching koiShot again while it is running also **starts a capture** (single-instance behaviour).
 
-## Region Selection
+The screen dims and enters selection mode. By default the **work area of the screen under the cursor** is pre-selected (screen minus taskbar / Dock / menu bar), so a plain click captures it; moving the mouse switches the preview to the rectangle under the cursor.
 
-| Action | Effect |
+## Selecting a region
+
+| Action | Result |
 | --- | --- |
-| Left-drag | Select any rectangular region |
-| `Shift` + drag | Select a square |
-| Click a UI element | Select its exact bounds (button, input box, ...) |
-| Drag handles | Resize from eight directions |
-| `Esc` | Cancel |
+| Drag with the left button | Select any rectangular region |
+| `Shift` + drag | Square region (press or release `Shift` mid-drag; clamped at screen edges) |
+| Single click on a UI element | Select that element's exact bounds (button, input, image…) |
+| Drag edges / corner handles | Resize the selection in eight directions |
+| Drag inside the selection | Move the whole selection |
+| Wheel (with an annotation selected) | Adjust the selected annotation's thickness / size |
+| `Esc` | Cancel the capture |
 
-**Element detection**: hovering highlights windows, buttons and images based on accessibility APIs (Windows UIA / macOS Accessibility); a single click selects the element precisely.
+### UI element highlight
 
-## Magnifier
+While hovering without a selection, the window / button / image under the cursor is outlined and a **single click** turns it into the selection — no pixel-perfect alignment needed. Supported via:
 
-While selecting, a magnifier shows pixels near the cursor for precise alignment and color picking.
+- Windows: UI Automation (UIA);
+- macOS: Accessibility (AX), requires permission;
+- Linux: not implemented yet; falls back to plain selection.
 
-## Confirm
+Without permission nothing breaks: the highlight simply never appears.
 
-After selection, a **toolbar** appears below the region. The active tool is highlighted, and tools that support styling open a property panel beneath the toolbar. All buttons:
+### Magnifier
 
-| Group | Buttons | Purpose | Details |
+Moving the mouse during selection shows a magnifier that zooms the pixels next to the cursor, with a pixel grid plus **RGB readout** and coordinates below — handy for aligning edges or picking a colour.
+
+### Shortcut hint panel
+
+A translucent panel in the **left column of the screen** lists the keys available right now:
+
+| Phase | Content |
+| --- | --- |
+| Before selecting | Drag to select · Shift+drag for a square · Click to select a UI element · Esc to cancel |
+| Selection committed (toolbar visible) | Drag the selection to move/resize · Wheel adjusts the selected annotation · Ctrl+Z undo · Enter finish · Esc cancel |
+
+It prefers the bottom-left corner, moves to the top-left only when the bottom-left is blocked, hides while you are dragging, and is not shown during GIF/MP4 recording.
+
+## Toolbar
+
+After you release the mouse, the toolbar appears below the selection. The active tool is highlighted; clicking it again opens its property popup. Buttons from left to right:
+
+| Group | Button | Purpose | Details |
 | --- | --- | --- | --- |
-| Annotation | Pen / Rectangle / Ellipse / Arrow / Highlighter / Mosaic / Gaussian Blur / Text / Number badge | Mark up the capture | [Annotation](/en/guide/features/annotation) |
-| Edit | Undo / Redo | Step back or forward, `Ctrl/Cmd + Z` / `Ctrl/Cmd + Shift + Z` | [Undo / Redo](/en/guide/features/annotation#undo-redo) |
-| Output | Copy | Copy the capture to the clipboard | [Saving & Output](/en/guide/features/output) |
-| Output | Save | Save as PNG to the configured folder | [Saving & Output](/en/guide/features/output) |
-| Output | Pin | Keep the capture on top of the desktop | [Pin](/en/guide/features/pin) |
-| Output | OCR | Recognize text as copyable content | [OCR & Table](/en/guide/features/ocr-table) |
-| Output | Table | Convert a table capture to xlsx / CSV / TSV | [OCR & Table](/en/guide/features/ocr-table) |
-| Output | Long capture | Scroll and stitch a full-page image | [Long Capture & GIF](/en/guide/features/long-capture-gif) |
-| Output | GIF | Record the region as a GIF | [Long Capture & GIF](/en/guide/features/long-capture-gif) |
-| Exit | Cancel | Discard the capture (`Esc`) | — |
+| Annotation | Pen / Rectangle / Ellipse / Arrow / Highlighter / Mosaic / Blur / Text / Number | Add annotations; the ones with a small chevron have a property popup | [Annotation](/en/guide/features/annotation) |
+| Edit | Undo / Redo | Step back or forward, `Ctrl + Z` / `Ctrl + Shift + Z` (`Cmd` on macOS) | [Undo & redo](/en/guide/features/annotation#undo--redo) |
+| Output | Pin | Pin the selection to the desktop | [Pin](/en/guide/features/pin) |
+| Output | OCR | Recognise text in the selection, with line numbers | [OCR & tables](/en/guide/features/ocr-table) |
+| Output | Table | Rebuild a table into an editable grid, export xlsx / CSV | [OCR & tables](/en/guide/features/ocr-table) |
+| Output | Long capture | Scroll-stitch a long screenshot | [Long screenshot, GIF & recording](/en/guide/features/long-capture-gif) |
+| Output | Record GIF | Record the selection as an animated GIF | [Long screenshot, GIF & recording](/en/guide/features/long-capture-gif) |
+| Output | Record video | Record the selection as MP4 (optional microphone audio) | [Long screenshot, GIF & recording](/en/guide/features/long-capture-gif) |
+| Finish | Save / Cancel / Copy | Save to the configured folder, discard, or copy (rightmost) | [Saving & output](/en/guide/features/output) |
 
-- `Enter` runs the default action for how the capture was started (`F1` → copy, `Alt + S` → save);
-- `Esc` or "Cancel" aborts.
+The toolbar flips above the selection when there is no room below, and is clamped horizontally when the selection touches a screen edge. It temporarily hides while you drag the selection.
 
-See [Annotation](/en/guide/features/annotation) for marking up, and [Saving & Output](/en/guide/features/output) for save paths and file naming.
+## Finishing
+
+- The **default action** depends on how you started; that button is highlighted in the brand colour:
+
+  | Entry | Default action |
+  | --- | --- |
+  | `F1` / tray Capture / relaunch | Copy to clipboard |
+  | `Alt + S` / tray Capture & save | Save to file (saves on mouse release, no toolbar) |
+  | `Alt + P` / tray Pin to desktop | Pin on mouse release |
+  | `Alt + R` | Show the recording bar in its ready state on release |
+
+- `Enter` runs the current default action;
+- Clicking Copy / Save / Pin finishes the capture with that action;
+- Cancel or `Esc` discards it (while editing a text annotation, `Esc` only exits the editor).
+
+::::tip
+Annotation details: [Annotation](/en/guide/features/annotation). OCR, tables, long capture, GIF and video each have their own section; paths, file names and formats: [Saving & output](/en/guide/features/output).
+::::

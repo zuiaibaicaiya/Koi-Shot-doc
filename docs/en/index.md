@@ -1,11 +1,11 @@
 ---
-description: 'koiShot documentation: capture, annotation, pin, long screenshot, OCR, table recognition and GIF recording.'
+description: 'koiShot documentation: capture, annotation, pin, long screenshot, GIF recording, MP4 recording, OCR and table recognition.'
 pageType: home
 
 hero:
   name: koiShot
   text: Cross-platform capture, pin & recognize — all in one
-  tagline: Available on Windows / macOS / Linux — capture & annotation, pin to desktop, long screenshots, OCR & table recognition, GIF recording, all local and offline
+  tagline: Windows / macOS / Linux — capture & annotation, pin to desktop, long screenshots, GIF & MP4 recording, OCR & table recognition, all local and offline
   actions:
     - theme: brand
       text: Download koiShot
@@ -25,19 +25,19 @@ features:
     icon: 💻
     link: /en/guide/start/getting-started
   - title: Capture & Annotate
-    details: Multi-screen selection, UI-element click-to-select, magnifier; full annotation toolkit with arrows, badges and mosaic.
+    details: Multi-screen selection, UI-element click-to-select, magnifier; nine annotation tools with configurable defaults.
     icon: 🖼️
     link: /en/guide/features/capture
   - title: Pin to Desktop
-    details: Keep screenshots always on top; wheel to zoom, Alt+wheel for opacity, keep annotating on the pin.
+    details: Keep screenshots always on top; wheel to zoom, Alt+wheel for opacity, keep annotating — or drag over text to copy it with OCR.
     icon: 📌
     link: /en/guide/features/pin
-  - title: Long Screenshot & GIF
-    details: Scroll-stitched long captures; record a region as a GIF with size presets.
+  - title: Long Screenshot, GIF & Recording
+    details: Scroll-stitched long captures; record a region as a GIF, or as an MP4 video with microphone audio.
     icon: 🎞️
     link: /en/guide/features/long-capture-gif
   - title: OCR & Table Recognition
-    details: Local offline recognition; screenshot to text or Excel (xlsx / CSV / TSV) — images never leave your machine.
+    details: Local offline recognition; screenshot to text or Excel (xlsx / CSV) — images never leave your machine.
     icon: 🔍
     link: /en/guide/features/ocr-table
   - title: i18n & Themes

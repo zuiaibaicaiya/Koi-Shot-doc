@@ -1,155 +1,160 @@
 ---
-description: 'koiShot annotation guide: pen, rectangle, ellipse, arrow, highlighter, mosaic, blur, text, number badges, property panel, undo/redo.'
+description: 'koiShot annotation guide: pen, rectangle, ellipse, arrow, highlighter, mosaic, blur, text and numbered badges; property popups, editing rules and defaults.'
 ---
 
 # Annotation
 
-## Choosing a Tool
+## Nine tools
 
-After framing the region, the **toolbar** appears below the selection. The active tool is **highlighted**, and for tools that support styling, a **property panel** opens under the toolbar — every change applies instantly. Annotations are confined to the selection and can be rolled back anytime with undo/redo.
+After selecting a region, the left part of the toolbar contains nine tools, in this order:
 
-## Tool Reference
+**Pen → Rectangle → Ellipse → Arrow → Highlighter → Mosaic → Blur → Text → Number**
+
+Seven of them have a **small chevron** on their right:
+
+- Click the **main button** to switch to that tool and start drawing;
+- Click the **chevron** to open its property popup (does not switch tools);
+- Clicking the **already active** main button again toggles the popup (no need to aim at the chevron).
+
+**Mosaic / Blur** have no popup; they use a small panel below the toolbar with a "Thickness" row only.
+
+## Property popup
+
+| Row | Content | Notes |
+| --- | --- | --- |
+| Colour | 9 preset swatches | Click to switch; hover shows the hex value |
+| Thickness | Fine / Medium / Thick / Extra thick | Shown as line previews with tooltips like "Medium (4px)"; for Text this row is the **font size**, for Mosaic/Blur the **brush size** |
+| Opacity | 5% – 100% slider | Drag or wheel; a percentage tooltip appears above the handle while dragging |
+
+- The popup does not steal mouse input: you can keep drawing while it is open, and it stays open;
+- Picking anything in the popup (swatch, thickness, slider, toggle) also **activates that tool**;
+- Close it with the chevron / main button again, or `Esc`.
+
+:::tip
+The colour and thickness values are the same ones used by Settings → Annotation. Changes made during a capture session affect only that session and are not written back to the defaults.
+:::
+
+## Tools
 
 ### Pen
 
-**Use**: freehand drawing for irregular areas or handwritten notes.
-
-**How to use**:
-
-1. Click "Pen" in the toolbar (it highlights when active);
-2. Pick color, width and opacity in the property panel;
-3. Hold the left button and drag to draw; release to finish the stroke;
-4. Draw multiple strokes freely — each stroke is one undo step.
-
-**Example**: circle the error message in an app screenshot by hand.
-
-**Note**: pen strokes can't be selected or edited afterwards — undo with `Ctrl/Cmd + Z` and redraw.
+Freehand drawing for circling irregular areas or handwriting notes. Each stroke is a separate undo step. Strokes **cannot be selected afterwards** — undo and redraw instead.
 
 ### Rectangle / Ellipse
 
-**Use**: outline regular areas such as a button or a table block.
+1. Pick the tool, then drag; hold `Shift` while drawing to constrain to a **square / circle** (toggles live);
+2. On release the shape **enters the selected state** with eight handles.
 
-**How to use**:
+| Action | Result |
+| --- | --- |
+| Drag a corner handle | Scale from the opposite corner (flipping allowed) |
+| Drag an edge handle | Move that edge only |
+| Drag inside the shape | Move it |
+| Wheel over the shape | Adjust border thickness (±1, 1–40) |
 
-1. Click "Rectangle" or "Ellipse";
-2. Set color, width and opacity in the property panel;
-3. Hold the left button, drag from start point to end point, release to finish;
-4. Drawn shapes stay editable (see [Editing](#editing)).
-
-**Example**: draw a red rectangle around the invalid input field in a form.
-
-**Note**: both are outlined shapes with no fill; to highlight the underlying content instead, use the "Highlighter".
+Both are outline-only shapes. Use the highlighter if you want to tint the content instead.
 
 ### Arrow
 
-**Use**: point at a specific element to show direction or causality.
+1. Pick Arrow; to change style, open the popup and choose from the **8 style previews**;
+2. Drag from tail to head;
+3. On release three handles appear: **start / middle / end**.
 
-**How to use**:
+| Action | Result |
+| --- | --- |
+| Drag start or end handle | Change the tail or the direction |
+| Drag the middle handle | Bend the arrow into a quadratic Bézier curve |
+| Drag the shaft / head | Move the whole arrow |
+| Wheel over the arrow | Adjust thickness (±1, 1–40) |
 
-1. Click "Arrow"; to change the style, click the **dropdown** beside the button and pick one of 8 styles;
-2. Hold the left button and drag — the arrow points from the start point to the end point;
-3. Drawn arrows can be moved and resized as a whole.
+**Arrow + text**: the arrow popup has a text-icon toggle. When enabled, finishing an arrow (with a long enough drag) opens an inline text box **at the arrow's start point**. The text and arrow are then linked:
 
-**Example**: draw an arrow from the "Settings button" to the "menu that opens" to show what happens on click.
-
-**Note**: drag direction determines where the arrow points; if reversed, undo and redraw or adjust the selected arrow.
+- Dragging either moves the pair; the text stays at the tail side;
+- Dragging the linked text rotates the whole arrow around its tip (works with both the text and arrow tools);
+- Double-click the linked text to edit it;
+- Undo / redo handles both together;
+- The toggle resets to off at the start of every capture.
 
 ### Highlighter
 
-**Use**: semi-transparent highlighting that emphasizes content without hiding it.
+Semi-transparent highlighting that does not hide the content underneath. The stroke is drawn at twice the configured thickness; colour, thickness and opacity are adjustable.
 
-**How to use**:
+### Mosaic / Blur
 
-1. Click "Highlighter";
-2. Pick a color and width;
-3. Hold the left button and swipe across the text or area to emphasize.
+For hiding phone numbers, avatars, IDs and similar:
 
-**Example**: highlight the key clauses in a contract screenshot with yellow.
+1. Pick the tool;
+2. Choose "Thickness" (brush size) in the panel below the toolbar;
+3. Paint over the area — it is pixelated / blurred immediately.
 
-**Note**: the highlighter is semi-transparent by design — it offers no opacity setting.
-
-### Mosaic
-
-**Use**: pixelate painted areas to hide sensitive information.
-
-**How to use**:
-
-1. Click "Mosaic";
-2. Adjust the brush **width** in the property panel;
-3. Hold the left button and paint over the content — painted areas pixelate immediately.
-
-**Example**: paint over phone numbers and avatars in a chat screenshot.
-
-**Note**: painted areas can't be restored to the original pixels (only undone as a whole stroke); make sure everything sensitive is covered.
-
-### Gaussian Blur
-
-**Use**: smooth blur, softer than mosaic — good when you don't want an obvious "censored" look.
-
-**How to use**: same as "Mosaic" — pick the tool, adjust the width, paint over the target area.
-
-**Example**: blur a personal-info panel in the background while keeping the overall look of the image.
-
-**Note**: only the brush **width** applies; for strong masking, prefer Mosaic.
+Only thickness is adjustable. Mosaic is blocky and hides better; blur is softer and keeps the layout. Painting cannot be partially reverted — undo removes the whole stroke.
 
 ### Text
 
-**Use**: add typed notes directly on the capture.
+1. Pick Text and set colour / font size / opacity in the popup;
+2. **Click** the target position to open an input box and type;
+3. `Enter` inserts a line break, `Ctrl + Enter` (`Cmd + Enter` on macOS) commits;
+4. With the text tool: **click** an existing text to select it (clicking a swatch then recolours it), **double-click** to edit it;
+5. While typing, the **wheel** adjusts the font size live.
 
-**How to use**:
-
-1. Click "Text";
-2. Set color, width (i.e. font size) and opacity in the property panel;
-3. **Click** the spot where the text should go, then type;
-4. While editing, press `Enter` for a new line; scrolling the **wheel** adjusts the text width in real time;
-5. Press `Ctrl + Enter` (`Cmd + Enter` on macOS) to commit, or `Esc` to discard.
-
-**Example**: add "click here to sign in" next to the login button.
-
-**Note**: don't click outside the input box before committing; pressing `Esc` discards what you've typed.
-
-### Number Badge
-
-**Use**: place numbered badges that mark the order of steps — great for tutorials.
-
-**How to use**:
-
-1. Click "Number badge"; use the **dropdown** beside the button to set the start number or toggle auto-increment;
-2. Click each spot in order — badges appear as 1, 2, 3… and **auto-increment**;
-3. Adjust color and width in the property panel; placed badges can be selected and moved.
-
-**Example**: mark steps ①②③ on a settings screenshot for a how-to guide.
-
-**Note**: undo rewinds the counter (after undoing ③, the next click places ③ again — no skipped numbers); with auto-increment off, every click uses the same number.
-
-## Property Panel
-
-For most tools the panel shows three rows, top to bottom:
-
-| Setting | Options | Notes |
-| --- | --- | --- |
-| Color | 9 preset swatches | Click to switch; the active swatch highlights |
-| Width | Fine / Medium / Thick / Extra thick | Affects line or stroke width |
-| Opacity | 5%–100% slider | Applies in real time |
-
-**Exceptions**: Mosaic and Gaussian Blur use only the brush size, so their panel shows the width row only; the Highlighter is semi-transparent by design and needs no opacity setting.
-
-## Editing
-
-| Action | How |
+| Action | Result |
 | --- | --- |
-| Select | Click a drawn shape (rectangle, ellipse, arrow, badge; pen strokes aren't selectable) |
-| Resize | Drag one of the eight outer handles; the frame sits outside the shape so strokes stay visible |
-| Move | Drag the shape as a whole |
-| Delete | Select it and press `Ctrl/Cmd + Z` to undo that step |
+| `Ctrl + Enter` | Commit |
+| Click elsewhere / another text | Commit the current one, then continue |
+| Switch tools | Commit — nothing is lost |
+| Click a swatch while typing | Only recolours this text; typing continues |
+| `Esc` | Discard this edit (restores the original when editing) |
 
-**Boundary**: annotations are strictly clipped to the selection, so exports never lose a corner.
+### Number
 
-## Undo / Redo
+1. Pick Number; set the start value or turn auto-increment off in the popup (start value 1–999);
+2. **Press and drag** to place a round badge at the press point with an arrow pointing to the release point; **click without dragging** to place a plain badge;
+3. Values auto-increment (1, 2, 3…);
+4. In the selected state, drag the **tip handle** to change direction, or drag the **badge** to move the whole mark;
+5. Wheel over the selected number: over the **badge** it changes the badge size, over the **shaft/head** it changes the arrow thickness.
+
+- Numbering restarts at the configured start value for every capture;
+- Undo / redo move the counter backwards / forwards without skipping;
+- With auto-increment off, every placement uses the same number.
+
+## Editing existing annotations
+
+Annotations follow a "**only the newest one is editable**" rule (freezing):
+
+| State | Behaviour |
+| --- | --- |
+| Just drawn, still selected | Drag handles to scale, drag the body to move, wheel to change thickness |
+| After drawing a new shape / switching tools / undo-redo | Older shapes are **frozen**; pressing them is like pressing empty canvas and starts a new stroke |
+
+So to change an old annotation, undo and redraw; to adjust the current one, use its handles.
+
+**Bounds**: everything is clamped inside the selected region, so exported images are never cut off. Handles and outlines are drawn *outside* the stroke and never appear in the exported image.
+
+## Undo & redo
 
 | Shortcut | Action |
 | --- | --- |
-| `Ctrl + Z` (`Cmd + Z` on macOS) | Undo the last step |
-| `Ctrl + Shift + Z` (`Cmd + Shift + Z` on macOS) | Redo |
+| `Ctrl + Z` (`Cmd + Z`) | Undo |
+| `Ctrl + Shift + Z` (`Cmd + Shift + Z`) | Redo |
 
-The toolbar "Undo / Redo" buttons do the same. Number badges stay consistent: undoing rewinds the counter and redoing continues it — no skipped or repeated numbers.
+The toolbar buttons behave identically and are disabled when there is nothing to undo or redo.
+
+## Annotation defaults
+
+Default colour / thickness / opacity / arrow style / number start value and auto-increment for every tool live in **Settings → Annotation**, shared by the capture overlay and pin windows.
+
+| Tool | Colour | Thickness | Opacity | Other |
+| --- | --- | --- | --- | --- |
+| Pen | `#F43F5E` | Thick (6) | 100% | — |
+| Rectangle | `#F43F5E` | Thick (6) | 100% | — |
+| Ellipse | `#F43F5E` | Thick (6) | 100% | — |
+| Arrow | `#F43F5E` | Thick (6) | 100% | Style: solid |
+| Highlighter | `#F43F5E` | Thick (6) | 100% | — |
+| Mosaic | — | Thick (6) | — | — |
+| Blur | — | Thick (6) | — | — |
+| Text | `#F43F5E` | Thick (6, font size) | 100% | — |
+| Number | `#F43F5E` | Thick (6) | 100% | Start 1, auto-increment on |
+
+- Thickness has exactly four steps: Fine 2 / Medium 4 / Thick 6 / Extra thick 10;
+- Defaults are applied **when annotation starts** (new capture, or when a tool is (re)selected); session tweaks are not saved;
+- "Restore defaults" on the Annotation settings page resets everything.
