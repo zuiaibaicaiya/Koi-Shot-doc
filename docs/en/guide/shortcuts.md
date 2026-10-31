@@ -56,10 +56,11 @@ Clicking elsewhere, clicking a swatch or switching tools commits instead of disc
 
 ## While recording (long screenshot / GIF / video)
 
-| Key | Result |
+| Key / action | Result |
 | --- | --- |
-| `Esc` | Long screenshot: stop and produce the image; GIF / video: cancel the recording |
-| Bar buttons | Start / Stop / Cancel (GIF and video require confirming "Start recording") |
+| `Esc` | Long screenshot: stop and produce the image; GIF / video: cancel the recording (captured frames are discarded) |
+| Control / recording bar buttons | Long screenshot: Start ▶ / Finish ✓ / Cancel ✕; GIF and video first require confirming "Start recording". Buttons are icons — hover to see the name |
+| Drag inside the region (GIF / video ready state) | Move the recording region (move only, no resize; cannot leave the current screen) |
 
 ## Result windows
 

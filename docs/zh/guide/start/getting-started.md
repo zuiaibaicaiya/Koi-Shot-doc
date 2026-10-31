@@ -8,7 +8,7 @@ description: 获取 koiShot：Windows 安装向导、macOS DMG 与 Linux .deb，
 
 ## Windows 安装
 
-1. 下载安装向导 `koiShot-<版本>-setup.exe`，双击运行；
+1. 下载安装向导 `koiShot-<版本>-windows-x64-setup.exe`，双击运行；
 2. 跟随**简体中文安装向导**完成安装，无需管理员权限；
 3. 安装完成后保持「运行 koiShot」勾选并点击「完成」，koiShot 启动并驻留系统托盘。
 
@@ -42,7 +42,7 @@ description: 获取 koiShot：Windows 安装向导、macOS DMG 与 Linux .deb，
 
 ## macOS 安装
 
-1. 下载映像 `koiShot-<版本>.dmg`，双击打开；
+1. 按芯片下载对应安装映像并双击打开：Apple 芯片用 `koiShot-<版本>-macos-arm64.dmg`，Intel 机型用 `koiShot-<版本>-macos-x86_64.dmg`（若发布的是通用包则只有一个 `-macos-universal.dmg`，两种机型都能装）；
 2. 按安装界面的引导，将 **koiShot 拖入右侧「应用程序」文件夹**：
 
 ![macOS 安装界面：把 koiShot 拖到右侧「应用程序」完成安装](/images/install/macos-dmg-install.png)

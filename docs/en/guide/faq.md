@@ -53,6 +53,8 @@ If the microphone is unavailable, koiShot **records silently** and tells you aft
 3. Rebind it under Settings → Hotkeys and confirm registration;
 4. On macOS, `F1` is a system key by default — enable "Use F1, F2, etc. keys as standard function keys" or use `Ctrl` / `Alt` / `Shift`.
 
+On Windows, global hotkeys are exclusive: if another app already owns the combination (graphics driver panels often grab `Alt + R`), rebinding to it fails immediately with a registration error — pick another combination. The same applies to default hotkeys that were already taken when koiShot started.
+
 ## Capture & annotation
 
 ### I can't edit a shape I drew earlier?
@@ -89,11 +91,15 @@ Not in the current version — only zoom and opacity.
 
 ### "No valid scrolling detected"?
 
-Bring the target window to the foreground (click the browser or document), click **Start**, then scroll steadily. The message also appears when the page cannot scroll or the region already covers everything.
+Bring the target window to the foreground (click the browser or document), click **Start** on the control bar, then scroll steadily. The message also appears when the page cannot scroll or the region already covers everything.
 
 ### The long screenshot is misaligned?
 
 Scroll steadily and avoid fast flings; animations, videos or parallax effects can misalign — capture in segments. The result is saved and copied automatically, so you can still annotate it.
+
+### Changed my mind in the middle of a long capture?
+
+Click **Cancel** (✕) on the control bar: sampled frames are discarded, with no file and no clipboard entry. `Esc` while capturing behaves like **Finish** and produces an image — use Cancel when you do not want any output.
 
 ### GIF recording stopped by itself?
 
@@ -102,6 +108,22 @@ GIF has a frame budget (fps × 30, about 30 s) and a total-pixel budget; hitting
 ### Video recording stopped at 10 minutes?
 
 The maximum clip length is 10 minutes; recording stops and exports automatically.
+
+### I clicked Start but recording stays in the ready state?
+
+If the encoder does not enter the recording state within about 5 seconds, koiShot reports "Video encoder start timed out" and cleans up:
+
+1. Lower the frame rate to 30 fps or less under Settings → General → Recording (MP4), or disable the microphone and retry;
+2. Close apps that occupy the GPU / encoder (other recorders, streaming tools) and update your graphics driver;
+3. If it still fails, quit and relaunch koiShot.
+
+### "The previous video is still exporting"?
+
+Stopping a recording writes the H.264 file, so long clips and large regions take longer (often several seconds, longer for 10-minute clips). A new recording is refused until it finishes; if export takes more than about 30 seconds, koiShot force-finishes the session — a formed file is reported as complete, otherwise you get an error.
+
+### Screenshots or recordings look washed out on an HDR monitor?
+
+On Windows, koiShot detects HDR monitors and tone-maps screenshots, GIFs and recordings, producing standard SDR output (highlights no longer blow out). If it still looks washed out, check the system HDR setting and your graphics driver, or compare against another region / app. Very old systems that cannot provide FP16 capture fall back to 8-bit and may still look slightly washed out.
 
 ### GIF or video?
 
@@ -149,6 +171,8 @@ Straight into the save folder (no native save dialog) and the folder is opened; 
 | Annotation editing | Only the currently selected (newest) shape is editable |
 | GIF duration | About 30 s per recording (fps × 30 frames) |
 | Video duration | Up to 10 minutes per clip |
+| Video frame rate | Up to 60 fps; the actual rate depends on machine performance and the encoder |
+| Linux video recording | No native capture yet — falls back to compatible capture (~10 fps) |
 | Long screenshots | Animations / videos may misalign; scroll steadily |
 | Table recognition | Text, merges and size only — no fonts, exact colours or formula semantics |
 | AI features | Image editing and visual Q&A are currently hidden |

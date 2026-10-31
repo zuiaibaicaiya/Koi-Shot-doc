@@ -42,7 +42,7 @@ const pageMetas: Record<string, { title: string; description: string }> = {
   '/guide/features/long-capture-gif': {
     title: '长截图、GIF 与 MP4 录屏 | koiShot 使用文档',
     description:
-      'koiShot 长截图滚动自动拼接、GIF 录制与框选 MP4 录屏教程：时长与体积上限、帧率与体积预设，适合网页、聊天记录与操作演示。',
+      'koiShot 长截图滚动自动拼接、GIF 录制与框选 MP4 录屏教程：控制条与录制条按钮、取消与完成、时长与体积上限、帧率 10–60 与体积预设，适合网页、聊天记录与操作演示。',
   },
   '/guide/features/ocr-table': {
     title: 'OCR 与表格识别 | koiShot 使用文档',
@@ -98,7 +98,7 @@ const pageMetas: Record<string, { title: string; description: string }> = {
   '/en/guide/features/long-capture-gif': {
     title: 'Long Screenshot, GIF & MP4 Recording | koiShot Docs',
     description:
-      'koiShot long screenshot scrolling and stitching, GIF recording and region MP4 video recording with duration, size and frame-rate limits.',
+      'koiShot long screenshot stitching, GIF recording and region MP4 video recording: control and recording bar buttons, cancel vs finish, duration and size limits, 10–60 fps settings.',
   },
   '/en/guide/features/ocr-table': {
     title: 'OCR & Tables | koiShot Docs',

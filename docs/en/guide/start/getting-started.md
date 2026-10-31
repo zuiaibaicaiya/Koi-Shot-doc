@@ -8,7 +8,7 @@ Download the package for your platform from the release page. Nothing to build o
 
 ## Windows
 
-1. Download `koiShot-<version>-setup.exe` and run it;
+1. Download `koiShot-<version>-windows-x64-setup.exe` and run it;
 2. Follow the **Simplified Chinese installer**; no administrator rights required;
 3. Keep "Run koiShot" checked on the last page and click Finish — koiShot starts and stays in the system tray.
 
@@ -42,7 +42,7 @@ If koiShot is running (for example during an upgrade), the installer offers to c
 
 ## macOS
 
-1. Download `koiShot-<version>.dmg` and open it;
+1. Download the image matching your chip and open it: `koiShot-<version>-macos-arm64.dmg` for Apple Silicon, `koiShot-<version>-macos-x86_64.dmg` for Intel (a release may instead ship a single `-macos-universal.dmg`, which runs on both);
 2. Drag **koiShot into the Applications folder** as the window shows:
 
 ![macOS installer: drag koiShot into Applications](/images/install/macos-dmg-install.png)

@@ -20,7 +20,7 @@ koiShot is a **tray-only** application: there is no persistent main window. It l
 | Pin | Keep a screenshot always on top; zoom, opacity, annotate further; drag over text to copy it via OCR |
 | Long screenshot | Scroll and stitch automatically — great for web pages and chat logs |
 | GIF recording | Record a region as an animated GIF with frame and pixel budgets |
-| Video recording | Record a region as MP4 (H.264 + microphone), up to 10 minutes per clip |
+| Video recording | Record a region as MP4 (H.264 + microphone, 10–60 fps), up to 10 minutes per clip |
 | OCR | Local PaddleOCR engine; results with line numbers, copy all or a single line |
 | Table recognition | Screenshot to an editable grid, manual merge/split, export xlsx / CSV or copy as TSV |
 | Extras | Customizable global hotkeys, tray residency, light/dark themes, Chinese/English UI, configurable annotation defaults |
