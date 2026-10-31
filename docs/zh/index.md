@@ -5,7 +5,7 @@ pageType: home
 hero:
   name: koiShot
   text: 截图、标注、贴图、录制与识别，一款搞定
-  tagline: Windows / macOS / Linux 跨平台：截图标注、贴图、长截图、GIF / MP4 录屏（最高 60 帧）、OCR 与表格识别，全程本地离线，无广告、无水印、无需登录
+  tagline: Windows / macOS / Linux 跨平台：截图标注、贴图、长截图、GIF / MP4 录屏、OCR 与表格识别，全程本地离线，无广告、无水印、无需登录
   actions:
     - theme: brand
       text: 下载 koiShot

@@ -5,7 +5,7 @@ pageType: home
 hero:
   name: koiShot
   text: Capture, annotate, pin, record & recognize — all in one
-  tagline: Windows / macOS / Linux — annotated screenshots, pin to desktop, long captures, GIF / MP4 recording (up to 60 fps), OCR and table recognition; all local and offline, no ads, watermarks or sign-in
+  tagline: Windows / macOS / Linux — annotated screenshots, pin to desktop, long captures, GIF / MP4 recording, OCR and table recognition; all local and offline, no ads, watermarks or sign-in
   actions:
     - theme: brand
       text: Download koiShot
