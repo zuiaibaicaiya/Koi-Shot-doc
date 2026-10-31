@@ -17,11 +17,13 @@ const zh: AudienceContent = {
   subtitle: '看看 koiShot 是否适合你',
   groups: [
     {
-      icon: '🎂',
-      title: '年龄范围',
+      icon: '🧩',
+      title: '平台与安装',
       items: [
-        '主力用户为 16～45 岁：中学生、大学生到职场人士',
-        '零门槛上手：会用电脑、会截图，即可使用全部功能',
+        'Windows 10 及以上：安装向导默认仅当前用户，无需管理员权限',
+        'macOS：按 Apple 芯片 / Intel 下载对应 DMG，首次运行需授予屏幕录制权限',
+        'Linux：X11 桌面，提供 Debian / Ubuntu 的 .deb 安装包',
+        '中英文界面、浅色 / 深色 / 跟随系统，5 个全局快捷键均可自定义',
       ],
     },
     {
@@ -64,11 +66,13 @@ const en: AudienceContent = {
   subtitle: 'See whether koiShot fits your needs',
   groups: [
     {
-      icon: '🎂',
-      title: 'Age Range',
+      icon: '🧩',
+      title: 'Platforms & Install',
       items: [
-        'Mainly 16–45: students through working professionals',
-        'Zero learning curve: if you can use a computer, you can use koiShot',
+        'Windows 10 or later: per-user installer, no admin rights required',
+        'macOS: pick the Apple Silicon or Intel DMG; grant Screen Recording on first run',
+        'Linux: X11 desktops, Debian / Ubuntu .deb package provided',
+        'Chinese / English UI, light / dark / system themes, five rebindable global hotkeys',
       ],
     },
     {

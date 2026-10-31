@@ -10,9 +10,9 @@ const SITE_URL = 'https://koishot.example.com';
 /** 每个路由的 SEO 标题与描述（覆盖中英文所有页面） */
 const pageMetas: Record<string, { title: string; description: string }> = {
   '/': {
-    title: 'koiShot 使用文档：截图、标注、贴图、长截图、OCR 与表格识别',
+    title: 'koiShot 使用文档：截图、标注、贴图、长截图、60fps 录屏、OCR 与表格识别',
     description:
-      'koiShot 跨平台截图工具使用文档：截图标注、贴图、长截图、GIF 录制、MP4 录屏、本地离线 OCR 文字识别与表格识别（截图转 Excel）。',
+      'koiShot 跨平台截图工具使用文档：截图标注、贴图、长截图、GIF 录制、最高 60 帧的 MP4 录屏、本地离线 OCR 文字识别与表格识别（截图转 Excel），无水印无广告。',
   },
   '/guide/start/introduction': {
     title: '产品介绍 | koiShot',
@@ -66,9 +66,9 @@ const pageMetas: Record<string, { title: string; description: string }> = {
   },
   '/en/': {
     title:
-      'koiShot Docs: Capture, Pin, Long Screenshot, Recording, OCR & Tables',
+      'koiShot Docs: Capture, Pin, Long Screenshot, 60 fps Recording, OCR & Tables',
     description:
-      'koiShot documentation: screenshot annotation, pin to desktop, scrolling capture, GIF and MP4 recording, local offline OCR and table recognition.',
+      'koiShot documentation: screenshot annotation, pin to desktop, long screenshots, GIF and up to 60 fps MP4 recording, local offline OCR and table recognition — no ads or watermarks.',
   },
   '/en/guide/start/introduction': {
     title: 'Introduction | koiShot',

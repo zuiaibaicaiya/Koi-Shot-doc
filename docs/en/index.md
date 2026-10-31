@@ -1,11 +1,11 @@
 ---
-description: 'koiShot documentation: capture, annotation, pin, long screenshot, GIF recording, MP4 recording, OCR and table recognition.'
+description: 'koiShot docs: cross-platform capture, annotation, pin, long screenshot, GIF and 60 fps MP4 recording, offline OCR and table recognition.'
 pageType: home
 
 hero:
   name: koiShot
-  text: Cross-platform capture, pin & recognize — all in one
-  tagline: Windows / macOS / Linux — capture & annotation, pin to desktop, long screenshots, GIF & MP4 recording, OCR & table recognition, all local and offline
+  text: Capture, annotate, pin, record & recognize — all in one
+  tagline: Windows / macOS / Linux · local offline OCR & tables · recording up to 60 fps with HDR tone mapping · no ads, watermarks or sign-in
   actions:
     - theme: brand
       text: Download koiShot
@@ -20,28 +20,28 @@ hero:
     src: /koi-logo.svg
     alt: koiShot
 features:
-  - title: Cross-Platform
-    details: Works on Windows, macOS and Linux with a consistent experience; UI language and theme follow your system.
-    icon: 💻
-    link: /en/guide/start/getting-started
   - title: Capture & Annotate
-    details: Multi-screen selection, UI-element click-to-select, magnifier; nine annotation tools with configurable defaults.
+    details: Multi-screen selection, hover-highlighted UI elements, magnifier with RGB readout; nine tools — rectangles, ellipses, arrows and badges stay editable.
     icon: 🖼️
     link: /en/guide/features/capture
   - title: Pin to Desktop
-    details: Keep screenshots always on top; wheel to zoom, Alt+wheel for opacity, keep annotating — or drag over text to copy it with OCR.
+    details: Keep captures always on top, zoom 0.3–4.0 with the wheel, Alt+wheel for opacity, keep annotating — or drag over text to copy it with OCR.
     icon: 📌
     link: /en/guide/features/pin
-  - title: Long Screenshot, GIF & Recording
-    details: Scroll-stitched long captures; record a region as a GIF, or as an MP4 video with microphone audio.
+  - title: Long Screenshot
+    details: Scroll and stitch automatically; the control bar and preview show frames and progress live, and Cancel drops everything without leaving a partial file.
+    icon: 📜
+    link: /en/guide/features/long-capture-gif
+  - title: GIF & MP4 Recording
+    details: GIF at 5–30 fps; MP4 at 10–60 fps with H.264 and microphone, up to 10 minutes; native capture on Windows / macOS and HDR tone mapping.
     icon: 🎞️
     link: /en/guide/features/long-capture-gif
-  - title: OCR & Table Recognition
-    details: Local offline recognition; screenshot to text or Excel (xlsx / CSV) — images never leave your machine.
+  - title: OCR & Tables
+    details: Local offline PaddleOCR with line numbers and per-line copy; turn table screenshots into an editable grid, export xlsx / CSV or copy as TSV.
     icon: 🔍
     link: /en/guide/features/ocr-table
-  - title: i18n & Themes
-    details: English & Chinese UI, light/dark/system themes, applied instantly.
-    icon: 🎨
+  - title: Cross-Platform & UX
+    details: Windows / macOS / Linux; Chinese & English UI, light / dark / system themes; five rebindable hotkeys, tray-only, single instance, no ads or watermarks.
+    icon: ⚙️
     link: /en/guide/settings
 ---

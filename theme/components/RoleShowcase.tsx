@@ -22,25 +22,25 @@ const zh: { intro: string; roles: RoleItem[] } = {
       icon: '💻',
       role: '开发者',
       en: 'Developers',
-      features: ['GIF 录制', '截图'],
+      features: ['截图', 'GIF 录制', 'MP4 录屏'],
       scene:
-        '将 API 文档、日志和报错贴在屏幕上边看边写；用截图或 GIF 捕捉可复现的 Bug。',
+        '将 API 文档、日志和报错贴在屏幕上边看边写；用截图、GIF 或带声音的 MP4 录屏捕捉可复现的 Bug。',
     },
     {
       icon: '📊',
       role: '产品经理',
       en: 'Product Managers',
-      features: ['OCR', '长截图', '截图'],
+      features: ['OCR', '长截图', '表格识别'],
       scene:
-        '记录用户流程和反馈线程，用长截图保存完整页面，OCR 提取图内文字，始终井井有条。',
+        '记录用户流程和反馈线程：长截图保存完整页面，OCR 提取图内文字，表格截图直接转 Excel。',
     },
     {
       icon: '🎧',
       role: '客户支持',
       en: 'Customer Support',
-      features: ['标注', 'GIF 录制'],
+      features: ['标注', 'GIF 录制', 'MP4 录屏'],
       scene:
-        '逐步记录问题处理过程，框选并高亮屏幕区域，用 GIF 给用户直观的操作引导。',
+        '逐步记录问题处理过程，框选高亮屏幕区域，用 GIF 或带麦克风讲解的录屏给用户直观引导。',
     },
     {
       icon: '📝',
@@ -54,9 +54,9 @@ const zh: { intro: string; roles: RoleItem[] } = {
       icon: '🎓',
       role: '教育者与培训师',
       en: 'Educators & Trainers',
-      features: ['截图', '标注', 'GIF 录制'],
+      features: ['截图', '标注', 'MP4 录屏'],
       scene:
-        '制作带标注的教程和演示课件，用截图加序号步骤、用 GIF 清晰传达操作过程。',
+        '制作带标注的教程和演示课件：序号步骤图讲清结构，需要讲解时用录屏录下完整操作。',
     },
   ],
 };
@@ -77,25 +77,25 @@ const en: typeof zh = {
       icon: '💻',
       role: '开发者',
       en: 'Developers',
-      features: ['GIF', 'Capture'],
+      features: ['Capture', 'GIF', 'MP4 recording'],
       scene:
-        'Keep API docs, logs and errors on screen while coding; capture bugs with a screenshot or GIF.',
+        'Keep API docs, logs and errors on screen while coding; capture bugs with a screenshot, GIF or narrated MP4.',
     },
     {
       icon: '📊',
       role: '产品经理',
       en: 'Product Managers',
-      features: ['OCR', 'Long capture', 'Capture'],
+      features: ['OCR', 'Long capture', 'Table recognition'],
       scene:
-        'Track user flows and feedback threads — full pages via long capture, text via OCR, always organized.',
+        'Track user flows and feedback threads — full pages via long capture, text via OCR, and table screenshots straight to Excel.',
     },
     {
       icon: '🎧',
       role: '客户支持',
       en: 'Customer Support',
-      features: ['Annotate', 'GIF'],
+      features: ['Annotate', 'GIF', 'MP4 recording'],
       scene:
-        'Document issues step by step, highlight screen areas and guide users visually with GIFs.',
+        'Document issues step by step, highlight screen areas, and guide users with a GIF or a narrated recording.',
     },
     {
       icon: '📝',
@@ -109,9 +109,9 @@ const en: typeof zh = {
       icon: '🎓',
       role: '教育者与培训师',
       en: 'Educators & Trainers',
-      features: ['Capture', 'Annotate', 'GIF'],
+      features: ['Capture', 'Annotate', 'MP4 recording'],
       scene:
-        'Create annotated tutorials and demos — numbered screenshots and GIFs that communicate clearly.',
+        'Create annotated tutorials and demos — numbered screenshots explain structure, recordings explain the flow.',
     },
   ],
 };
