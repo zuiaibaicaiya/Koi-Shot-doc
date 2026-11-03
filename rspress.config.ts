@@ -150,7 +150,7 @@ function urlFor(route: { routePath: string }): string {
 /** 首页页脚：QQ 交流群二维码展示 */
 const footerMessage = `
 <div align="center">
-  <img src="${SITE_URL}/images/qq-group.jpg" width="220" alt="koiShot QQ 交流群二维码" />
+  <img src="${BASE_PATH}images/qq-group.jpg" width="220" alt="koiShot QQ 交流群二维码" />
   <p>QQ 交流群：<strong>1134581312</strong> · 扫一扫二维码，加入群聊</p>
 </div>
 `;
