@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 下载 koiShot
-      link: https://pan.baidu.com/s/1wRFvwskNjT-IGAc4YM4sHg?pwd=nrhi
+      link: https://github.com/zuiaibaicaiya/Koi-Shot-doc/releases
     - theme: alt
       text: 快速开始
       link: /zh/guide/start/introduction
