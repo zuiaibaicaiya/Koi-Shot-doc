@@ -3,9 +3,11 @@ import { defineConfig } from '@rspress/core';
 import { pluginSitemap } from '@rspress/plugin-sitemap';
 
 /**
- * 站点正式域名：上线前替换为真实域名（sitemap、og:url、canonical 都依赖它）。
+ * 站点正式地址：GitHub Pages（仓库 Koi-Shot-doc 部署在 /Koi-Shot-doc 子路径下）。
+ * 如后续绑定独立域名，改为 `https://你的域名` 并把下方 base 改为 '/'。
  */
-const SITE_URL = 'https://koishot.example.com';
+const SITE_URL = 'https://zuiaibaicaiya.github.io/Koi-Shot-doc';
+const BASE_PATH = '/Koi-Shot-doc/';
 
 /** 每个路由的 SEO 标题与描述（覆盖中英文所有页面） */
 const pageMetas: Record<string, { title: string; description: string }> = {
@@ -147,6 +149,7 @@ function urlFor(route: { routePath: string }): string {
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
+  base: BASE_PATH,
   title: 'koiShot：截图、标注、贴图、长截图、OCR 与表格识别',
   description: 'koiShot 使用文档：截图、标注、贴图、长截图、OCR 与表格识别。',
   logoText: 'koiShot',
@@ -234,7 +237,7 @@ export default defineConfig({
       {
         icon: 'github',
         mode: 'link',
-        content: 'https://github.com',
+        content: 'https://github.com/zuiaibaicaiya/Koi-Shot-doc',
       },
     ],
   },
