@@ -66,6 +66,11 @@ const pageMetas: Record<string, { title: string; description: string }> = {
     description:
       'koiShot 常见问题解答：macOS 权限授权、快捷键冲突、标注编辑、OCR 排查、录屏与功能限制说明。',
   },
+  '/guide/about': {
+    title: '关于我们 | koiShot 使用文档',
+    description:
+      '关于 koiShot：加入 QQ 交流群（1134581312）反馈问题、提出功能建议与获取最新版本动态。',
+  },
   '/en/': {
     title:
       'koiShot Docs: Capture, Pin, Long Screenshot, 60 fps Recording, OCR & Tables',
@@ -122,6 +127,11 @@ const pageMetas: Record<string, { title: string; description: string }> = {
     description:
       'koiShot FAQ: macOS permissions, hotkey conflicts, annotation editing, OCR, recording and known limitations.',
   },
+  '/en/guide/about': {
+    title: 'About Us | koiShot Docs',
+    description:
+      'About koiShot: join the QQ group (1134581312) to report issues, suggest features and get release updates.',
+  },
 };
 
 const defaultMeta: Record<string, { title: string; description: string }> = {
@@ -146,14 +156,6 @@ function metaFor(route: { routePath: string; lang: string }) {
 function urlFor(route: { routePath: string }): string {
   return `${SITE_URL}${normalizeRoutePath(route.routePath) || '/'}`;
 }
-
-/** 首页页脚：QQ 交流群二维码展示 */
-const footerMessage = `
-<div align="center">
-  <img src="${BASE_PATH}images/qq-group.jpg" width="220" alt="koiShot QQ 交流群二维码" />
-  <p>QQ 交流群：<strong>1134581312</strong> · 扫一扫二维码，加入群聊</p>
-</div>
-`;
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
@@ -241,9 +243,6 @@ export default defineConfig({
     },
   ],
   themeConfig: {
-    footer: {
-      message: footerMessage,
-    },
     socialLinks: [
       {
         icon: 'github',

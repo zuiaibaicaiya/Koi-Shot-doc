@@ -3,5 +3,10 @@
     "text": "Guide",
     "link": "/en/guide/start/introduction",
     "activeMatch": "/en/guide/"
+  },
+  {
+    "text": "About",
+    "link": "/en/guide/about",
+    "activeMatch": "/en/guide/about"
   }
 ]

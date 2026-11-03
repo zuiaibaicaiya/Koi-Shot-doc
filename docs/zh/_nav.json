@@ -3,5 +3,10 @@
     "text": "使用指南",
     "link": "/zh/guide/start/introduction",
     "activeMatch": "/zh/guide/"
+  },
+  {
+    "text": "关于我们",
+    "link": "/zh/guide/about",
+    "activeMatch": "/zh/guide/about"
   }
 ]
