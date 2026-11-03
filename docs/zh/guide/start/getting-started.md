@@ -14,7 +14,7 @@ description: 获取 koiShot：Windows 安装向导、macOS DMG 与 Linux .deb，
 
 ### 安装向导步骤
 
-**选择安装位置**：默认安装到当前用户的本地程序目录（`%LOCALAPPDATA%\Programs\koiShot`），可自行修改。首次安装时向导会先询问安装范围，默认「仅当前用户安装」，无需管理员权限。
+**选择安装位置**：默认安装到当前用户的本地程序目录（`%LOCALAPPDATA%\Programs\koiShot`），可自行修改。首次安装时向导会先询问安装范围，默认「仅当前用户安装」、无需管理员权限，也可切换为「为所有用户安装」（此时需要管理员权限确认）。
 
 **选择附加任务**：
 
@@ -96,10 +96,10 @@ macOS 的截图与录制能力依赖三项独立的系统授权，需要手动�
 sudo dpkg -i koishot_<版本>-1_amd64.deb
 ```
 
-- 安装后可在应用菜单中启动 koiShot，也可直接运行 `koiShot`；
+- 安装后可在应用菜单中启动 koiShot，每个用户的桌面也会创建 koiShot 快捷方式图标；也可直接运行 `koiShot`；
 - 包内自带 Qt 运行库与 OCR 模型，不依赖系统 Qt 版本；
-- 附带用户级服务，异常退出后会尝试自动重启；
-- 卸载：`sudo dpkg -r koishot`（彻底清除配置用 `purge`）。
+- 附带 systemd 用户服务，**异常崩溃后 2 秒自动重启**（从托盘正常退出不会被拉起；5 分钟内连续崩溃超过 5 次会暂停自动重启以防死循环）；
+- 卸载：`sudo dpkg -r koishot` 保留配置文件；`sudo dpkg -P koishot`（或 `apt purge`）连同配置与服务一并清除。
 
 ## 首次启动
 

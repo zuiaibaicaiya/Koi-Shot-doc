@@ -18,6 +18,10 @@ It shows / hides the **capture overlay** (not a main window): press once to ente
 
 Linux global hotkeys rely on X11 and **do not work on Wayland**. Switch to an X11 session at the login screen.
 
+### Theme changes have no effect?
+
+The environment variable `KOISHOT_THEME=light|dark` **forces a theme** and takes priority over the setting in the app. If changing the theme does nothing, check whether that variable is set in your system environment; remove it and restart koiShot.
+
 ### The app restarted after switching language?
 
 Expected: switching between Chinese and English restarts koiShot to apply the new language; settings and hotkeys are preserved.
@@ -103,11 +107,11 @@ Click **Cancel** (✕) on the control bar: sampled frames are discarded, with no
 
 ### GIF recording stopped by itself?
 
-GIF has a frame budget (fps × 30, about 30 s) and a total-pixel budget; hitting either stops and exports automatically. Use **video recording** for longer clips.
+GIF has a frame budget (fps × 30, about 30 s) and a cumulative total-pixel budget (~320 million pixels — larger regions reach it sooner); hitting either stops and exports what was captured. Use **video recording** for longer clips.
 
 ### Video recording stopped at 10 minutes?
 
-The maximum clip length is 10 minutes; recording stops and exports automatically.
+The maximum clip length is 10 minutes (recording time only — paused time is not counted); recording stops and exports automatically.
 
 ### I clicked Start but recording stays in the ready state?
 
@@ -137,11 +141,12 @@ The engine and models ship with the installer. First run Settings → General �
 
 ### OCR feels slow or uses a lot of memory?
 
-The engine preloads when a capture starts. If it still feels slow:
+The engine preloads when a capture starts, so a few hundred MB (~185 MB) staying resident **is not a memory leak**; a temporary spike during recognition is normal too. If it still feels slow:
 
 1. Quit koiShot completely (tray → Quit) and relaunch;
 2. Confirm the self-check reports a healthy environment;
-3. If it persists, report it (see below) with the self-check output.
+3. To save memory, set the environment variable `KOISHOT_OCR_PRELOAD=0` before launching — models then load at first recognition (slightly slower first use);
+4. If it persists, report it (see below) with the self-check output.
 
 ### Table rows or columns are wrong?
 
@@ -166,15 +171,18 @@ Straight into the save folder (no native save dialog) and the folder is opened; 
 | Limitation | Notes |
 | --- | --- |
 | macOS permissions | Screen Recording required; Accessibility for UI highlight; Microphone for audio |
+| macOS recording version | Video recording (MP4) needs ScreenCaptureKit — macOS 12.3+ |
 | Linux Wayland | No global hotkeys; UI-element highlight not implemented; best experience on Windows |
 | Pin transforms | No rotation / mirroring |
 | Annotation editing | Only the currently selected (newest) shape is editable |
-| GIF duration | About 30 s per recording (fps × 30 frames) |
-| Video duration | Up to 10 minutes per clip |
+| QR codes | QR family only — 1D barcodes and DataMatrix / Aztec / PDF417 are not supported |
+| GIF duration | About 30 s per recording (fps × 30 frames) or ~320 million cumulative pixels, whichever comes first |
+| GIF content | On Windows, semi-transparent windows may be missing from the GIF (capture performance trade-off) |
+| Video duration | Up to 10 minutes per clip (paused time not counted) |
 | Video frame rate | Up to 60 fps; the actual rate depends on machine performance and the encoder |
 | Linux video recording | No native capture yet — falls back to compatible capture (~10 fps) |
 | Long screenshots | Animations / videos may misalign; scroll steadily |
-| Table recognition | Text, merges and size only — no fonts, exact colours or formula semantics |
+| Table recognition | Text, merges and size only — no fonts, exact colours or formula semantics; no diagonal headers, nested tables or vertical text; at least 2×2 cells required |
 | AI features | Image editing and visual Q&A are currently hidden |
 
 ## Still stuck?

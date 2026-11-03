@@ -14,7 +14,7 @@ Download the package for your platform from the release page. Nothing to build o
 
 ### Installer steps
 
-**Install location**: defaults to the per-user program directory (`%LOCALAPPDATA%\Programs\koiShot`) and can be changed. The installer asks for the install scope first and defaults to "install for the current user only".
+**Install location**: defaults to the per-user program directory (`%LOCALAPPDATA%\Programs\koiShot`) and can be changed. The installer asks for the install scope first and defaults to "install for the current user only" (no admin rights); you can switch to "install for all users" (requires admin confirmation).
 
 **Additional tasks**:
 
@@ -96,10 +96,10 @@ A Debian/Ubuntu `.deb` package is provided (`koishot_<version>-1_amd64.deb`):
 sudo dpkg -i koishot_<version>-1_amd64.deb
 ```
 
-- Launch koiShot from the application menu, or run `koiShot`;
+- Launch koiShot from the application menu, or run `koiShot`; a shortcut icon is also placed on each user's desktop;
 - Qt runtime libraries and OCR models are bundled — no system Qt6 required;
-- A user-level service restarts the app after an unexpected exit;
-- Uninstall with `sudo dpkg -r koishot` (add `purge` to remove configuration).
+- A systemd user service **restarts the app 2 seconds after a crash** (a normal quit from the tray is not restarted; after more than 5 crashes within 5 minutes the auto-restart pauses to prevent loops);
+- Uninstall with `sudo dpkg -r koishot` to keep configuration files, or `sudo dpkg -P koishot` (or `apt purge`) to remove configuration and the service as well.
 
 ## First launch
 

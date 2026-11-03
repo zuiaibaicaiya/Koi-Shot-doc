@@ -27,7 +27,7 @@ Any of these:
 
 - While dragging, the toolbar hides temporarily so it never blocks the drag; it comes back on release;
 - The toolbar sits centred below the content and **flips above** when there is no room; when the image is narrower than the toolbar and sits at a screen edge, the toolbar is clamped horizontally so every button stays clickable;
-- Pins never steal focus, so clicking toolbar buttons does not interrupt text annotation input.
+- Pins never steal focus, so clicking toolbar buttons does not interrupt text annotation input; while typing, `Alt` + wheel does not change opacity (the wheel adjusts font size then).
 
 ## Pin toolbar
 
@@ -36,6 +36,7 @@ Any of these:
 | Nine annotation tools | Annotate on the pin exactly as during capture — see [Annotation](/en/guide/features/annotation) |
 | Undo / Redo | Same behaviour as the capture overlay |
 | Copy | Copy the pin image to the clipboard (original, without annotations) |
+| QR code | Enter selection mode; drag a rectangle around a QR code to decode and copy its content |
 | Save annotated image | Save the **composited** image (including annotations) |
 | Zoom percentage | Current zoom level (0.3–4.0) |
 | Hide toolbar | Collapse the toolbar for a clean image; re-show from the context menu |
@@ -78,6 +79,11 @@ The selection is textual, like Word or a browser — a **contiguous run of text*
 - With an annotation tool active, the same spot draws an annotation instead;
 - Selecting again while recognition is running shows "Recognising, please wait…";
 - An empty result shows "No text recognised".
+
+Recognition caveats:
+
+- Recognition runs on the **original image**: text covered by mosaic / blur annotations is still recognised from underneath;
+- The result is an **approximate whole-word superset** of what you selected: a few extra characters may appear at either end; selection is exact only within a single line — a diagonal drag includes the full start/end of every line it crosses.
 
 ## Closing a pin
 

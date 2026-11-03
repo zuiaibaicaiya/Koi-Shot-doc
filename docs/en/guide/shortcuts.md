@@ -49,18 +49,20 @@ Clicking elsewhere, clicking a swatch or switching tools commits instead of disc
 | --- | --- |
 | Drag | Move the pin |
 | Wheel | Zoom (0.3–4.0×) |
-| `Alt` + wheel | Opacity (5%–100%) |
+| `Alt` + wheel | Opacity (5%–100%; not while typing) |
 | `Ctrl + Z` / `Ctrl + Shift + Z` | Undo / redo annotation |
-| `Esc` / `Ctrl + W` (`Cmd + W`) | Close the pin (during text editing `Esc` only exits the editor) |
+| `Esc` / `Ctrl + W` (`Cmd + W`) | Close the pin (during text editing or QR selection `Esc` exits the mode first) |
 | Drag over text with no tool active | Select text, recognise it and copy to the clipboard |
+| "QR code" → drag a rectangle | Decode the QR code and copy its content (button again or `Esc` to cancel) |
 
 ## While recording (long screenshot / GIF / video)
 
 | Key / action | Result |
 | --- | --- |
-| `Esc` | Long screenshot: stop and produce the image; GIF / video: cancel the recording (captured frames are discarded) |
-| Control / recording bar buttons | Long screenshot: Start ▶ / Finish ✓ / Cancel ✕; GIF and video first require confirming "Start recording". Buttons are icons — hover to see the name |
-| Drag inside the region (GIF / video ready state) | Move the recording region (move only, no resize; cannot leave the current screen) |
+| `Esc` | Long screenshot: stop and produce the image; GIF / video: cancel the recording (captured frames are discarded); ready state: cancel |
+| Control / recording bar buttons | Long screenshot: Start ▶ / Finish ✓ / Cancel ✕; GIF and video first require confirming "Start recording"; video also has Pause ❚❚ / Resume ▶ while recording. Buttons are icons — hover to see the name |
+| Recording-bar frame-rate dropdown (GIF / video ready state) | Change the frame rate directly; locked once recording starts |
+| Drag inside the region (ready state) | Move the recording region (move only, no resize; cannot leave the current screen; also applies to long capture) |
 
 ## Result windows
 

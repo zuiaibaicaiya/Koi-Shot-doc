@@ -95,7 +95,7 @@ Only thickness is adjustable. Mosaic is blocky and hides better; blur is softer 
 2. **Click** the target position to open an input box and type;
 3. `Enter` inserts a line break, `Ctrl + Enter` (`Cmd + Enter` on macOS) commits;
 4. With the text tool: **click** an existing text to select it (clicking a swatch then recolours it), **double-click** to edit it;
-5. While typing, the **wheel** adjusts the font size live.
+5. While typing, the **wheel** adjusts the font size live (3–40, finer than the four popup steps).
 
 | Action | Result |
 | --- | --- |
@@ -103,11 +103,12 @@ Only thickness is adjustable. Mosaic is blocky and hides better; blur is softer 
 | Click elsewhere / another text | Commit the current one, then continue |
 | Switch tools | Commit — nothing is lost |
 | Click a swatch while typing | Only recolours this text; typing continues |
-| `Esc` | Discard this edit (restores the original when editing) |
+| Clear the text, then commit | Deletes this text (recoverable via redo) |
+| `Esc` | Discard this edit (restores the original when editing; after clearing, `Esc` restores rather than deletes) |
 
 ### Number
 
-1. Pick Number; set the start value or turn auto-increment off in the popup (start value 1–999);
+1. Pick Number; set the start value or turn auto-increment off in the popup ("Start value" 1–999; the current-number box accepts 1–9999);
 2. **Press and drag** to place a round badge at the press point with an arrow pointing to the release point; **click without dragging** to place a plain badge;
 3. Values auto-increment (1, 2, 3…);
 4. In the selected state, drag the **tip handle** to change direction, or drag the **badge** to move the whole mark;
@@ -128,7 +129,7 @@ Annotations follow a "**only the newest one is editable**" rule (freezing):
 
 So to change an old annotation, undo and redraw; to adjust the current one, use its handles.
 
-**Bounds**: everything is clamped inside the selected region, so exported images are never cut off. Handles and outlines are drawn *outside* the stroke and never appear in the exported image.
+**Bounds**: annotation bodies (except mosaic / blur) are clamped inside the selected region, so exported images are never cut off. Handles and outlines are drawn *outside* the stroke and may extend beyond the selection on screen, but never appear in the exported image. Mosaic / blur brush tips land where you paint — near an edge the effect may exceed the region and gets cropped naturally on export.
 
 ## Undo & redo
 

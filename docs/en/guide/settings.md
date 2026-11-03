@@ -18,9 +18,9 @@ The sidebar has four pages: **General / Hotkeys / Annotation / About**. Settings
 | Save path | Open folder after save | Opens the folder after each save (off by default) |
 | GIF recording | Size preset | High quality / Balanced (default) / Small size |
 | GIF recording | Frame rate | 5–30 fps (default 15) |
-| Recording (MP4) | Frame rate | 10–60 fps (default 30): 10 / 15 / 20 / 24 / 25 / 30 / 50 / 60; higher is smoother but costs more performance |
+| Recording (MP4) | Frame rate | 10–60 fps (default 30): 10 / 15 / 20 / 24 / 25 / 30 / 50 / 60; higher is smoother but costs more performance. The GIF/video recording bar also has a frame-rate dropdown — the last choice wins |
 | Recording (MP4) | Microphone | "Record microphone audio", on by default; off or unauthorized means silent video |
-| OCR self-check | Status / Run self-check / Open models folder | Verify the recognition models and runtime |
+| OCR self-check | Status / Run self-check / Open models folder | Verify the recognition models and runtime; the result lists the models and dictionaries actually loaded |
 
 ## Hotkeys
 

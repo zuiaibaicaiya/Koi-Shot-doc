@@ -50,7 +50,7 @@ A translucent panel in the **left column of the screen** lists the keys availabl
 | Before selecting | Drag to select · Shift+drag for a square · Click to select a UI element · Esc to cancel |
 | Selection committed (toolbar visible) | Drag the selection to move/resize · Wheel adjusts the selected annotation · Ctrl+Z undo · Enter finish · Esc cancel |
 
-It prefers the bottom-left corner, moves to the top-left only when the bottom-left is blocked, hides while you are dragging, and is not shown during GIF/MP4 recording.
+It prefers the bottom-left corner, moves to the top-left only when the bottom-left is blocked, and hides entirely when both left corners are occupied by other overlays (selection, toolbar, magnifier). It hides while you are dragging, stays visible during the editing phase after the toolbar appears, and is not shown during GIF/MP4 recording.
 
 ## Toolbar
 
@@ -62,6 +62,7 @@ After you release the mouse, the toolbar appears below the selection. The active
 | Edit | Undo / Redo | Step back or forward, `Ctrl + Z` / `Ctrl + Shift + Z` (`Cmd` on macOS) | [Undo & redo](/en/guide/features/annotation#undo--redo) |
 | Output | Pin | Pin the selection to the desktop | [Pin](/en/guide/features/pin) |
 | Output | OCR | Recognise text in the selection, with line numbers | [OCR & tables](/en/guide/features/ocr-table) |
+| Output | QR code | Decode QR codes in the selection and copy the content | [OCR & tables](/en/guide/features/ocr-table) |
 | Output | Table | Rebuild a table into an editable grid, export xlsx / CSV | [OCR & tables](/en/guide/features/ocr-table) |
 | Output | Long capture | Scroll-stitch a long screenshot | [Long screenshot, GIF & recording](/en/guide/features/long-capture-gif) |
 | Output | Record GIF | Record the selection as an animated GIF | [Long screenshot, GIF & recording](/en/guide/features/long-capture-gif) |

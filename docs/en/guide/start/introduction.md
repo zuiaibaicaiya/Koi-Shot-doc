@@ -23,6 +23,7 @@ koiShot is a **tray-only** application: there is no persistent main window. It l
 | Video recording | Record a region as MP4 (H.264 + microphone, 10–60 fps), up to 10 minutes per clip |
 | OCR | Local PaddleOCR engine; results with line numbers, copy all or a single line |
 | Table recognition | Screenshot to an editable grid, manual merge/split, export xlsx / CSV or copy as TSV |
+| QR code | Decode QR-family codes in a selection; content goes straight to the clipboard |
 | Extras | Customizable global hotkeys, tray residency, light/dark themes, Chinese/English UI, configurable annotation defaults |
 
 ## Use cases
@@ -38,8 +39,8 @@ koiShot is a **tray-only** application: there is no persistent main window. It l
 
 | Platform | Requirements |
 | --- | --- |
-| Windows | Windows 10 or later; the installer needs no admin rights |
-| macOS | Screen Recording permission; Accessibility for UI-element highlight; Microphone for audio in recordings (see [FAQ](/en/guide/faq)) |
+| Windows | Windows 10 or later (video capture needs Win10 1903+); per-user install by default, no admin rights needed |
+| macOS | Screen Recording permission; Accessibility for UI-element highlight; Microphone for audio in recordings; video recording (MP4) needs macOS 12.3+ (see [FAQ](/en/guide/faq)) |
 | Linux | X11 session (global hotkeys do not work on Wayland); a `.deb` package is provided |
 
 ## Three moves to get going

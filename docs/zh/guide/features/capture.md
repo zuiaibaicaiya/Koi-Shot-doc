@@ -50,7 +50,7 @@ description: koiShot 截图使用说明：框选、正方形选区、控件高�
 | 尚未框选 | 拖拽框选截图区域 · Shift+拖拽 正方形选区 · 单击选中区块 · Esc 取消截图 |
 | 选区已提交（工具栏已弹出） | 拖拽选区 移动/调整位置 · 滚轮 调整选中标注粗细/大小 · Ctrl+Z 撤销标注 · Enter 完成截图 · Esc 取消截图 |
 
-面板**左下角优先**，左下放不下才换到左上；拖拽进行中（框选、移动、缩放选区）会临时隐藏，松手后自动恢复；GIF / 录屏录制态不显示。
+面板**左下角优先**，左下放不下才换到左上；如果左列上下两角都被其它浮层（选区、工具栏、放大镜等）压住，会暂时隐藏让路。拖拽进行中（框选、移动、缩放选区）会临时隐藏，松手后自动恢复；工具栏弹出后的编辑阶段它仍会显示，方便随时查看快捷键；GIF / 录屏录制态不显示。
 
 ## 工具栏
 
@@ -62,6 +62,7 @@ description: koiShot 截图使用说明：框选、正方形选区、控件高�
 | 编辑 | 撤销 / 重做 | 回退或恢复上一步标注，快捷键 `Ctrl + Z` / `Ctrl + Shift + Z`（macOS 用 `Cmd`） | [撤销与重做](/zh/guide/features/annotation#撤销与重做) |
 | 输出 | 贴图 | 把选区钉在桌面置顶显示 | [贴图](/zh/guide/features/pin) |
 | 输出 | OCR | 识别选区内的文字，结果带行号 | [OCR 与表格识别](/zh/guide/features/ocr-table) |
+| 输出 | 二维码识别 | 解码选区内的二维码并复制内容到剪贴板 | [OCR 与表格识别](/zh/guide/features/ocr-table) |
 | 输出 | 表格 | 把表格截图还原为可编辑表格并导出 xlsx / CSV | [OCR 与表格识别](/zh/guide/features/ocr-table) |
 | 输出 | 长截图 | 滚动页面自动拼接长图 | [长截图、GIF 与录屏](/zh/guide/features/long-capture-gif) |
 | 输出 | 录制 GIF | 把选区录成 GIF 动图 | [长截图、GIF 与录屏](/zh/guide/features/long-capture-gif) |
