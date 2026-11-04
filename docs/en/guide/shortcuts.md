@@ -68,8 +68,12 @@ Clicking elsewhere, clicking a swatch or switching tools commits instead of disc
 
 | Key / action | Result |
 | --- | --- |
-| `Esc` | Close the OCR / table result window |
+| `Esc` | Close the OCR / table / translation result window |
 | Double-click a line (OCR) | Copy just that line |
+| Wheel over the left image (translation) | Zoom the original (100%–800%) |
+| Right-drag the zoomed image | Pan the original |
+| Right-click the translation | Copy selection / Copy all / Select all |
+| "Translate to" dropdown | Switch target language and re-translate |
 
 :::tip
 All global hotkeys can be rebound and take effect immediately; a conflict message means the combination is already taken by koiShot or another app.

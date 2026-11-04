@@ -1,5 +1,5 @@
 ---
-description: koiShot 使用文档：跨平台截图、标注、贴图、长截图、GIF 与 60fps MP4 录屏、本地离线 OCR 与表格识别。
+description: koiShot 使用文档：跨平台截图、标注、贴图、长截图、GIF 与 60fps MP4 录屏、本地离线 OCR、截图翻译与表格识别。
 pageType: home
 
 hero:
@@ -28,18 +28,18 @@ features:
     details: 截图钉在桌面置顶显示，滚轮缩放 0.3–4.0、Alt+滚轮调透明度，还能继续标注；未选工具时框选文字直接识别复制。
     icon: 📌
     link: /zh/guide/features/pin
-  - title: 长截图
-    details: 滚动自动拼接，控制条与预览窗实时显示帧数和拼接效果；运行中可随时取消，不会留下半成品。
-    icon: 📜
-    link: /zh/guide/features/long-capture-gif
-  - title: GIF 与 MP4 录制
-    details: GIF 帧率 5–30；MP4 帧率 10–60、H.264 + 麦克风、单次最长 10 分钟；Windows / macOS 原生抓帧，HDR 屏自动色调映射。
+  - title: 长截图与录制
+    details: 滚动自动拼接长图，控制条与预览窗实时显示帧数；GIF 帧率 5–30，MP4 帧率 10–60、H.264 + 麦克风、最长 10 分钟，HDR 屏自动色调映射。
     icon: 🎞️
     link: /zh/guide/features/long-capture-gif
   - title: OCR 与表格识别
     details: 本地离线 PaddleOCR，结果带行号、可整段或单行复制；表格截图转可编辑网格，导出 xlsx / CSV 或复制 TSV。
     icon: 🔍
     link: /zh/guide/features/ocr-table
+  - title: 截图翻译
+    details: 框选外文 → 本地 OCR → 阿里云机器翻译，左图右文对照；滚轮缩放、右键拖动，目标语言随时切换重翻。
+    icon: 🌐
+    link: /zh/guide/features/translate
   - title: 跨平台与体验
     details: Windows / macOS / Linux；中英文界面、浅色 / 深色 / 跟随系统；5 个全局快捷键可改，托盘常驻、单实例、无水印无广告。
     icon: ⚙️

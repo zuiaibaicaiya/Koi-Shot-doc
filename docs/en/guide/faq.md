@@ -1,5 +1,5 @@
 ---
-description: 'koiShot FAQ: permissions, hotkey conflicts, annotation editing, OCR, long capture, GIF and video recording, save locations and limitations.'
+description: 'koiShot FAQ: permissions, hotkey conflicts, annotation editing, OCR, screenshot translation, long capture, GIF and video recording, save locations and limitations.'
 ---
 
 # FAQ
@@ -9,6 +9,8 @@ description: 'koiShot FAQ: permissions, hotkey conflicts, annotation editing, OC
 ### No main window after launching?
 
 koiShot has **no persistent main window** — it only lives in the tray / menu bar. Left-click the tray icon to capture; the right-click menu opens settings or quits.
+
+koiShot never shows up in the Windows taskbar or the `Alt + Tab` list either (not even the settings window), and on macOS it stays out of the Dock and `⌘ + Tab`. Quit it from the tray menu rather than from the taskbar / Dock.
 
 ### What does `Alt + Q` do?
 
@@ -154,6 +156,32 @@ The engine preloads when a capture starts, so a few hundred MB (~185 MB) staying
 - Best results on regular tables with clear rules; verify complex or skewed tables and fix them with Merge / Split;
 - Exports use the grid as currently shown, so fix first, export afterwards.
 
+## Screenshot translation
+
+### Translate says "Please fill in the Alibaba Cloud AccessKey ID and AccessKey Secret first"?
+
+The machine translation step calls Alibaba Cloud, so you need your own credentials: go to Settings → General → Translation settings, enter the AccessKey ID / Secret, click **Save**, then **Test translation** — the test sends a real request and reports success or failure in the card. Changes apply immediately, no restart.
+
+### Translation failed?
+
+The status line on the right shows the reason returned by the service. The usual suspects:
+
+1. **Text too long**: the whole recognised text is sent in one request and anything above the `TranslateGeneral` limit (about 5000 characters) is rejected — translate the screen in a few smaller selections;
+2. **Invalid credentials / service not enabled / account in arrears**: make sure the AccessKey belongs to an account with machine translation enabled and verify with "Test translation";
+3. **No network**: failures are not retried automatically; switch language or press Translate again.
+
+### Does translation upload my image?
+
+No. Recognition (OCR) always runs locally and **images never leave your machine**; only the recognised text is sent to Alibaba Cloud machine translation. Keep that in mind for sensitive content.
+
+### The translation looks wrong?
+
+Most "bad translations" start as bad recognition — check the text in the left image first, then select a cleaner region and retry. Vertical text, decorative fonts, low contrast and occluded text recognise poorly and translate just as poorly. The right pane shows only the translation; use the OCR button in a second window when you need the original side by side.
+
+### Do I need a new capture after switching the target language?
+
+No. Change the "Translate to" dropdown at the bottom of the result window and the same source text is translated again into the new language — no need to go back to the capture overlay.
+
 ## Saved files
 
 ### Where are my screenshots?
@@ -183,6 +211,7 @@ Straight into the save folder (no native save dialog) and the folder is opened; 
 | Linux video recording | No native capture yet — falls back to compatible capture (~10 fps) |
 | Long screenshots | Animations / videos may misalign; scroll steadily |
 | Table recognition | Text, merges and size only — no fonts, exact colours or formula semantics; no diagonal headers, nested tables or vertical text; at least 2×2 cells required |
+| Screenshot translation | Needs your own Alibaba Cloud AccessKey and network access (recognition stays local, images are not uploaded); one request per capture with a ~5000 character limit; only the translation is shown |
 | AI features | Image editing and visual Q&A are currently hidden |
 
 ## Still stuck?

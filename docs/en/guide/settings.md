@@ -1,10 +1,10 @@
 ---
-description: 'koiShot settings and tray: general settings, hotkeys, annotation defaults, about page, GIF and recording options, OCR self-check, tray menu.'
+description: 'koiShot settings and tray: general settings, translation settings, hotkeys, annotation defaults, about page, GIF and recording options, OCR self-check, tray menu.'
 ---
 
 # Settings & Tray
 
-Open settings via the **tray icon → Settings**. The current version is shown at the bottom of the settings sidebar.
+Open settings via the **tray icon → Settings**. The full build version (including the git commit, e.g. `v1.1.0+g1a2b3c4`) is shown at the bottom of the sidebar.
 
 The sidebar has four pages: **General / Hotkeys / Annotation / About**. Settings is not an always-on-top window — if another window covers it, pick "Settings" from the tray menu again to bring it forward.
 
@@ -13,6 +13,10 @@ The sidebar has four pages: **General / Hotkeys / Annotation / About**. Settings
 | Section | Setting | Description |
 | --- | --- | --- |
 | Language | UI language | 中文 / English, follows the system by default; switching **restarts** koiShot |
+| Translation | Provider | Fixed to "Alibaba Cloud machine translation" — nothing to choose |
+| Translation | AccessKey ID / AccessKey Secret | Credentials for Alibaba Cloud machine translation; both fields are masked by default — click the "eye" to reveal them temporarily, then click again to mask. **Save** writes them into the local settings |
+| Translation | Target language | Chinese / English / Japanese / Korean / French / German / Spanish / Russian, the default for the Translate button (the result window can switch on the fly) |
+| Translation | Test translation | Sends a real request with one sample sentence and reports success or failure in the card, so you can verify the credentials; changes apply immediately, no restart |
 | Appearance | Theme | Follow system / Light / Dark, applied instantly to all windows |
 | Save path | Save path | Common destination for captures, long screenshots, GIFs, recordings and table exports; defaults to a `koiShot` folder under Pictures |
 | Save path | Open folder after save | Opens the folder after each save (off by default) |
@@ -59,7 +63,11 @@ Per-tool factory values: [Annotation defaults](/en/guide/features/annotation#ann
 
 ## About
 
-Settings → About shows the logo, name, version, feature description and copyright, plus an **Open-source licenses** link. Clicking it opens a modal listing Qt 6, ONNX Runtime, PaddleOCR and other third-party components with links (opened in your browser); close it with the button or `Esc`.
+Settings → About shows the logo, name, version, feature description, the **QQ group** and copyright:
+
+- **Version**: the About page shows the full build version plus the platform tag (e.g. `1.1.0+g1a2b3c4 · windows-x64`), matching the installer naming; the `v…` label at the bottom of the sidebar comes from the same source;
+- **QQ group**: the join QR code and group number **1134581312** — click the number to copy it;
+- **Open-source licenses**: opens a modal listing Qt 6, ONNX Runtime, PaddleOCR and other third-party components with links (opened in your browser); close it with the button or `Esc`.
 
 ## Tray
 

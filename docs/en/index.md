@@ -1,5 +1,5 @@
 ---
-description: 'koiShot docs: cross-platform capture, annotation, pin, long screenshot, GIF and 60 fps MP4 recording, offline OCR and table recognition.'
+description: 'koiShot docs: cross-platform capture, annotation, pin, long screenshot, GIF and 60 fps MP4 recording, offline OCR, screenshot translation and table recognition.'
 pageType: home
 
 hero:
@@ -28,18 +28,18 @@ features:
     details: Keep captures always on top, zoom 0.3–4.0 with the wheel, Alt+wheel for opacity, keep annotating — or drag over text to copy it with OCR.
     icon: 📌
     link: /en/guide/features/pin
-  - title: Long Screenshot
-    details: Scroll and stitch automatically; the control bar and preview show frames and progress live, and Cancel drops everything without leaving a partial file.
-    icon: 📜
-    link: /en/guide/features/long-capture-gif
-  - title: GIF & MP4 Recording
-    details: GIF at 5–30 fps; MP4 at 10–60 fps with H.264 and microphone, up to 10 minutes; native capture on Windows / macOS and HDR tone mapping.
+  - title: Long Screenshot & Recording
+    details: Scroll and stitch automatically with a live control bar and frame counter; GIF at 5–30 fps, MP4 at 10–60 fps with H.264 and microphone up to 10 minutes, HDR tone mapping.
     icon: 🎞️
     link: /en/guide/features/long-capture-gif
   - title: OCR & Tables
     details: Local offline PaddleOCR with line numbers and per-line copy; turn table screenshots into an editable grid, export xlsx / CSV or copy as TSV.
     icon: 🔍
     link: /en/guide/features/ocr-table
+  - title: Screenshot Translation
+    details: Select foreign text → local OCR → Alibaba Cloud translation, side by side with the image; zoom, pan with the right button and switch languages instantly.
+    icon: 🌐
+    link: /en/guide/features/translate
   - title: Cross-Platform & UX
     details: Windows / macOS / Linux; Chinese & English UI, light / dark / system themes; five rebindable hotkeys, tray-only, single instance, no ads or watermarks.
     icon: ⚙️

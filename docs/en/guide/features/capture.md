@@ -62,6 +62,7 @@ After you release the mouse, the toolbar appears below the selection. The active
 | Edit | Undo / Redo | Step back or forward, `Ctrl + Z` / `Ctrl + Shift + Z` (`Cmd` on macOS) | [Undo & redo](/en/guide/features/annotation#undo--redo) |
 | Output | Pin | Pin the selection to the desktop | [Pin](/en/guide/features/pin) |
 | Output | OCR | Recognise text in the selection, with line numbers | [OCR & tables](/en/guide/features/ocr-table) |
+| Output | Translate | Recognise foreign text and machine-translate it into a side-by-side window | [Screenshot translation](/en/guide/features/translate) |
 | Output | QR code | Decode QR codes in the selection and copy the content | [OCR & tables](/en/guide/features/ocr-table) |
 | Output | Table | Rebuild a table into an editable grid, export xlsx / CSV | [OCR & tables](/en/guide/features/ocr-table) |
 | Output | Long capture | Scroll-stitch a long screenshot | [Long screenshot, GIF & recording](/en/guide/features/long-capture-gif) |
@@ -87,5 +88,5 @@ The toolbar flips above the selection when there is no room below, and is clampe
 - Cancel or `Esc` discards it (while editing a text annotation, `Esc` only exits the editor).
 
 :::tip
-Annotation details: [Annotation](/en/guide/features/annotation). OCR, tables, long capture, GIF and video each have their own section; paths, file names and formats: [Saving & output](/en/guide/features/output).
+Annotation details: [Annotation](/en/guide/features/annotation). OCR, tables, QR codes and translation each have their own section; long capture, GIF and video: [Long screenshot, GIF & recording](/en/guide/features/long-capture-gif); paths, file names and formats: [Saving & output](/en/guide/features/output).
 :::

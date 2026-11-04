@@ -26,6 +26,8 @@ To check the environment, open Settings → General → OCR self-check and click
 
 Typical uses: extracting text from images, copying non-selectable text (dialogs, scans, video subtitles, PDF screenshots).
 
+When you need to **understand foreign text** rather than extract it, use **Translate** on the toolbar: it reuses the same local OCR and sends the text to Alibaba Cloud machine translation, with the image and the translation side by side (see [Screenshot translation](/en/guide/features/translate)).
+
 ## Table recognition (screenshot to Excel)
 
 1. Press `F1` and select the table region (keep the selection tight to the table);
@@ -74,7 +76,7 @@ Decode QR codes in the selection and copy the content **straight to the clipboar
 ### During a capture
 
 1. Press `F1` and select the region containing the QR code;
-2. Click **QR code** on the toolbar (to the right of OCR);
+2. Click **QR code** on the toolbar (to the right of OCR and Translate);
 3. Decoding uses the **original image** at capture time (annotations are not included). On success a toast shows the decoded content and the capture overlay closes automatically; the content is already on your clipboard.
 
 ### In a pin window

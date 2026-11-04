@@ -62,6 +62,7 @@ description: koiShot 截图使用说明：框选、正方形选区、控件高�
 | 编辑 | 撤销 / 重做 | 回退或恢复上一步标注，快捷键 `Ctrl + Z` / `Ctrl + Shift + Z`（macOS 用 `Cmd`） | [撤销与重做](/zh/guide/features/annotation#撤销与重做) |
 | 输出 | 贴图 | 把选区钉在桌面置顶显示 | [贴图](/zh/guide/features/pin) |
 | 输出 | OCR | 识别选区内的文字，结果带行号 | [OCR 与表格识别](/zh/guide/features/ocr-table) |
+| 输出 | 翻译 | 识别选区内的外文并机翻，弹出左图右文结果窗 | [截图翻译](/zh/guide/features/translate) |
 | 输出 | 二维码识别 | 解码选区内的二维码并复制内容到剪贴板 | [OCR 与表格识别](/zh/guide/features/ocr-table) |
 | 输出 | 表格 | 把表格截图还原为可编辑表格并导出 xlsx / CSV | [OCR 与表格识别](/zh/guide/features/ocr-table) |
 | 输出 | 长截图 | 滚动页面自动拼接长图 | [长截图、GIF 与录屏](/zh/guide/features/long-capture-gif) |
@@ -87,5 +88,5 @@ description: koiShot 截图使用说明：框选、正方形选区、控件高�
 - 点击「取消」或按 `Esc`：放弃截图（文字标注编辑中按 `Esc` 只退出编辑，不会关掉整张截图）。
 
 :::tip
-标注操作详见[标注与编辑](/zh/guide/features/annotation)；OCR、表格、长截图、GIF 与录屏详见对应章节；保存路径、文件命名与格式见[保存与输出](/zh/guide/features/output)。
+标注操作详见[标注与编辑](/zh/guide/features/annotation)；OCR、表格、二维码与翻译详见对应章节；长截图、GIF 与录屏见[长截图、GIF 与录屏](/zh/guide/features/long-capture-gif)；保存路径、文件命名与格式见[保存与输出](/zh/guide/features/output)。
 :::

@@ -13,7 +13,7 @@ Captures, pins, long screenshots, GIFs, recordings and table exports all end up 
 | Clipboard | Paste straight into chat, docs or a ticket; no file is created |
 | File | Written into the folder configured under Settings → General → Save path |
 | Pin | Shown as an always-on-top window; save from the pin when needed (see [Pin](/en/guide/features/pin)) |
-| Result window | OCR / table recognition open their own window for copying or exporting (see [OCR & tables](/en/guide/features/ocr-table)) |
+| Result window | OCR, table recognition and screenshot translation open their own window for copying or exporting (see [OCR & tables](/en/guide/features/ocr-table), [Screenshot translation](/en/guide/features/translate)) |
 
 ## File naming
 
@@ -44,6 +44,7 @@ Every saved file uses `name_date_time` (24-hour clock). Saving several files wit
 | GIF recording | Yes | "Stop recording" encodes and writes `gif_*.gif` |
 | Video recording | Yes | "Stop recording" exports and writes `koiShot_*.mp4`; honours "Open folder after save" |
 | Table recognition | Yes | "Export Excel" / "Export CSV" writes into the save folder (opened as well when "Open folder after save" is on) |
+| Screenshot translation | No | Creates no file: copy the translation with the button or the context menu |
 
 ## Formats
 

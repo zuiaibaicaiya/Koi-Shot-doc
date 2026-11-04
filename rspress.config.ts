@@ -51,6 +51,11 @@ const pageMetas: Record<string, { title: string; description: string }> = {
     description:
       'koiShot 本地离线 OCR 文字识别与表格识别：截图转文字、截图转 Excel、二维码识别，导出 xlsx / CSV 或复制 TSV。',
   },
+  '/guide/features/translate': {
+    title: '截图翻译 | koiShot 使用文档',
+    description:
+      'koiShot 截图翻译：框选外文 → 本地 OCR → 阿里云机器翻译，左图右文结果窗，滚轮缩放、右键拖动、目标语言随时切换重翻。',
+  },
   '/guide/settings': {
     title: '设置与托盘 | koiShot 使用文档',
     description:
@@ -111,6 +116,11 @@ const pageMetas: Record<string, { title: string; description: string }> = {
     title: 'OCR & Tables | koiShot Docs',
     description:
       'koiShot local offline OCR, table recognition and QR decoding: screenshot to text or Excel (xlsx / CSV, copy as TSV).',
+  },
+  '/en/guide/features/translate': {
+    title: 'Screenshot Translation | koiShot Docs',
+    description:
+      'koiShot screenshot translation: select foreign text, local OCR, Alibaba Cloud machine translation, side-by-side result window with zoom, pan and instant language switching.',
   },
   '/en/guide/settings': {
     title: 'Settings & Tray | koiShot Docs',

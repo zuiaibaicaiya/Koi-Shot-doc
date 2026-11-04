@@ -28,5 +28,10 @@
     "type": "file",
     "name": "ocr-table",
     "label": "OCR & Tables"
+  },
+  {
+    "type": "file",
+    "name": "translate",
+    "label": "Screenshot Translation"
   }
 ]

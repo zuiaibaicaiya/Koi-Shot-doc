@@ -1,12 +1,12 @@
 ---
-description: 'koiShot overview: a cross-platform capture tool with annotation, pin, long screenshot, GIF & MP4 recording, OCR and table recognition.'
+description: 'koiShot overview: a cross-platform capture tool with annotation, pin, long screenshot, GIF & MP4 recording, OCR, screenshot translation and table recognition.'
 ---
 
 # Introduction
 
 ## What is koiShot
 
-**koiShot** is a cross-platform desktop capture and pin tool for Windows, macOS and Linux. Beyond plain screenshots it bundles annotation, pin-to-desktop, long screenshots, GIF recording, region video recording (MP4), OCR and table recognition (screenshot to Excel) in one app. All text and table recognition runs **locally** — no network, no image uploads.
+**koiShot** is a cross-platform desktop capture and pin tool for Windows, macOS and Linux. Beyond plain screenshots it bundles annotation, pin-to-desktop, long screenshots, GIF recording, region video recording (MP4), OCR, screenshot translation and table recognition (screenshot to Excel) in one app. Text and table recognition run **locally** — no network, no image uploads.
 
 koiShot is a **tray-only** application: there is no persistent main window. It lives in the system tray / menu bar and is driven from the tray, global hotkeys or the capture overlay.
 
@@ -22,6 +22,7 @@ koiShot is a **tray-only** application: there is no persistent main window. It l
 | GIF recording | Record a region as an animated GIF with frame and pixel budgets |
 | Video recording | Record a region as MP4 (H.264 + microphone, 10–60 fps), up to 10 minutes per clip |
 | OCR | Local PaddleOCR engine; results with line numbers, copy all or a single line |
+| Translation | Select foreign text → local OCR → Alibaba Cloud machine translation, side-by-side with the image; switch target language and re-translate instantly |
 | Table recognition | Screenshot to an editable grid, manual merge/split, export xlsx / CSV or copy as TSV |
 | QR code | Decode QR-family codes in a selection; content goes straight to the clipboard |
 | Extras | Customizable global hotkeys, tray residency, light/dark themes, Chinese/English UI, configurable annotation defaults |
@@ -32,6 +33,7 @@ koiShot is a **tray-only** application: there is no persistent main window. It l
 - **Docs & tutorials**: number, arrow and label steps to produce illustrated guides quickly.
 - **Data wrangling**: screenshot a table → table recognition → export to Excel, no retyping.
 - **Reading & clipping**: long screenshots for whole pages; OCR to extract text from images.
+- **Foreign content**: select a foreign UI, error message or paper excerpt and get the translation, ready to copy.
 - **Reference while working**: pin a reference image to a corner of the screen.
 - **Demos**: GIF for a few seconds of interaction; MP4 when you need audio or a longer clip.
 
@@ -42,6 +44,8 @@ koiShot is a **tray-only** application: there is no persistent main window. It l
 | Windows | Windows 10 or later (video capture needs Win10 1903+); per-user install by default, no admin rights needed |
 | macOS | Screen Recording permission; Accessibility for UI-element highlight; Microphone for audio in recordings; video recording (MP4) needs macOS 12.3+ (see [FAQ](/en/guide/faq)) |
 | Linux | X11 session (global hotkeys do not work on Wayland); a `.deb` package is provided |
+
+Screenshot translation requires **your own Alibaba Cloud machine translation AccessKey** and network access (setup: [Screenshot translation](/en/guide/features/translate)). OCR, tables and QR codes stay fully local and offline — no account needed.
 
 ## Three moves to get going
 

@@ -108,4 +108,5 @@ koiShot **only lives in the system tray** after launch and shows no window (ther
 1. Left-click the tray icon to start a capture;
 2. Check save path, UI language, theme and hotkeys in Settings (all 5 global actions can be rebound);
 3. Optionally run Settings → OCR self-check → "Run self-check" to confirm the recognition environment (usually unnecessary);
-4. For recordings with audio, verify the microphone switch under Settings → General → Recording (MP4) and grant the microphone permission.
+4. For recordings with audio, verify the microphone switch under Settings → General → Recording (MP4) and grant the microphone permission;
+5. To use screenshot translation, enter your Alibaba Cloud machine translation AccessKey under Settings → General → Translation settings ("Test translation" verifies it instantly — see [Screenshot translation](/en/guide/features/translate)).

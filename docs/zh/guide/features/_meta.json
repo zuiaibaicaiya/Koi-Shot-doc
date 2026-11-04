@@ -28,5 +28,10 @@
     "type": "file",
     "name": "ocr-table",
     "label": "OCR 与表格识别"
+  },
+  {
+    "type": "file",
+    "name": "translate",
+    "label": "截图翻译"
   }
 ]
