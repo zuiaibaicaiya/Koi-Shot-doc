@@ -15,6 +15,12 @@ Join our QQ group for bug reports, feature suggestions and release updates:
 
 ![koiShot QQ group QR code](/images/qq-group.jpg)
 
+## Updates & Open Source
+
+koiShot checks the latest stable release at startup and downloads and verifies the full installer in the background. Windows installs it silently while the system is idle and relaunches automatically; macOS / Linux open the downloaded package for you to finish in the system wizard. Check the progress or retry manually from the status line in Settings → About (see [Settings & Tray](/en/guide/settings)), or install a newer package manually as described in [Get Started](/en/guide/start/getting-started).
+
+koiShot builds on open-source components including Qt 6, ONNX Runtime and PaddleOCR. The full license list is available under Settings → About → Open-source licenses and in `THIRD_PARTY_NOTICES.md` inside the package.
+
 ## Reporting Issues
 
 When reporting an issue in the group, please include:

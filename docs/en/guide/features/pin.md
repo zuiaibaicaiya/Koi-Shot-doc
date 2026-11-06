@@ -26,7 +26,8 @@ Any of these:
 | `Esc` / `Ctrl + W` (`Cmd + W`) | Close this pin |
 
 - While dragging, the toolbar hides temporarily so it never blocks the drag; it comes back on release;
-- The toolbar sits centred below the content and **flips above** when there is no room; when the image is narrower than the toolbar and sits at a screen edge, the toolbar is clamped horizontally so every button stays clickable;
+- The toolbar sits centred below the content and **flips above** when there is no room; when the image is narrower than the toolbar and sits at a screen edge, the toolbar is clamped horizontally so every button stays clickable; it always stays outside the image window and **never covers the picture**;
+- With multiple monitors, it picks the **screen that overlaps the image most** and stays entirely inside it. Dragging the pin onto another monitor with a different scale recomputes the position on release, so the toolbar neither drifts nor gets clipped;
 - Pins never steal focus, so clicking toolbar buttons does not interrupt text annotation input; while typing, `Alt` + wheel does not change opacity (the wheel adjusts font size then).
 
 ## Pin toolbar
@@ -62,7 +63,7 @@ With **no annotation tool active**, you can select text directly on the pin:
 
 1. Hover over text — the cursor becomes an **I-beam** and a light blue dashed hint appears;
 2. Drag across the text you want; each selected line is highlighted in translucent blue (**what lights up is exactly what will be recognised**);
-3. On release the text is recognised and **copied to the clipboard**, with a toast such as "Copied N lines to the clipboard".
+3. On release the text is recognised and **copied to the clipboard**, with a toast such as "Copied N lines: <recognised text preview>" — the short preview lets you confirm the result without pasting it anywhere.
 
 The selection is textual, like Word or a browser — a **contiguous run of text**, not the pixels under the pointer:
 

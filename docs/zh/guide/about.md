@@ -15,6 +15,12 @@ koiShot 是一款跨平台（Windows / macOS / Linux）截图工具，支持截�
 
 ![koiShot QQ 交流群二维码](/images/qq-group.jpg)
 
+## 版本更新与开源许可
+
+koiShot 会在启动时自动检查最新正式版本，并在后台下载、校验完整安装包；Windows 在系统空闲时静默安装后自动重启，macOS / Linux 打开下载好的安装包供你按向导完成。想查看进度或手动重试，到「设置 → 关于」的更新状态行（见[设置与托盘](/zh/guide/settings)），也可在[获取与安装](/zh/guide/start/getting-started)里手动覆盖安装。
+
+本软件使用了 Qt 6、ONNX Runtime、PaddleOCR 等开源组件，完整许可清单见「设置 → 关于 → 开源许可协议」与发行包内的 `THIRD_PARTY_NOTICES.md`。
+
 ## 反馈问题
 
 在群里反馈问题时，建议附上：

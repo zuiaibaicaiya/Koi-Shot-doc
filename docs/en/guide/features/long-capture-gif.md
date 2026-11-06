@@ -55,8 +55,8 @@ All three bar buttons are **icon-only** (start / stop / cancel) with tooltips: t
 The bar sits below the selection, **horizontally centered on the selection**, 12px away from the selection border, and reflows automatically:
 
 - Near the bottom edge, it flips above the selection;
-- If the selection covers the taskbar (menu bar / Dock on macOS), the bar avoids the system area;
-- In extreme cases (near full-screen) it is clamped inside the screen and stays fully visible.
+- If the selection covers the taskbar (menu bar / Dock on macOS), the bar **prefers to avoid** the system area;
+- In extreme cases (near full-screen) it is clamped inside the screen and stays fully visible; when the available area really cannot fit it, the bar falls back to the full screen and may overlay system UI while staying fully usable — expected behaviour, not a bug.
 
 :::tip
 Centering rather than right-aligning matters: the bar's right end is the cancel button, so grabbing the selection's bottom-right corner to adjust it could easily cancel the whole overlay by mistake.
@@ -74,7 +74,7 @@ GIF has both a **frame budget** and a **total-pixel budget**:
 
 ### Frame rate & size preset
 
-The **recording bar itself has a frame-rate dropdown** (shared with video recording): it can be changed in the ready state and is locked once recording starts. The Settings value is the default; the last choice on either side wins.
+The **recording bar itself has a frame-rate dropdown**: GIF and video recording share the same button, but it offers two different preset lists (GIF 5–30, video 10–60) and the two values are stored separately, so one never overwrites the other. Change it in the ready state; it is locked once recording starts and during export. The Settings value is the default and changes take effect on the **next recording**.
 
 Settings → General → GIF recording (see [Settings & tray](/en/guide/settings)):
 
@@ -92,7 +92,7 @@ Choose video when you need **audio**, a **longer clip** or **better quality**.
 1. Press `Alt + R` (or click "Record video" on the capture toolbar);
 2. Select the region — the shortcut entry shows the recording bar in its **ready** state as soon as you release the mouse; the toolbar entry shows it after clicking the button;
 3. In the ready state you can drag inside the region to move it (move only, no resize); confirm and click the **Start recording** icon;
-4. While recording, the bar shows `REC`, elapsed time and "fps | MP4"; click **Pause** (❚❚) when needed — the bar switches to "Paused", and **paused time does not count toward the duration** nor appear as a frozen segment in the video; click **Resume** (▶) to continue;
+4. While recording, the bar shows `REC`, elapsed time and "MP4" (the frame rate is chosen in the dropdown); click **Pause** (❚❚) when needed — the bar switches to "Paused", and **paused time does not count toward the duration** nor appear as a frozen segment in the video; click **Resume** (▶) to continue;
 5. Click **Stop recording**; the bar shows "Exporting video" and the file is saved as `koiShot_date_time.mp4`;
 6. **Cancel recording** discards the partial file.
 

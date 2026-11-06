@@ -72,6 +72,8 @@ After you release the mouse, the toolbar appears below the selection. The active
 
 The toolbar flips above the selection when there is no room below, and is clamped horizontally when the selection touches a screen edge. It temporarily hides while you drag the selection.
 
+With multiple monitors, the toolbar picks the **screen that overlaps the selection most** and stays entirely inside it: a selection crossing a screen boundary never leaves the toolbar split across two screens or clipped at an edge. Pin windows use the same placement rules.
+
 ## Finishing
 
 - The **default action** depends on how you started; that button is highlighted in the brand colour:

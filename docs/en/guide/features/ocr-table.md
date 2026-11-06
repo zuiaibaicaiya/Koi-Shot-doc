@@ -22,7 +22,7 @@ To check the environment, open Settings → General → OCR self-check and click
 | Close button / `Esc` | Close the result window and release the result (closing while recognition is running does not cancel it; the window pops up again when the result arrives) |
 | Recognition failed | A tray balloon reports the failure; retry or select a sharper region |
 
-**Automatic orientation correction (optional, off by default)**: koiShot can correct a whole image rotated by 90°/270° before detection and flip upside-down text lines (0°/180°) individually, but the corresponding correction models are **not bundled by default**; when missing the step is skipped silently and normal recognition is unaffected. Desktop screenshots are almost always upright, so this rarely matters.
+**Automatic orientation correction (on by default)**: koiShot can correct a whole image rotated by 90°/270° before detection and flip upside-down text lines (0°/180°) individually. Whole-image rotation is enabled by default (turn it off with the environment variable `PADDLEOCR_DOC_ORI=0`), but the helper models are **not bundled with the installer**; desktop screenshots are always upright and rotation is skipped when confidence is low, so it rarely runs in practice. Missing models are skipped silently and normal recognition is unaffected.
 
 Typical uses: extracting text from images, copying non-selectable text (dialogs, scans, video subtitles, PDF screenshots).
 
@@ -62,7 +62,7 @@ The feature aims to give you a **usable first draft** for three things: **text, 
 
 - A table needs **at least 2 rows and 2 columns** to be recognised (no upper limit);
 - Diagonal headers, nested sub-tables and vertical text are not supported (they get flattened or merged);
-- Dark-theme tables and low-contrast rules (e.g. white lines on cream background) may not be detected — the engine silently falls back to geometric recovery, which cannot express merges;
+- Complex backgrounds (dark themes, gradients, colour blocks) and low-contrast rules are handled with background normalisation, dark-theme inversion and local-contrast line detection, so even very light grey rules are picked up; only lines whose signal is genuinely too weak are missed, causing a silent fallback to geometric recovery, which cannot express merges;
 - Exported Excel stores **numbers as text**: order IDs, phone numbers and leading zeros are preserved; values that parse cleanly (thousands separators, percentages, currency, dates) are converted to real numbers.
 
 :::tip

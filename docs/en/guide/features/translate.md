@@ -17,7 +17,7 @@ Recognition runs locally; the machine translation calls Alibaba Cloud, so you ne
 3. Choose the **target language** (Chinese / English / Japanese / Korean / French / German / Spanish / Russian) as the default for the Translate button;
 4. Click **Save**, then **Test translation** — it sends a real request with one sample sentence and shows the result right in the card.
 
-Changes take effect **immediately**: no restart, no need to capture again.
+Changes take effect **immediately**: no restart, no need to capture again. Credentials are stored **only in the local settings file** (the Secret is written in plain text on your machine); the UI masks them by default and they are never sent with a screenshot or recognised text.
 
 ## How to translate
 
@@ -72,10 +72,10 @@ Changes take effect **immediately**: no restart, no need to capture again.
 - **Network required**: failures are reported without automatic retry; switching language, selecting again or pressing Translate again all start a new request;
 - Eight target languages are available: Chinese, English, Japanese, Korean, French, German, Spanish, Russian.
 
-::::tip
+:::tip
 Recognition is always local and **images are never uploaded**; only the recognised text is sent to Alibaba Cloud machine translation. Keep that in mind for sensitive content.
-::::
+:::
 
-::::tip
+:::tip
 When a translation looks wrong, check the left image first — most "bad translations" start as bad recognition, and a tighter selection usually fixes it.
-::::
+:::

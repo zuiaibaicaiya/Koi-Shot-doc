@@ -1,10 +1,12 @@
 ---
-description: 'Get koiShot: Windows installer, macOS DMG and Linux .deb. No build required, OCR included.'
+description: 'Get koiShot: Windows installer, macOS DMG and Linux .deb. No build required, OCR and the recording backend included, automatic updates at startup.'
 ---
 
 # Get Started
 
-Download the package for your platform from the release page. Nothing to build or configure — runtime libraries and the OCR engine are bundled, so it works right after installation.
+Download the package for your platform from the release page. Nothing to build or configure — runtime libraries, the OCR engine and the video encoding backend are bundled, so it works right after installation.
+
+Once installed, **you never need to check for updates manually**: koiShot queries the latest stable GitHub release at startup, downloads and verifies the full installer in the background; on Windows it installs silently while the system is idle and relaunches automatically, while macOS / Linux open the downloaded package for you to finish in the system wizard. There is no update switch in settings — Settings → About shows progress and a manual retry, see the [FAQ](/en/guide/faq).
 
 ## Windows
 
@@ -37,7 +39,8 @@ If koiShot is running (for example during an upgrade), the installer offers to c
 
 ### Upgrade & uninstall
 
-- **Upgrade**: run the new installer over the old one — no need to uninstall first; existing settings are kept;
+- **Upgrade (default)**: koiShot checks for new releases, downloads and verifies the installer in the background, then — after 2 continuous minutes of system idle time — quits, installs silently and relaunches the new version automatically. No wizard to run, settings are kept;
+- **Manual upgrade (fallback)**: you can also run a newer installer over the old one — no need to uninstall first; settings are kept;
 - **Uninstall**: use Settings → Apps on Windows, or the uninstall entry in the koiShot start-menu folder. Autostart entries and files are removed automatically.
 
 ## macOS
@@ -85,7 +88,8 @@ Then **quit and relaunch koiShot** (tray icon → Quit). The microphone is only 
 
 ### Upgrade & uninstall
 
-- **Upgrade**: drag the new koiShot into Applications to overwrite; settings are kept. Re-check the permissions above if capture stops working;
+- **Upgrade (default)**: koiShot downloads the new DMG and opens it automatically — drag koiShot into Applications to overwrite; settings are kept. Re-check the permissions above if capture stops working;
+- **Manual upgrade (fallback)**: download the new DMG from the release page yourself and follow the same steps;
 - **Uninstall**: quit from the tray menu, then move koiShot from Applications to the Trash.
 
 ## Linux
@@ -93,13 +97,19 @@ Then **quit and relaunch koiShot** (tray icon → Quit). The microphone is only 
 A Debian/Ubuntu `.deb` package is provided (`koishot_<version>-1_amd64.deb`):
 
 ```bash
-sudo dpkg -i koishot_<version>-1_amd64.deb
+sudo apt install ./koishot_<version>-1_amd64.deb
 ```
 
+If the system libraries are already present, `sudo dpkg -i koishot_<version>-1_amd64.deb` also works (run `sudo apt -f install` if dependencies are missing).
+
 - Launch koiShot from the application menu, or run `koiShot`; a shortcut icon is also placed on each user's desktop;
-- Qt runtime libraries and OCR models are bundled — no system Qt6 required;
+- Qt runtime libraries, OCR models and the **Qt Multimedia / FFmpeg backend needed for video recording** are bundled — no system Qt6 or system ffmpeg required, MP4 recording works out of the box. An "Encoder start timed out" error or a 0-byte file right after Start usually means an older package without that backend — reinstall the current release;
 - A systemd user service **restarts the app 2 seconds after a crash** (a normal quit from the tray is not restarted; after more than 5 crashes within 5 minutes the auto-restart pauses to prevent loops);
 - Uninstall with `sudo dpkg -r koishot` to keep configuration files, or `sudo dpkg -P koishot` (or `apt purge`) to remove configuration and the service as well.
+
+### Upgrade
+
+Automatic updates download the new `.deb` and hand it to the system's default handler — finish the install in the package manager / administrator prompt while the app keeps running. You can also upgrade manually with `sudo apt install ./koishot_<new-version>-1_amd64.deb`: the running instance is stopped first and configuration files are kept.
 
 ## First launch
 

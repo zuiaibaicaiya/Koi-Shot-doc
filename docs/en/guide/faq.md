@@ -1,5 +1,5 @@
 ---
-description: 'koiShot FAQ: permissions, hotkey conflicts, annotation editing, OCR, screenshot translation, long capture, GIF and video recording, save locations and limitations.'
+description: 'koiShot FAQ: automatic updates and upgrades, permissions, hotkey conflicts, annotation editing, OCR, screenshot translation, long capture, GIF and video recording, save locations and limitations.'
 ---
 
 # FAQ
@@ -31,6 +31,32 @@ Expected: switching between Chinese and English restarts koiShot to apply the ne
 ### Launching koiShot again opens no new window?
 
 koiShot is single-instance: launching it while running **starts a capture** instead of opening another window.
+
+## Updates & Upgrades
+
+### How do I know a new version is out, and do I have to confirm?
+
+You don't. About 6 seconds after launch, koiShot checks the latest stable GitHub release (no repeat within 24 hours of a successful check). If a newer version is found, a tray balloon says it is downloading in the background; the installer is fetched in parallel chunks with resume support and verified with SHA-256. **There is no confirmation step and no update switch in settings** — new versions are installed as soon as they are found. See [Settings & Tray](/en/guide/settings) for the full flow.
+
+### Can I turn automatic updates off?
+
+Not in the current version — there is no switch and no "notify only" option. Failed checks (offline, rate limits) are silent; only download / verification / install failures are reported, with a "Retry" and an "Open release page" escape hatch. Pre-releases and drafts are ignored.
+
+### Windows restarts the app automatically — what if I'm using it?
+
+After the download is verified, koiShot waits for 2 continuous minutes without keyboard or mouse input, then quits, installs silently and relaunches the new version automatically — no installer wizard to run. It stays fully usable while waiting for idle time; updates are always full installers (~60 MB), not deltas. Save any work in progress before the install starts.
+
+### Does macOS / Linux finish the install too?
+
+The package is downloaded automatically and handed to the system's default handler, but you finish it in the system wizard: drag koiShot into Applications on macOS, or complete the `.deb` install with administrator rights on Linux. The app itself keeps running; silent installation is Windows-only for now. On some Linux desktops tray balloons are not clickable — use Settings → About for the status instead.
+
+### The download was interrupted / "Update failed"?
+
+Progress is not lost on network loss or when you quit the app: the next launch, or the 10-minute idle check, resumes from the chunks already downloaded. Click "Retry" on the About status line to resume immediately; if GitHub is unreachable, "Open release page" lets you download the installer and upgrade manually (supported on all three platforms, see [Get Started](/en/guide/start/getting-started)).
+
+### Can I check right now or upgrade manually?
+
+Click "Check for updates / Check again" in Settings → About — it bypasses the once-a-day throttle. Running a newer installer over the existing one also works on every platform and keeps your settings; it is a fallback to automatic updates, not something you need to do routinely.
 
 ## Permissions (macOS)
 
@@ -121,7 +147,8 @@ If the encoder does not enter the recording state within about 5 seconds, koiSho
 
 1. Lower the frame rate to 30 fps or less under Settings → General → Recording (MP4), or disable the microphone and retry;
 2. Close apps that occupy the GPU / encoder (other recorders, streaming tools) and update your graphics driver;
-3. If it still fails, quit and relaunch koiShot.
+3. If it still fails, quit and relaunch koiShot;
+4. **Linux only**: if the timeout (or a 0-byte file) appears a few seconds after Start, the `.deb` is most likely an older build that did not bundle the Qt Multimedia / FFmpeg recording backend — reinstall the current package from the release page. No system Qt6 or system ffmpeg is needed.
 
 ### "The previous video is still exporting"?
 
@@ -208,10 +235,11 @@ Straight into the save folder (no native save dialog) and the folder is opened; 
 | GIF content | On Windows, semi-transparent windows may be missing from the GIF (capture performance trade-off) |
 | Video duration | Up to 10 minutes per clip (paused time not counted) |
 | Video frame rate | Up to 60 fps; the actual rate depends on machine performance and the encoder |
-| Linux video recording | No native capture yet — falls back to compatible capture (~10 fps) |
+| Linux video recording | No native capture yet — falls back to compatible capture (~10 fps); the encoding backend ships with the `.deb`, no system Qt6 / ffmpeg needed |
 | Long screenshots | Animations / videos may misalign; scroll steadily |
 | Table recognition | Text, merges and size only — no fonts, exact colours or formula semantics; no diagonal headers, nested tables or vertical text; at least 2×2 cells required |
 | Screenshot translation | Needs your own Alibaba Cloud AccessKey and network access (recognition stays local, images are not uploaded); one request per capture with a ~5000 character limit; only the translation is shown |
+| Automatic updates | No switch, no confirmation; silent install is Windows-only, macOS / Linux finish the downloaded package in the system wizard; pre-releases / drafts are ignored |
 | AI features | Image editing and visual Q&A are currently hidden |
 
 ## Still stuck?

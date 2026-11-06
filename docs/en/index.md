@@ -5,7 +5,7 @@ pageType: home
 hero:
   name: koiShot
   text: Capture, annotate, pin, record & recognize — all in one
-  tagline: Windows / macOS / Linux — annotated screenshots, pin to desktop, long captures, GIF / MP4 recording, OCR and table recognition; all local and offline, no ads, watermarks or sign-in
+  tagline: Windows / macOS / Linux — annotated screenshots, pin to desktop, long captures, GIF / MP4 recording, OCR and table recognition; recognition runs fully offline, no ads, watermarks or sign-in, plus automatic updates
   actions:
     - theme: brand
       text: Download koiShot
@@ -41,7 +41,7 @@ features:
     icon: 🌐
     link: /en/guide/features/translate
   - title: Cross-Platform & UX
-    details: Windows / macOS / Linux; Chinese & English UI, light / dark / system themes; five rebindable hotkeys, tray-only, single instance, no ads or watermarks.
+    details: Windows / macOS / Linux; Chinese & English UI, light / dark / system themes; five rebindable hotkeys, tray-only, single instance, automatic background updates, no ads or watermarks.
     icon: ⚙️
     link: /en/guide/settings
 ---

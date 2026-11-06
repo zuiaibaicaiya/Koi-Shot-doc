@@ -25,7 +25,7 @@ koiShot is a **tray-only** application: there is no persistent main window. It l
 | Translation | Select foreign text → local OCR → Alibaba Cloud machine translation, side-by-side with the image; switch target language and re-translate instantly |
 | Table recognition | Screenshot to an editable grid, manual merge/split, export xlsx / CSV or copy as TSV |
 | QR code | Decode QR-family codes in a selection; content goes straight to the clipboard |
-| Extras | Customizable global hotkeys, tray residency, light/dark themes, Chinese/English UI, configurable annotation defaults |
+| Extras | Customizable global hotkeys, tray residency, light/dark themes, Chinese/English UI, configurable annotation defaults, automatic background updates |
 
 ## Use cases
 

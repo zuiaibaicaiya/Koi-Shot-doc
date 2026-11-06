@@ -24,7 +24,7 @@ const pageMetas: Record<string, { title: string; description: string }> = {
   '/guide/start/getting-started': {
     title: '获取与安装 | koiShot',
     description:
-      '下载 Windows 安装向导与 macOS DMG 安装 koiShot，无需构建，OCR 已内置，开箱即用。',
+      '下载 Windows 安装向导、macOS DMG 或 Linux .deb 安装 koiShot，无需构建，OCR 与录屏后端已内置，启动自动检测更新并后台安装。',
   },
   '/guide/features/capture': {
     title: '截图 | koiShot 使用文档',
@@ -59,7 +59,7 @@ const pageMetas: Record<string, { title: string; description: string }> = {
   '/guide/settings': {
     title: '设置与托盘 | koiShot 使用文档',
     description:
-      'koiShot 设置说明：界面语言、主题、保存路径、GIF 与录屏参数、OCR 自检、快捷键、标注默认值与系统托盘。',
+      'koiShot 设置说明：界面语言、主题、保存路径、GIF 与录屏参数、OCR 自检、快捷键、标注默认值、关于页自动更新与开源许可、系统托盘。',
   },
   '/guide/shortcuts': {
     title: '快捷键总表 | koiShot 使用文档',
@@ -69,7 +69,7 @@ const pageMetas: Record<string, { title: string; description: string }> = {
   '/guide/faq': {
     title: '常见问题 | koiShot 使用文档',
     description:
-      'koiShot 常见问题解答：macOS 权限授权、快捷键冲突、标注编辑、OCR 排查、录屏与功能限制说明。',
+      'koiShot 常见问题解答：自动更新与升级、macOS 权限授权、快捷键冲突、标注编辑、OCR 排查、录屏与功能限制说明。',
   },
   '/guide/about': {
     title: '关于我们 | koiShot 使用文档',
@@ -90,7 +90,7 @@ const pageMetas: Record<string, { title: string; description: string }> = {
   '/en/guide/start/getting-started': {
     title: 'Get Started | koiShot',
     description:
-      'Download the Windows installer, macOS DMG or Linux .deb to install koiShot — no build required, OCR included.',
+      'Download the Windows installer, macOS DMG or Linux .deb to install koiShot — no build required, OCR and the recording backend included, with automatic background updates.',
   },
   '/en/guide/features/capture': {
     title: 'Capture | koiShot Docs',
@@ -125,7 +125,7 @@ const pageMetas: Record<string, { title: string; description: string }> = {
   '/en/guide/settings': {
     title: 'Settings & Tray | koiShot Docs',
     description:
-      'koiShot settings: language, theme, save path, GIF and recording options, OCR self-check, hotkeys, annotation defaults and tray menu.',
+      'koiShot settings: language, theme, save path, GIF and recording options, OCR self-check, hotkeys, annotation defaults, About page automatic updates and open-source licenses, tray menu.',
   },
   '/en/guide/shortcuts': {
     title: 'Shortcuts | koiShot Docs',
@@ -135,7 +135,7 @@ const pageMetas: Record<string, { title: string; description: string }> = {
   '/en/guide/faq': {
     title: 'FAQ | koiShot Docs',
     description:
-      'koiShot FAQ: macOS permissions, hotkey conflicts, annotation editing, OCR, recording and known limitations.',
+      'koiShot FAQ: automatic updates and upgrades, macOS permissions, hotkey conflicts, annotation editing, OCR, recording and known limitations.',
   },
   '/en/guide/about': {
     title: 'About Us | koiShot Docs',

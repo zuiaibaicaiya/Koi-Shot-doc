@@ -5,7 +5,7 @@ pageType: home
 hero:
   name: koiShot
   text: 截图、标注、贴图、录制与识别，一款搞定
-  tagline: Windows / macOS / Linux 跨平台：截图标注、贴图、长截图、GIF / MP4 录屏、OCR 与表格识别，全程本地离线，无广告、无水印、无需登录
+  tagline: Windows / macOS / Linux 跨平台：截图标注、贴图、长截图、GIF / MP4 录屏、OCR 与表格识别；识别全程本地离线，无广告、无水印、无需登录，启动自动更新
   actions:
     - theme: brand
       text: 下载 koiShot
@@ -41,7 +41,7 @@ features:
     icon: 🌐
     link: /zh/guide/features/translate
   - title: 跨平台与体验
-    details: Windows / macOS / Linux；中英文界面、浅色 / 深色 / 跟随系统；5 个全局快捷键可改，托盘常驻、单实例、无水印无广告。
+    details: Windows / macOS / Linux；中英文界面、浅色 / 深色 / 跟随系统；5 个全局快捷键可改，托盘常驻、单实例；启动自动检测更新并后台安装，无水印无广告。
     icon: ⚙️
     link: /zh/guide/settings
 ---
