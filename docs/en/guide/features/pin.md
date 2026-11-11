@@ -1,103 +1,74 @@
 ---
-description: 'koiShot pin guide: keep a screenshot always on top, zoom and opacity, pin toolbar and context menu, drag-to-copy text with OCR.'
+description: 'Keep a screenshot always on top for reference: create a pin, zoom and fade it, annotate further, and copy text straight off the image.'
 ---
 
 # Pin to Desktop
 
-## What a pin is
+Use a pin when you want a screenshot to stay visible while you work in other windows. It becomes a small **always-on-top window** you can still annotate — handy for reference images, comparisons and quick notes.
 
-A pin turns a screenshot into an **always-on-top floating window** — perfect for keeping a reference visible while working elsewhere. Pins sit above normal windows (they may cover the taskbar / Dock) and include the full annotation toolbar.
-
-## Creating a pin
+## Create a pin
 
 Any of these:
 
-- Click "Pin" on the capture toolbar after selecting a region;
-- Press `Alt + P`: the capture is pinned as soon as you release the mouse (no toolbar);
+- After selecting a region, click **Pin** on the capture toolbar;
+- Press `Alt + P`: the region is pinned as soon as you release the mouse (no toolbar);
 - Tray menu → "Pin to desktop".
 
-## Pin window
+## What you can do with a pin
 
-| Action | Result |
+| What you want | What to do |
 | --- | --- |
-| Drag the image | Move the pin (drag it to any screen edge, even over the taskbar / Dock) |
-| Wheel | Zoom (0.3–4.0×); the current percentage is shown on the toolbar |
-| `Alt` + wheel | Adjust opacity (5%–100%) |
-| `Esc` / `Ctrl + W` (`Cmd + W`) | Close this pin |
+| Move it | Drag the image (right to a screen edge if you like) |
+| Zoom in / out | Wheel (0.3–4.0×); the current percentage is on the toolbar |
+| Back to original size | Click the zoom percentage on the toolbar |
+| See what is behind it | `Alt` + wheel lowers opacity (5%–100%) |
+| Close this pin | `Esc` / `Ctrl + W` (`Cmd + W`), or the "Close" button |
 
-- While dragging, the toolbar hides temporarily so it never blocks the drag; it comes back on release;
-- The toolbar sits centred below the content and **flips above** when there is no room; when the image is narrower than the toolbar and sits at a screen edge, the toolbar is clamped horizontally so every button stays clickable; it always stays outside the image window and **never covers the picture**;
-- With multiple monitors, it picks the **screen that overlaps the image most** and stays entirely inside it. Dragging the pin onto another monitor with a different scale recomputes the position on release, so the toolbar neither drifts nor gets clipped;
-- Pins never steal focus, so clicking toolbar buttons does not interrupt text annotation input; while typing, `Alt` + wheel does not change opacity (the wheel adjusts font size then).
+:::tip
+If a pin blocks your work, lower its opacity with `Alt` + wheel instead of moving it around. Rotation and mirroring are not supported in this version.
+:::
 
-## Pin toolbar
+The toolbar finds its own place: normally below the image, flipping above when there is no room, and clamped inside the screen at edges so every button stays clickable. With a very large image that no longer fits above or below, it may cover a small part of the picture. It hides while you drag the pin and returns on release.
+
+## Toolbar and right-click menu
 
 | Button | Purpose |
 | --- | --- |
-| Nine annotation tools | Annotate on the pin exactly as during capture — see [Annotation](/en/guide/features/annotation) |
-| Undo / Redo | Same behaviour as the capture overlay |
-| Copy | Copy the pin image to the clipboard (original, without annotations) |
-| QR code | Enter selection mode; drag a rectangle around a QR code to decode and copy its content |
-| Save annotated image | Save the **composited** image (including annotations) |
-| Zoom percentage | Current zoom level (0.3–4.0) |
-| Hide toolbar | Collapse the toolbar for a clean image; re-show from the context menu |
-| Close | Close the pin |
+| Nine annotation tools | Keep annotating on the pin, same as during capture — see [Annotation](/en/guide/features/annotation) |
+| Undo / Redo | Step back or forward through annotations |
+| Copy | Copy the original image (no annotations) to the clipboard |
+| QR code | Enter selection mode; box a QR code to decode and copy it |
+| Save annotated image | Save the **composited** image |
+| Zoom percentage | Current zoom; click to reset to 100% |
+| Hide toolbar / Close | Leave just the image / close the pin |
 
-## Pin context menu
-
-Right-click a pin:
-
-| Item | Purpose |
-| --- | --- |
-| Copy | Copy the pin image to the clipboard |
-| Save original | Save the **un-annotated** original screenshot |
-| Hide / Show toolbar | Collapse or expand the annotation toolbar |
-| Hide / Show shadow | Toggle the drop shadow |
-| Close | Close the pin |
-
-File names and locations follow the shared rules in [Saving & output](/en/guide/features/output).
-
-## Drag over text to copy it (no tool selected)
-
-With **no annotation tool active**, you can select text directly on the pin:
-
-1. Hover over text — the cursor becomes an **I-beam** and a light blue dashed hint appears;
-2. Drag across the text you want; each selected line is highlighted in translucent blue (**what lights up is exactly what will be recognised**);
-3. On release the text is recognised and **copied to the clipboard**, with a toast such as "Copied N lines: <recognised text preview>" — the short preview lets you confirm the result without pasting it anywhere.
-
-The selection is textual, like Word or a browser — a **contiguous run of text**, not the pixels under the pointer:
-
-| Case | Selected range |
-| --- | --- |
-| Single line | From the press point to the release point |
-| First line of a multi-line drag | Press point → end of line |
-| Middle lines | Whole lines |
-| Last line | Start of line → release point |
-
-- Dragging upwards or downwards gives the same result;
-- Pressing in blank space above or below snaps to the nearest line;
-- A drag shorter than 4 display pixels counts as a mis-click;
-- With an annotation tool active, the same spot draws an annotation instead;
-- Selecting again while recognition is running shows "Recognising, please wait…";
-- An empty result shows "No text recognised".
-
-Recognition caveats:
-
-- Recognition runs on the **original image**: text covered by mosaic / blur annotations is still recognised from underneath;
-- The result is an **approximate whole-word superset** of what you selected: a few extra characters may appear at either end; selection is exact only within a single line — a diagonal drag includes the full start/end of every line it crosses.
-
-## Closing a pin
-
-- The "Close" button on the toolbar;
-- "Close" in the context menu;
-- `Esc` or `Ctrl + W` (`Cmd + W` on macOS).
-
-While editing a text annotation, `Esc` only exits the editor — it will not close the pin.
+Right-clicking a pin also offers "Save original" (the clean screenshot), "Hide / Show toolbar", "Hide / Show shadow" and "Close". Where files go and how they are named: [Saving & output](/en/guide/features/output).
 
 :::tip
-Save annotated image → for showing the highlighted result; right-click "Save original" → for delivering the clean screenshot. One pin, two outputs.
+Use "Save annotated image" to show someone the marked-up result; right-click "Save original" for a clean copy. One pin, two outputs.
 :::
 
-:::tip
-Pins stay on top. If a pin blocks your work, lower its opacity with `Alt` + wheel instead of moving it around. Rotation / mirroring is not supported in the current version.
-:::
+## Drag over text to copy it
+
+With **no annotation tool active**, select text right on the image as you would on a web page:
+
+1. Hover over text — the cursor becomes an **I-beam** with a light-blue dashed hint;
+2. Drag across the words; each selected line lights up in translucent blue — **what lights up is what gets recognised**;
+3. Release: the text is recognised and **copied to the clipboard**. A toast at the bottom shows a short preview, so you can check the result without pasting.
+
+Selection is textual, like a browser: a contiguous run of text, not the pixels under the pointer. Within one line it runs from press point to release point; across lines the first line runs to its end, middle lines are taken whole, and the last line runs to the release point. Up or down gives the same result, and blank space above or below snaps to the nearest line.
+
+| What happens | What it means |
+| --- | --- |
+| Barely moved the mouse | Treated as a mis-click — drag further across the text |
+| Pressed blank space or used the right button | No text selection; it just moves the pin |
+| An annotation tool is active | The same spot draws an annotation |
+| Selected again while recognising | "Recognising, please wait…" |
+| Nothing recognised | "No text recognised" |
+| Nothing happens at all | Check the recognition environment under Settings → OCR self-check; moving the pin and everything else still works |
+
+Two caveats: recognition reads the **original image**, so text hidden under mosaic / blur is still readable; and the result is an **approximate whole run** that may include a few extra characters at either end — a single-line selection is the most precise.
+
+## Close a pin
+
+Click "Close" on the toolbar, choose "Close" from the context menu, or press `Esc` / `Ctrl + W` (`Cmd + W`). While typing a text annotation, `Esc` only exits the editor — it will not close the pin.

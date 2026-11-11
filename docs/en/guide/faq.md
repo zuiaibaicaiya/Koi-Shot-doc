@@ -1,213 +1,220 @@
 ---
-description: 'koiShot FAQ: automatic updates and upgrades, permissions, hotkey conflicts, annotation editing, OCR, screenshot translation, long capture, GIF and video recording, save locations and limitations.'
+description: 'Find the symptom you are seeing and follow the steps: launch, updates, permissions, hotkeys, annotations, pins, recording, recognition, translation and saved files.'
 ---
 
 # FAQ
 
+Find the **symptom you are seeing** below and follow the steps.
+
 ## Install & launch
 
-### No main window after launching?
+### There is no window after launching?
 
-koiShot has **no persistent main window** — it only lives in the tray / menu bar. Left-click the tray icon to capture; the right-click menu opens settings or quits.
+koiShot has no persistent main window — it only lives in the tray / menu bar. Left-click the icon to capture; the right-click menu opens settings or quits.
 
-koiShot never shows up in the Windows taskbar or the `Alt + Tab` list either (not even the settings window), and on macOS it stays out of the Dock and `⌘ + Tab`. Quit it from the tray menu rather than from the taskbar / Dock.
+On Windows, capture and pin windows never take a taskbar slot; **only the Settings window appears there**, and that button disappears when you close it. On macOS there is no Dock icon and no `⌘ + Tab` entry.
 
 ### What does `Alt + Q` do?
 
-It shows / hides the **capture overlay** (not a main window): press once to enter capture mode, again to cancel. The tray menu item is "Show/hide window".
+It shows / hides the capture overlay: press once to enter capture mode, again to cancel. The tray item is "Show/hide window".
 
 ### Hotkeys do nothing on Linux?
 
-Linux global hotkeys rely on X11 and **do not work on Wayland**. Switch to an X11 session at the login screen.
+Global hotkeys do not work in a Wayland session — switch to X11 at the login screen.
+
+### koiShot doesn't start at login on Linux / how do I turn autostart off?
+
+The `.deb` starts koiShot at login for all users, with no switch in settings. If it does not appear after re-login, check that it launches from the application menu, then that `/etc/xdg/autostart/koishot.desktop` still exists.
+
+To turn autostart off, delete that entry with admin rights: `sudo rm /etc/xdg/autostart/koishot.desktop`. See [Get Started](/en/guide/start/getting-started#start-at-login).
 
 ### Theme changes have no effect?
 
-The environment variable `KOISHOT_THEME=light|dark` **forces a theme** and takes priority over the setting in the app. If changing the theme does nothing, check whether that variable is set in your system environment; remove it and restart koiShot.
+Check whether the environment variable `KOISHOT_THEME` is set — it forces a theme and overrides the setting in the app. Remove it and restart koiShot.
 
 ### The app restarted after switching language?
 
-Expected: switching between Chinese and English restarts koiShot to apply the new language; settings and hotkeys are preserved.
+Expected. Switching between Chinese and English restarts koiShot to apply the new language; settings and hotkeys are preserved.
 
 ### Launching koiShot again opens no new window?
 
-koiShot is single-instance: launching it while running **starts a capture** instead of opening another window.
+It is single-instance: launching it while it is running **starts a capture** instead of opening another window.
 
 ## Updates & Upgrades
 
-### How do I know a new version is out, and do I have to confirm?
+### Do I have to check for updates or confirm anything?
 
-You don't. About 6 seconds after launch, koiShot checks the latest stable GitHub release (no repeat within 24 hours of a successful check). If a newer version is found, a tray balloon says it is downloading in the background; the installer is fetched in parallel chunks with resume support and verified with SHA-256. **There is no confirmation step and no update switch in settings** — new versions are installed as soon as they are found. See [Settings & Tray](/en/guide/settings) for the full flow.
+No. koiShot checks in the background at startup and downloads and installs newer versions automatically — no confirmation dialog, no switch in settings. Tray notifications tell you when a download is in progress; the full flow is in [Settings & Tray](/en/guide/settings).
 
 ### Can I turn automatic updates off?
 
-Not in the current version — there is no switch and no "notify only" option. Failed checks (offline, rate limits) are silent; only download / verification / install failures are reported, with a "Retry" and an "Open release page" escape hatch. Pre-releases and drafts are ignored.
+Not in this version — there is no switch and no "notify only" option. Offline checks are silent; only download / install failures are reported.
 
 ### Windows restarts the app automatically — what if I'm using it?
 
-After the download is verified, koiShot waits for 2 continuous minutes without keyboard or mouse input, then quits, installs silently and relaunches the new version automatically — no installer wizard to run. It stays fully usable while waiting for idle time; updates are always full installers (~60 MB), not deltas. Save any work in progress before the install starts.
+Installation waits until you have been **away from the keyboard and mouse for two continuous minutes**, then koiShot reopens. It stays fully usable while waiting; save any work in progress before it starts.
 
 ### Does macOS / Linux finish the install too?
 
-The package is downloaded automatically and handed to the system's default handler, but you finish it in the system wizard: drag koiShot into Applications on macOS, or complete the `.deb` install with administrator rights on Linux. The app itself keeps running; silent installation is Windows-only for now. On some Linux desktops tray balloons are not clickable — use Settings → About for the status instead.
+The package is downloaded and handed to the system, but you finish it in the system dialog: drag koiShot into Applications on macOS, or complete the `.deb` install with administrator rights on Linux. The app keeps running.
 
 ### The download was interrupted / "Update failed"?
 
-Progress is not lost on network loss or when you quit the app: the next launch, or the 10-minute idle check, resumes from the chunks already downloaded. Click "Retry" on the About status line to resume immediately; if GitHub is unreachable, "Open release page" lets you download the installer and upgrade manually (supported on all three platforms, see [Get Started](/en/guide/start/getting-started)).
+Progress is not lost when you lose the connection or quit the app — the next launch continues. To continue right away, click "Retry" under Settings → About; if GitHub is unreachable, "Open release page" lets you download and install manually.
 
 ### Can I check right now or upgrade manually?
 
-Click "Check for updates / Check again" in Settings → About — it bypasses the once-a-day throttle. Running a newer installer over the existing one also works on every platform and keeps your settings; it is a fallback to automatic updates, not something you need to do routinely.
+Click "Check for updates / Check again" in Settings → About. Running a newer installer over the existing one also works on every platform and keeps your settings.
 
 ## Permissions (macOS)
 
 ### Screenshots are completely black?
 
-Grant Screen Recording: System Settings → Privacy & Security → Screen Recording, enable koiShot, then quit and relaunch. **Without permission captures are black and no error is shown.**
+Grant Screen Recording: System Settings → Privacy & Security → Screen Recording, enable koiShot, then quit and relaunch. Without permission captures are black with no error shown.
 
 ### Click-to-select a UI element does nothing?
 
-That needs **Accessibility**: System Settings → Privacy & Security → Accessibility, enable koiShot. Without it the highlight silently falls back to plain selection; everything else keeps working.
+That needs **Accessibility**: enable koiShot under System Settings → Privacy & Security → Accessibility. Without it, hovering silently falls back to a plain selection; everything else keeps working.
 
 ### A recording has no audio?
 
 1. Check "Record microphone audio" under Settings → General → Recording (MP4) (on by default);
-2. Grant koiShot microphone access in System Settings → Privacy & Security → Microphone;
-3. Relaunch koiShot after changing permissions.
+2. macOS asks for the microphone the first time you record with audio — allow it, and relaunch koiShot after changing permissions.
 
-If the microphone is unavailable, koiShot **records silently** and tells you afterwards — video is never blocked by audio.
+If the microphone is unavailable, koiShot records silently — video is never blocked by audio.
 
 ## Hotkeys
 
 ### A shortcut does nothing?
 
-1. Make sure koiShot is running (tray icon present);
-2. Check for conflicts with other apps' global hotkeys — try another combination;
-3. Rebind it under Settings → Hotkeys and confirm registration;
-4. On macOS, `F1` is a system key by default — enable "Use F1, F2, etc. keys as standard function keys" or use `Ctrl` / `Alt` / `Shift`.
+1. Make sure the tray icon is there, so koiShot is running;
+2. Try another combination — it may clash with another app's global hotkey;
+3. Rebind it under Settings → Hotkeys and confirm;
+4. On macOS, `F1` is a system key by default: enable "Use F1, F2, etc. keys as standard function keys" in System Settings → Keyboard, or use a `Ctrl` / `Alt` / `Shift` combination.
 
-On Windows, global hotkeys are exclusive: if another app already owns the combination (graphics driver panels often grab `Alt + R`), rebinding to it fails immediately with a registration error — pick another combination. The same applies to default hotkeys that were already taken when koiShot started.
+On Windows, if another app has taken a combination exclusively (graphics panels often grab `Alt + R`), rebinding to it fails with a registration error — pick another.
 
 ## Capture & annotation
 
 ### I can't edit a shape I drew earlier?
 
-Annotations follow the "only the newest is editable" rule: drawing another shape, switching tools or undo/redo **freezes** older ones — pressing them behaves like pressing empty canvas. Undo and redraw, or adjust while the shape is still selected. See [Editing existing annotations](/en/guide/features/annotation#editing-existing-annotations).
+Only the **newest** annotation is editable. Drawing another shape, switching tools or undo/redo freezes the older ones — pressing them behaves like pressing empty canvas. Undo and redraw, or adjust the shape while it is still selected. See [Can I change what I just drew?](/en/guide/features/annotation#can-i-change-what-i-just-drew).
 
 ### Where did the property panel go?
 
-Pen / Rectangle / Ellipse / Arrow / Highlighter / Text / Number keep their properties in the **popup behind the chevron** (or click the active main button again). The small panel below the toolbar is only used by Mosaic and Blur.
+Pen / Rectangle / Ellipse / Arrow / Highlighter / Text / Number keep their properties in the **popup behind the chevron** (or click the active main button again). The small panel below the toolbar is only used by Mosaic and Blur; it steps aside while a popup is open and returns when the popup closes.
 
 ### I changed annotation defaults but this capture looks the same?
 
-Defaults apply **when annotation starts** — a new capture or re-selecting the tool. The current session keeps the values you picked during it.
+Defaults apply **when annotation starts** — a new capture, or re-selecting the tool. The current session keeps the values you picked during it.
 
 ### Does switching tools while typing drop my text?
 
-No. Everything except `Esc` commits: switching tools, clicking elsewhere on the canvas, clicking a swatch.
+No. Everything except `Esc` commits: switching tools, clicking elsewhere, clicking a swatch.
 
 ## Pin
 
 ### A pin blocks my view?
 
-Lower its opacity with `Alt` + wheel, or hide the toolbar from the toolbar button / context menu.
+Lower its opacity with `Alt` + wheel, or click "Hide toolbar" to leave just the image.
 
 ### A pin disappeared unexpectedly?
 
-While a pin has focus, `Esc` (or `Ctrl/⌘ + W`) closes it by design; during text editing `Esc` only exits the editor. Just pin again if it was accidental.
+With a pin focused, `Esc` (or `Ctrl/⌘ + W`) closes it by design; while typing text, `Esc` only exits the editor. Just pin again if it was accidental.
 
 ### Can pins be rotated or mirrored?
 
-Not in the current version — only zoom and opacity.
+Not in this version — only zoom and opacity.
 
 ## Long screenshot / GIF / video
 
 ### "No valid scrolling detected"?
 
-Bring the target window to the foreground (click the browser or document), click **Start** on the control bar, then scroll steadily. The message also appears when the page cannot scroll or the region already covers everything.
+Click the target window (browser or document) to bring it forward, click **Start**, then scroll steadily. The message also appears when the page cannot scroll or the selection already covers everything; very small scrolls are not stitched immediately, so keep going.
 
 ### The long screenshot is misaligned?
 
-Scroll steadily and avoid fast flings; animations, videos or parallax effects can misalign — capture in segments. The result is saved and copied automatically, so you can still annotate it.
+Scroll steadily, avoid fast flings; animations, videos and parallax effects can misalign — capture in segments. The result is saved and copied automatically, so you can still annotate it.
 
-### Changed my mind in the middle of a long capture?
+### Changed my mind mid-way through a long capture?
 
-Click **Cancel** (✕) on the control bar: sampled frames are discarded, with no file and no clipboard entry. `Esc` while capturing behaves like **Finish** and produces an image — use Cancel when you do not want any output.
+Click **Cancel** (✕) on the control bar: everything captured is discarded, no image and no clipboard entry. `Esc` behaves like **Finish** and produces an image.
 
 ### GIF recording stopped by itself?
 
-GIF has a frame budget (fps × 30, about 30 s) and a cumulative total-pixel budget (~320 million pixels — larger regions reach it sooner); hitting either stops and exports what was captured. Use **video recording** for longer clips.
+A GIF runs about 30 seconds at most, and less for a large region. At the limit it stops and exports what it has. Use video for longer clips.
 
 ### Video recording stopped at 10 minutes?
 
-The maximum clip length is 10 minutes (recording time only — paused time is not counted); recording stops and exports automatically.
+10 minutes per clip (paused time not counted) is the maximum; it stops and exports automatically.
 
 ### I clicked Start but recording stays in the ready state?
 
-If the encoder does not enter the recording state within about 5 seconds, koiShot reports "Video encoder start timed out" and cleans up:
+If it does not start within about 5 seconds, koiShot reports an encoder timeout. Try:
 
-1. Lower the frame rate to 30 fps or less under Settings → General → Recording (MP4), or disable the microphone and retry;
+1. Lower the frame rate to 30 fps or less under Settings → General → Recording (MP4), or turn the microphone off;
 2. Close apps that occupy the GPU / encoder (other recorders, streaming tools) and update your graphics driver;
-3. If it still fails, quit and relaunch koiShot;
-4. **Linux only**: if the timeout (or a 0-byte file) appears a few seconds after Start, the `.deb` is most likely an older build that did not bundle the Qt Multimedia / FFmpeg recording backend — reinstall the current package from the release page. No system Qt6 or system ffmpeg is needed.
+3. Quit and relaunch koiShot;
+4. **Linux**: older packages may lack the recording components — reinstall the current `.deb` from the release page. No extra system software is needed.
 
 ### "The previous video is still exporting"?
 
-Stopping a recording writes the H.264 file, so long clips and large regions take longer (often several seconds, longer for 10-minute clips). A new recording is refused until it finishes; if export takes more than about 30 seconds, koiShot force-finishes the session — a formed file is reported as complete, otherwise you get an error.
+After stopping, the video has to be written to disk — longer clips and larger regions take longer. Wait for the message to disappear before starting a new recording.
 
 ### Screenshots or recordings look washed out on an HDR monitor?
 
-On Windows, koiShot detects HDR monitors and tone-maps screenshots, GIFs and recordings, producing standard SDR output (highlights no longer blow out). If it still looks washed out, check the system HDR setting and your graphics driver, or compare against another region / app. Very old systems that cannot provide FP16 capture fall back to 8-bit and may still look slightly washed out.
+On Windows, koiShot handles HDR so highlights no longer blow out. If it still looks washed out, check the system HDR switch and your graphics driver, or compare another region / app. On older machines video may still look washed out, but recording is not interrupted. Changing the system HDR switch mid-recording can leave this clip blank — record it once more.
 
 ### GIF or video?
 
-GIF for a few seconds that loops in chat or tickets; video when you need audio, more than 30 seconds, or higher quality.
+GIF for a few seconds that loops in chat or tickets; video when you need audio, more than 30 seconds, or better quality.
 
 ## OCR & tables
 
-### OCR or table recognition isn't working?
+### Recognition isn't working?
 
-The engine and models ship with the installer. First run Settings → General → OCR self-check → "Run self-check"; if it reports a problem, open the models folder to verify the files, or reinstall.
+The engine and models ship with the installer. Run Settings → General → OCR self-check → "Run self-check" first; if it reports a problem, open the models folder to check the files, or reinstall.
 
-### OCR feels slow or uses a lot of memory?
+### Recognition feels slow or uses a lot of memory?
 
-The engine preloads when a capture starts, so a few hundred MB (~185 MB) staying resident **is not a memory leak**; a temporary spike during recognition is normal too. If it still feels slow:
+Models are loaded in advance when a capture opens, so some resident memory use **is normal, not a leak**; a temporary spike during recognition is normal too. If it still feels wrong:
 
-1. Quit koiShot completely (tray → Quit) and relaunch;
+1. Quit koiShot completely from the tray and reopen it;
 2. Confirm the self-check reports a healthy environment;
-3. To save memory, set the environment variable `KOISHOT_OCR_PRELOAD=0` before launching — models then load at first recognition (slightly slower first use);
-4. If it persists, report it (see below) with the self-check output.
+3. To save that memory, set the environment variable `KOISHOT_OCR_PRELOAD=0` before launching — models then load at first use (slightly slower the first time);
+4. If it persists, see "Still stuck?" below and include the self-check result.
 
 ### Table rows or columns are wrong?
 
 - Select tightly around the table;
-- Best results on regular tables with clear rules; verify complex or skewed tables and fix them with Merge / Split;
-- Exports use the grid as currently shown, so fix first, export afterwards.
+- Regular tables with clear rules work best; verify complex or tilted tables and fix them with Merge / Split;
+- Exports use the grid as it currently looks, so fix first, export afterwards.
 
 ## Screenshot translation
 
-### Translate says "Please fill in the Alibaba Cloud AccessKey ID and AccessKey Secret first"?
+### Translate says "Please fill in the AccessKey ID and AccessKey Secret first"?
 
-The machine translation step calls Alibaba Cloud, so you need your own credentials: go to Settings → General → Translation settings, enter the AccessKey ID / Secret, click **Save**, then **Test translation** — the test sends a real request and reports success or failure in the card. Changes apply immediately, no restart.
+Translation needs your own credentials: Settings → General → Translation settings, enter the AccessKey ID / Secret, click **Save**, then **Test translation**. Changes apply immediately.
 
 ### Translation failed?
 
-The status line on the right shows the reason returned by the service. The usual suspects:
+The status line on the right gives the reason. The usual ones:
 
-1. **Text too long**: the whole recognised text is sent in one request and anything above the `TranslateGeneral` limit (about 5000 characters) is rejected — translate the screen in a few smaller selections;
-2. **Invalid credentials / service not enabled / account in arrears**: make sure the AccessKey belongs to an account with machine translation enabled and verify with "Test translation";
-3. **No network**: failures are not retried automatically; switch language or press Translate again.
+1. **Text too long**: about 5000 characters per request — translate the screen in a few smaller selections;
+2. **Invalid credentials / service not enabled / account in arrears**: verify with "Test translation";
+3. **No network**: failures are not retried automatically — switch language or click Translate again.
 
 ### Does translation upload my image?
 
-No. Recognition (OCR) always runs locally and **images never leave your machine**; only the recognised text is sent to Alibaba Cloud machine translation. Keep that in mind for sensitive content.
+No. Recognition runs locally and **images never leave your machine**; only the recognised text is sent for translation. Keep that in mind for sensitive content.
 
 ### The translation looks wrong?
 
-Most "bad translations" start as bad recognition — check the text in the left image first, then select a cleaner region and retry. Vertical text, decorative fonts, low contrast and occluded text recognise poorly and translate just as poorly. The right pane shows only the translation; use the OCR button in a second window when you need the original side by side.
+Most bad translations start as bad recognition — check the text in the left image, then select a cleaner region and retry. Vertical text, decorative fonts, low contrast and occluded text are the usual culprits. The right pane shows only the translation; open an OCR result window for the original.
 
-### Do I need a new capture after switching the target language?
+### Do I need a new capture after switching target language?
 
-No. Change the "Translate to" dropdown at the bottom of the result window and the same source text is translated again into the new language — no need to go back to the capture overlay.
+No. Change the "Translate to" dropdown and the same source text is translated again.
 
 ## Saved files
 
@@ -215,32 +222,30 @@ No. Change the "Translate to" dropdown at the bottom of the result window and th
 
 1. Settings → General → Save path (defaults to a `koiShot` folder under Pictures);
 2. Files are named `name_date_time` — captures `koiShot_…png`, long screenshots `long_…`, GIFs `gif_…`, videos `koiShot_….mp4`, tables `table_…`;
-3. Enable "Open folder after save" to jump there automatically. See [Saving & output](/en/guide/features/output).
+3. Enable "Open folder after save" to have the folder pop open. See [Saving & output](/en/guide/features/output).
 
 ### Where does the table export go?
 
-Straight into the save folder (no native save dialog) and the folder is opened; the name looks like `table_20261002_153045.xlsx`.
+Straight into the save folder (no save dialog), named like `table_20261002_153045.xlsx`. With "Open folder after save" on, that folder also opens.
 
-## Limitations
+## Current limits
 
-| Limitation | Notes |
+| Feature | Status |
 | --- | --- |
-| macOS permissions | Screen Recording required; Accessibility for UI highlight; Microphone for audio |
-| macOS recording version | Video recording (MP4) needs ScreenCaptureKit — macOS 12.3+ |
-| Linux Wayland | No global hotkeys; UI-element highlight not implemented; best experience on Windows |
-| Pin transforms | No rotation / mirroring |
-| Annotation editing | Only the currently selected (newest) shape is editable |
-| QR codes | QR family only — 1D barcodes and DataMatrix / Aztec / PDF417 are not supported |
-| GIF duration | About 30 s per recording (fps × 30 frames) or ~320 million cumulative pixels, whichever comes first |
-| GIF content | On Windows, semi-transparent windows may be missing from the GIF (capture performance trade-off) |
-| Video duration | Up to 10 minutes per clip (paused time not counted) |
-| Video frame rate | Up to 60 fps; the actual rate depends on machine performance and the encoder |
-| Linux video recording | No native capture yet — falls back to compatible capture (~10 fps); the encoding backend ships with the `.deb`, no system Qt6 / ffmpeg needed |
-| Long screenshots | Animations / videos may misalign; scroll steadily |
-| Table recognition | Text, merges and size only — no fonts, exact colours or formula semantics; no diagonal headers, nested tables or vertical text; at least 2×2 cells required |
-| Screenshot translation | Needs your own Alibaba Cloud AccessKey and network access (recognition stays local, images are not uploaded); one request per capture with a ~5000 character limit; only the translation is shown |
-| Automatic updates | No switch, no confirmation; silent install is Windows-only, macOS / Linux finish the downloaded package in the system wizard; pre-releases / drafts are ignored |
-| AI features | Image editing and visual Q&A are currently hidden |
+| macOS permissions | Screen Recording and Accessibility must be granted; microphone asked for when needed |
+| macOS recording | Needs macOS 12.3+ |
+| Linux Wayland | No global hotkeys, no UI-element highlight; the fullest experience is on Windows |
+| Pins | No rotation / mirroring |
+| Annotation | Only the newest shape is editable |
+| QR codes | QR family only — no 1D barcodes or DataMatrix |
+| GIF | About 30 seconds per recording, less for large regions |
+| Video | Up to 10 minutes and 60 fps; smoothness depends on your machine |
+| Linux video | May run at about 10 fps; recording components ship with the package |
+| Long screenshots | Animations / videos can misalign |
+| Table recognition | No fonts, exact colours or formulas; no diagonal headers, nested tables or vertical text; at least 2×2 cells |
+| Translation | Needs your own Alibaba Cloud AccessKey and network; about 5000 characters per request; translation only |
+| Automatic updates | No switch, no confirmation; Windows finishes automatically, macOS / Linux need the system dialog |
+| AI features | Image editing and visual Q&A are not available yet — nothing to click in the interface |
 
 ## Still stuck?
 

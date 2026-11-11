@@ -1,148 +1,151 @@
 ---
-description: 'koiShot annotation guide: pen, rectangle, ellipse, arrow, highlighter, mosaic, blur, text and numbered badges; property popups, editing rules and defaults.'
+description: 'Highlight, redact, label and number anything on a screenshot: how the nine annotation tools work, how to edit what you drew, and where defaults live.'
 ---
 
 # Annotation
 
-## Nine tools
+After selecting a region, the nine tools on the left of the toolbar let you highlight the important part, hide sensitive details, add a note or number the steps. This page covers **how to draw** with each one and **what you can still change afterwards**.
 
-After selecting a region, the left part of the toolbar contains nine tools, in this order:
+## Picking a tool
 
 **Pen → Rectangle → Ellipse → Arrow → Highlighter → Mosaic → Blur → Text → Number**
 
-Seven of them have a **small chevron** on their right:
+- Freehand circles: Pen; box something: Rectangle / Ellipse; point at something: Arrow;
+- Mark a line: Highlighter; hide a phone number or avatar: Mosaic / Blur;
+- Add a note: Text; label "step 1, step 2": Number.
+
+Seven of them have a **small chevron** on the right:
 
 - Click the **main button** to switch to that tool and start drawing;
-- Click the **chevron** to open its property popup (does not switch tools);
-- Clicking the **already active** main button again toggles the popup (no need to aim at the chevron).
+- Click the **chevron** to open its property popup without switching tools;
+- Click the **active main button** again to toggle the popup — no need to aim at the chevron.
 
-**Mosaic / Blur** have no popup; they use a small panel below the toolbar with a "Thickness" row only.
+Mosaic / Blur have no popup; they show a row of four line previews below the toolbar. Click one to choose the brush size.
 
-## Property popup
+## What the popup lets you change
 
-| Row | Content | Notes |
-| --- | --- | --- |
-| Colour | 9 preset swatches | Click to switch; hover shows the hex value |
-| Thickness | Fine / Medium / Thick / Extra thick | Shown as line previews with tooltips like "Medium (4px)"; for Text this row is the **font size**, for Mosaic/Blur the **brush size** |
-| Opacity | 5% – 100% slider | Drag or wheel; a percentage tooltip appears above the handle while dragging |
+Open a chevron and you get up to three rows of settings; there are no row labels — the icons speak for themselves:
 
-- The popup does not steal mouse input: you can keep drawing while it is open, and it stays open;
-- Picking anything in the popup (swatch, thickness, slider, toggle) also **activates that tool**;
-- Close it with the chevron / main button again, or `Esc`.
+| What you want | What to do |
+| --- | --- |
+| Colour | 9 preset swatches; click to switch, the active one is highlighted, hover shows the hex value |
+| Thickness | Four line previews (Fine / Medium / Thick / Extra thick) with tooltips like "Medium (4px)"; for Text this row is the **font size** |
+| Opacity | 5%–100% slider, drag or wheel; a percentage readout appears above the handle |
+
+The arrow popup adds a grid of **8 styles** at the top, and the number popup adds a number row (value box / − / + / auto-increment) at the bottom.
+
+- The popup does not steal the mouse: keep drawing while it is open, and it stays open after you pick something;
+- Picking anything in the popup also **activates that tool**, so you can draw immediately;
+- **Only one popup is open at a time**; the Mosaic / Blur row steps aside while a popup is open and returns when it closes;
+- Close it with the chevron / main button again or `Esc`. It also closes when you start a new selection, switch to GIF recording or drag a pin window. **Drawing on the canvas does not close it** — adjust halfway, draw, then come back.
 
 :::tip
-The colour and thickness values are the same ones used by Settings → Annotation. Changes made during a capture session affect only that session and are not written back to the defaults.
+The colours and thickness steps are the same ones in Settings → Annotation. Changes in this capture affect only this image, not your defaults (see [Annotation defaults](#annotation-defaults)).
 :::
 
-## Tools
+## How to use each tool
 
 ### Pen
 
-Freehand drawing for circling irregular areas or handwriting notes. Each stroke is a separate undo step. Strokes **cannot be selected afterwards** — undo and redraw instead.
+Drag with the left button; each stroke is one undo step. A stroke **cannot be selected later** — undo with `Ctrl + Z` and redraw.
 
 ### Rectangle / Ellipse
 
-1. Pick the tool, then drag; hold `Shift` while drawing to constrain to a **square / circle** (toggles live);
-2. On release the shape **enters the selected state** with eight handles.
+Drag to draw; hold `Shift` for a **square / circle** (pressing or releasing mid-drag works immediately). On release the shape is selected with eight handles:
 
-| Action | Result |
+| What you want | What to do |
 | --- | --- |
-| Drag a corner handle | Scale from the opposite corner (flipping allowed) |
-| Drag an edge handle | Move that edge only |
-| Drag inside the shape | Move it |
-| Wheel over the shape | Adjust border thickness (±1, 1–40) |
+| Scale or flip | Drag a corner handle; hold `Shift` to keep it square / circular |
+| Move one edge | Drag a middle handle (`Shift` has no effect here) |
+| Move the whole shape | Drag inside it |
+| Change border thickness | Wheel over it (1–40) |
 
-Both are outline-only shapes. Use the highlighter if you want to tint the content instead.
+Both are outline-only. Use the highlighter if you want to tint what is underneath.
 
 ### Arrow
 
-1. Pick Arrow; to change style, open the popup and choose from the **8 style previews**;
-2. Drag from tail to head;
-3. On release three handles appear: **start / middle / end**.
+Click Arrow and drag from tail to head. For another style, pick one of the 8 previews at the top of its popup. On release you get three handles — start / middle / end:
 
-| Action | Result |
+| What you want | What to do |
 | --- | --- |
-| Drag start or end handle | Change the tail or the direction |
-| Drag the middle handle | Bend the arrow into a quadratic Bézier curve |
-| Drag the shaft / head | Move the whole arrow |
-| Wheel over the arrow | Adjust thickness (±1, 1–40) |
+| Change the tail or direction | Drag the start or end handle |
+| Bend the arrow | Drag the middle handle — it bends the way you pull |
+| Move the whole arrow | Drag the shaft or head |
+| Change thickness | Wheel over it (1–40) |
 
-**Arrow + text**: the arrow popup has a text-icon toggle. When enabled, finishing an arrow (with a long enough drag) opens an inline text box **at the arrow's start point**. The text and arrow are then linked:
+**Arrow with text**: the text-icon toggle at the bottom-right of the arrow popup opens an input box **at the arrow's start** once you finish drawing. The text and arrow are then linked:
 
-- Dragging either moves the pair; the text stays at the tail side;
-- Dragging the linked text rotates the whole arrow around its tip (works with both the text and arrow tools);
-- Double-click the linked text to edit it;
-- Undo / redo handles both together;
+- Dragging either moves the pair;
+- Dragging the text rotates the whole arrow around its tip (only while that arrow is still selected);
+- Double-click the text to edit it;
+- Undo / redo handle both together, so you never end up with text and no arrow;
 - The toggle resets to off at the start of every capture.
 
 ### Highlighter
 
-Semi-transparent highlighting that does not hide the content underneath. The stroke is drawn at twice the configured thickness; colour, thickness and opacity are adjustable.
+Semi-transparent strokes that do not hide the content underneath; the line is twice the chosen thickness, with adjustable colour, thickness and opacity.
 
 ### Mosaic / Blur
 
-For hiding phone numbers, avatars, IDs and similar:
+1. Pick the tool and click one of the line previews below the toolbar (that is the brush size);
+2. Drag over the area — it is pixelated / blurred immediately.
 
-1. Pick the tool;
-2. Choose "Thickness" (brush size) in the panel below the toolbar;
-3. Paint over the area — it is pixelated / blurred immediately.
-
-Only thickness is adjustable. Mosaic is blocky and hides better; blur is softer and keeps the layout. Painting cannot be partially reverted — undo removes the whole stroke.
+Only the brush size is adjustable, no colour or opacity. Mosaic is blocky and hides more; Blur is softer and less obvious. Painting **cannot be partly reverted** — undo removes the whole stroke.
 
 ### Text
 
 1. Pick Text and set colour / font size / opacity in the popup;
-2. **Click** the target position to open an input box and type;
-3. `Enter` inserts a line break, `Ctrl + Enter` (`Cmd + Enter` on macOS) commits;
-4. With the text tool: **click** an existing text to select it (clicking a swatch then recolours it), **double-click** to edit it;
-5. While typing, the **wheel** adjusts the font size live (3–40, finer than the four popup steps).
+2. **Click** where you want the text, then type;
+3. `Enter` adds a line, `Ctrl + Enter` (`Cmd + Enter` on macOS) commits;
+4. For text already placed: click to select it (then a swatch recolours it), double-click to edit it;
+5. While typing, the wheel fine-tunes the font size (3–40, finer than the four popup steps).
 
-| Action | Result |
+| What you do | What happens |
 | --- | --- |
 | `Ctrl + Enter` | Commit |
-| Click elsewhere / another text | Commit the current one, then continue |
+| Click empty canvas inside the selection | Commit, then start a new text at that point |
+| Click outside the selection | Commit only, no new input box |
+| Click another text | Commit; single click selects it (recolour / drag), double-click edits it |
 | Switch tools | Commit — nothing is lost |
 | Click a swatch while typing | Only recolours this text; typing continues |
-| Clear the text, then commit | Deletes this text (recoverable via redo) |
-| `Esc` | Discard this edit (restores the original when editing; after clearing, `Esc` restores rather than deletes) |
+| Clear the text, then commit | Deletes it (recoverable with redo) |
+| `Esc` | Discard this edit; when editing, restores the original |
 
 ### Number
 
-1. Pick Number; set the start value or turn auto-increment off in the popup ("Start value" 1–999; the current-number box accepts 1–9999);
-2. **Press and drag** to place a round badge at the press point with an arrow pointing to the release point; **click without dragging** to place a plain badge;
-3. Values auto-increment (1, 2, 3…);
-4. In the selected state, drag the **tip handle** to change direction, or drag the **badge** to move the whole mark;
-5. Wheel over the selected number: over the **badge** it changes the badge size, over the **shaft/head** it changes the arrow thickness.
+1. Pick Number; set the **current number** with −/+ or by typing (1–9999) and turn auto-increment off if you like. Where each capture starts (1–999) is set in Settings → Annotation;
+2. **Press and drag** to place a round badge at the press point with an arrow pointing to the release point; **click without dragging** for a plain badge;
+3. Each placement increments (1, 2, 3…);
+4. Drag the **tip handle** to change direction, or the **badge** to move it; a badge placed with a plain click has no tip;
+5. Wheel over the selected number: over the badge it changes badge size (2–40), over the arrow its thickness (1–40) — independently.
 
-- Numbering restarts at the configured start value for every capture;
-- Undo / redo move the counter backwards / forwards without skipping;
-- With auto-increment off, every placement uses the same number.
+Numbering restarts every capture; undo / redo moves the counter without skipping; with auto-increment off, every placement uses the same number.
 
-## Editing existing annotations
+## Can I change what I just drew?
 
-Annotations follow a "**only the newest one is editable**" rule (freezing):
+Simple rule: **only the newest annotation stays editable**.
 
-| State | Behaviour |
+| State | What you can do |
 | --- | --- |
 | Just drawn, still selected | Drag handles to scale, drag the body to move, wheel to change thickness |
-| After drawing a new shape / switching tools / undo-redo | Older shapes are **frozen**; pressing them is like pressing empty canvas and starts a new stroke |
+| After another shape, a tool switch, or undo / redo | Older shapes are frozen — pressing them is like pressing empty canvas and starts a new stroke |
 
-So to change an old annotation, undo and redraw; to adjust the current one, use its handles.
+So undo and redraw to fix an old annotation; adjust the current one while it is still selected.
 
-**Bounds**: annotation bodies (except mosaic / blur) are clamped inside the selected region, so exported images are never cut off. Handles and outlines are drawn *outside* the stroke and may extend beyond the selection on screen, but never appear in the exported image. Mosaic / blur brush tips land where you paint — near an edge the effect may exceed the region and gets cropped naturally on export.
+Annotations stay inside the selected region, so exports are never cut off; handles and outlines may show outside on screen but **never appear in the exported image**. Mosaic / Blur painted near an edge can spill slightly and is cropped naturally on export.
 
 ## Undo & redo
 
-| Shortcut | Action |
+| Key | Action |
 | --- | --- |
 | `Ctrl + Z` (`Cmd + Z`) | Undo |
-| `Ctrl + Shift + Z` (`Cmd + Shift + Z`) | Redo |
+| `Ctrl + Shift + Z` (`Ctrl + Y` also works on Windows) | Redo |
 
-The toolbar buttons behave identically and are disabled when there is nothing to undo or redo.
+The two toolbar buttons do the same and turn grey when there is nothing to undo / redo.
 
 ## Annotation defaults
 
-Default colour / thickness / opacity / arrow style / number start value and auto-increment for every tool live in **Settings → Annotation**, shared by the capture overlay and pin windows.
+Default colour / thickness / opacity / arrow style / number start value and auto-increment for every tool live in **Settings → Annotation**, shared by captures and pins.
 
 | Tool | Colour | Thickness | Opacity | Other |
 | --- | --- | --- | --- | --- |
@@ -157,5 +160,5 @@ Default colour / thickness / opacity / arrow style / number start value and auto
 | Number | `#F43F5E` | Thick (6) | 100% | Start 1, auto-increment on |
 
 - Thickness has exactly four steps: Fine 2 / Medium 4 / Thick 6 / Extra thick 10;
-- Defaults are applied **when annotation starts** (new capture, or when a tool is (re)selected); session tweaks are not saved;
+- Defaults apply **when annotation starts**; tweaks during a capture are not saved;
 - "Restore defaults" on the Annotation settings page resets everything.

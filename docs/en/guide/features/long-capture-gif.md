@@ -1,118 +1,108 @@
 ---
-description: 'koiShot long screenshot, GIF recording and MP4 video recording: scroll stitching, control and recording bars, cancel vs finish, duration and size limits, frame rate settings.'
+description: 'Long screenshots for pages that do not fit, GIFs for short demos, MP4 for audio or longer clips: how to use all three.'
 ---
 
 # Long Screenshot, GIF & Recording
 
+Use this page when one screen is not enough, or when you need to show someone how something works. Pick one first:
+
+| What you want | Use |
+| --- | --- |
+| Save a whole web page or chat log as one image | **Long screenshot** |
+| Record a few seconds to drop into chat or a ticket | **GIF** (loops automatically, small file) |
+| Audio, narration, or more than 30 seconds | **Video (MP4)** |
+
+All three start the same way: select a region, click a toolbar button, then click Finish — the result is saved automatically.
+
 ## Long screenshot
 
-When a page does not fit on one screen, capture it by scrolling and let koiShot stitch the frames.
+### How to use it
 
-### Steps
-
-1. Press `F1` and select the starting region (the stitched image keeps this width);
-2. Click "Long capture" on the toolbar — a **control bar** and a **"Long screenshot preview"** window appear; the bar sits at the selection's bottom-right (flipping above when there is no room) and the preview opens to the right of the selection (falling back to the left side when there is no room). The bar reads "Click Start, then scroll to stitch automatically";
-3. Click **Start** (▶, tooltip "Start long capture"), then **scroll the original content** (wheel, scrollbar or trackpad); koiShot detects scrolling and appends frames;
-4. The bar and preview show the captured frame count and the stitched result live;
-5. Click **Finish** (✓, tooltip "Finish long capture") when done: the image is **saved as `long_date_time.png` and copied to the clipboard** (see [Saving & output](/en/guide/features/output)).
+1. Press `F1` and select the starting region (its width becomes the width of the long image);
+2. Click **Long capture** on the toolbar. A **control bar** appears near the selection (bottom-right, flipping above if needed) and a **preview window** opens, usually to the right;
+3. Click **Start** (▶) on the bar, then **scroll the page** (wheel, scrollbar or trackpad). koiShot stitches as you scroll;
+4. The preview shows what has been stitched so far;
+5. Click **Finish** (✓): the image is saved as `long_date_time.png` and **copied to the clipboard** — paste it anywhere (see [Saving & output](/en/guide/features/output)).
 
 :::tip
-**Before** clicking Start, the mouse wheel over the selection is intercepted by the selection frame. Scroll the page into position first, then move the cursor outside the selection to scroll; after Start the wheel scrolls normally. In the ready state you can also **drag inside the selection** to move the capture region as a whole (move only, no resize).
+Before Start, the wheel is intercepted inside the selection to prevent accidents: scroll the page into position first, then move the cursor outside the selection. After Start, scrolling works normally. In the ready state you can drag inside the selection to move the capture area.
 :::
 
-The control bar has three **icon-only buttons** — identify them by their tooltips: Start ▶ / Finish ✓ / Cancel ✕. Start and Finish are mutually exclusive by state; Cancel is always available.
+The bar has three icon-only buttons — hover to see their names: Start ▶ / Finish ✓ / Cancel ✕.
 
-- Changed your mind before starting: click **Cancel** (✕) or press `Esc`;
-- **Changed your mind while capturing**: click **Cancel** — sampled frames are discarded, no image and no clipboard entry. This is the only "produces nothing" exit;
-- Pressing `Esc` while capturing behaves like **Finish**: it stops and produces the image from what has been stitched so far;
-- If no scrolling is detected, clicking Finish reports "No valid scrolling detected" — click the target window first (e.g. the browser) and retry.
+| What happens | What to do |
+| --- | --- |
+| Changed your mind before starting | Click **Cancel** (✕) or press `Esc` |
+| Want to abandon mid-way | Click **Cancel** — everything captured is discarded, no image, no clipboard entry |
+| Want to keep what is stitched | Click **Finish**, or press `Esc` (same as Finish while capturing) |
+| "No valid scrolling detected" | Click the target window (e.g. the browser) to bring it forward, then Start again and scroll steadily |
 
-### Tips
+### Tips for a clean result
 
-- Scroll steadily with moderate steps;
-- **Scrolling back up mid-way is fine**: already-stitched parts are deduplicated correctly;
-- Sticky headers and fixed footers appear only once in the stitched image;
-- When a frame cannot be matched, koiShot **waits for the next valid scroll** — it prefers dropping frames over producing a misaligned image;
-- Best for static content; animations, videos or parallax scrolling may misalign — capture such pages in segments;
-- Very long pages produce very large images; split them if needed.
+- Scroll steadily with moderate steps, not fast flings;
+- Scrolling back up is fine — repeated parts are removed;
+- Sticky headers and fixed footers appear only once;
+- If a frame cannot be matched, koiShot waits for the next scroll rather than producing a misaligned image;
+- Animations, videos and parallax scrolling can misalign — capture in segments; split very long pages too.
 
 ## GIF recording
 
-Record a region as an animated GIF — ideal for short interactions in chat or tickets.
+### How to use it
 
-### Steps
+1. Press `F1` and select the region to record (this becomes the GIF frame);
+2. Click **Record GIF**. Recording does **not** start yet: a bar appears with the selection outlined in the accent colour, so you can confirm the area;
+3. Click **Start recording** on the bar and perform the actions; the bar shows elapsed time and frame count;
+4. Click **Finish recording** — the bar shows "Exporting" and the file is saved as `gif_date_time.gif`;
+5. Click **Cancel recording** to throw away everything captured.
 
-1. Press `F1` and select the recording region (the GIF frame);
-2. Click "Record GIF". Recording does **not** start immediately: the bar appears in the **ready** state, the selection keeps a **theme-accent border**, timer and frame count are 0 — confirm or adjust the region now (drag inside the region to move it, see "Control bar & recording region");
-3. Click the **Start recording** icon to begin capturing, then perform the actions to demonstrate; the bar shows status, elapsed time and captured frames;
-4. Click **Stop recording**; the bar shows "Exporting" and the GIF is generated as `gif_date_time.gif`;
-5. Click **Cancel recording** to discard captured frames without producing a file.
+Bar buttons are icons with hover names: ready state shows start and cancel, recording replaces start with finish, and both are disabled while exporting.
 
-All three bar buttons are **icon-only** (start / stop / cancel) with tooltips: the ready state shows start and cancel, recording replaces start with stop, and both stop and cancel are disabled while exporting.
+### Before you start
 
-### Control bar & recording region
+Drag inside the selection in the ready state to move the area (move only, no resize); it locks once recording starts. **Keep the selection on one monitor** — a selection spanning two screens records only the part on one of them.
 
-The bar sits below the selection, **horizontally centered on the selection**, 12px away from the selection border, and reflows automatically:
+The bar sits centred below the selection, flips above near the screen bottom, and stays fully visible and clickable at screen edges.
 
-- Near the bottom edge, it flips above the selection;
-- If the selection covers the taskbar (menu bar / Dock on macOS), the bar **prefers to avoid** the system area;
-- In extreme cases (near full-screen) it is clamped inside the screen and stays fully visible; when the available area really cannot fit it, the bar falls back to the full screen and may overlay system UI while staying fully usable — expected behaviour, not a bug.
+### How long, and which quality
 
-:::tip
-Centering rather than right-aligning matters: the bar's right end is the cancel button, so grabbing the selection's bottom-right corner to adjust it could easily cancel the whole overlay by mistake.
+- About **30 seconds** per recording; larger areas run out sooner. At the limit, recording stops automatically and exports what it has. Use video for longer clips;
+- Photos, video and gradients come out cleanly, without large colour bands or speckling;
+- Under Settings → General → GIF recording:
 
-**The region can be adjusted in the ready state**: drag inside the selection to move it as a whole (move only, no resize; it cannot be moved off the current screen). Once recording starts the region is locked.
-:::
+  | Setting | How to choose |
+  | --- | --- |
+  | Frame rate | 5–30 fps, default 15 — higher is smoother but larger |
+  | Size preset | "High quality" for clarity, "Balanced" for everyday use, "Small size" when a chat or ticket limits attachments (smaller picture, fewer frames, smallest file) |
 
-### Limits
-
-GIF has both a **frame budget** and a **total-pixel budget**:
-
-- Frame limit = fps × 30 — about **30 seconds** (450 frames at the default 15 fps);
-- A cumulative **total-pixel budget** (~320 million pixels) is also counted frame by frame (frames × region area): the larger the region, the shorter the recording (a 4K full-screen region hits the budget almost immediately). Hitting either budget **stops recording automatically** and exports what was captured;
-- Keep the region tight around the content.
-
-### Frame rate & size preset
-
-The **recording bar itself has a frame-rate dropdown**: GIF and video recording share the same button, but it offers two different preset lists (GIF 5–30, video 10–60) and the two values are stored separately, so one never overwrites the other. Change it in the ready state; it is locked once recording starts and during export. The Settings value is the default and changes take effect on the **next recording**.
-
-Settings → General → GIF recording (see [Settings & tray](/en/guide/settings)):
-
-| Setting | Description |
-| --- | --- |
-| Frame rate | 5 / 10 / 15 / 20 / 25 / 30 fps (default 15) |
-| Size preset | High quality (finer dithering, larger files) / Balanced (recommended) / Small size (for size-limited attachments) |
+- The bar also has a frame-rate dropdown: **change it before pressing Start recording and it applies right away**. Once recording starts it is locked. Changing it in Settings only sets the default for the next recording.
 
 ## Video recording (MP4)
 
-Choose video when you need **audio**, a **longer clip** or **better quality**.
+### How to use it
 
-### Steps
+1. Press `Alt + R`, or click **Record video** on the capture toolbar;
+2. Select the region — the recording bar appears in its ready state;
+3. Confirm the area and click **Start recording**;
+4. The bar shows `REC` and elapsed time. Click **Pause** (❚❚) for a break, then **Resume** (▶): **paused time does not count and no frozen segment appears in the video**;
+5. Click **Finish recording**, wait for "Exporting video", and the file is saved as `koiShot_date_time.mp4`;
+6. **Cancel recording** deletes the partial file.
 
-1. Press `Alt + R` (or click "Record video" on the capture toolbar);
-2. Select the region — the shortcut entry shows the recording bar in its **ready** state as soon as you release the mouse; the toolbar entry shows it after clicking the button;
-3. In the ready state you can drag inside the region to move it (move only, no resize); confirm and click the **Start recording** icon;
-4. While recording, the bar shows `REC`, elapsed time and "MP4" (the frame rate is chosen in the dropdown); click **Pause** (❚❚) when needed — the bar switches to "Paused", and **paused time does not count toward the duration** nor appear as a frozen segment in the video; click **Resume** (▶) to continue;
-5. Click **Stop recording**; the bar shows "Exporting video" and the file is saved as `koiShot_date_time.mp4`;
-6. **Cancel recording** discards the partial file.
+The bar uses the same icon buttons and hover hints as GIF, plus Pause / Resume and the frame-rate dropdown.
 
-Bar buttons behave exactly like GIF recording: icon-only with tooltips, and the button set switches automatically between ready / recording / exporting.
+### Good to know before you record
 
-### Rules & limits
-
-| Item | Description |
+| Item | What to expect |
 | --- | --- |
-| Duration | Up to **10 minutes** per clip (recording time only — paused time is not counted); recording stops and exports automatically at the limit |
-| Pause / resume | Pause and resume any number of times; the finished video contains no paused segments |
-| Frame rate | 10–60 fps (default 30) — recording-bar dropdown or Settings → General → Recording (MP4); choices: 10 / 15 / 20 / 24 / 25 / 30 / 50 / 60; locked once recording starts |
-| Audio | Microphone capture is on by default; if disabled or unauthorized, koiShot records silently (a notification follows) — the video is unaffected |
-| Region | Locked once recording starts (encoding resolution is fixed); the region can be moved in the ready state. Since H.264 requires even dimensions, the output size may differ from the selection by 1px. Cross-screen regions fall back to compatible capture (~10 fps) |
-| Capture | Windows uses system graphics capture (WGC, **no extra permission**, Win10 1903+); macOS uses ScreenCaptureKit (needs **macOS 12.3+** and Screen Recording); Linux and systems where native capture fails fall back to compatible capture (~10 fps) |
-| HDR | On Windows, HDR monitors are tone-mapped to standard SDR video (highlights no longer wash out); the output is not HDR video. Toggling system HDR while recording has no effect — restart the recording |
-| Export | Stopping enters "Exporting"; starting a new recording meanwhile is refused with "The previous video is still exporting"; after a timeout the export is force-finished — a well-formed file is kept |
+| Maximum length | **10 minutes** per clip (paused time not counted); it stops and exports automatically |
+| Audio | Microphone on by default; if you turn it off or macOS denies it, you get a silent video — the picture is unaffected |
+| Frame rate | 10–60 fps, default 30. Choose on the bar before starting; locked afterwards |
+| System requirements | Windows 10 1903+ with no extra permission; macOS 12.3+ with Screen Recording granted; on Linux or older machines the picture may drop to about 10 fps |
+| Region | Locked after starting; output can differ from the selection by 1 pixel. A selection across monitors drops frames noticeably — stay on one screen |
+| HDR screens | Highlights no longer blow out. Changing the system HDR switch mid-recording may leave this clip blank or washed out again — record it once more |
+| While exporting | A new recording is refused until the previous one finishes; just wait for the message to disappear |
 
 :::tip
-Smaller regions and shorter clips give sharper, smaller results. Use GIF for a few seconds of looping demo; use video when you need narration, audio, or more than 30 seconds. Higher frame rates look smoother but cost more CPU / GPU — 30–60 fps suits demos; if recording has not started after about 5 seconds, koiShot reports an encoder start timeout — lower the frame rate or disable the microphone and retry.
+Smaller regions and shorter clips are sharper and smaller. 30–60 fps is plenty for a demo; if recording has not started after about 5 seconds, koiShot reports an encoder timeout — lower the frame rate or turn the microphone off and try again.
 
-On Windows, **semi-transparent layered windows** (some floating widgets, transparency-effect windows) may be missing from the GIF output — a performance trade-off of the screen-capture mechanism; normal windows are unaffected.
+On Windows, some semi-transparent floating widgets may be missing from a GIF; normal windows are unaffected.
 :::

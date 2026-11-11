@@ -1,58 +1,58 @@
 ---
-description: 'koiShot saving and output: save path, file naming, clipboard and per-feature write behaviour and formats.'
+description: 'Where captured files go, what they are called and how to change it; what copy, save and pin each give you.'
 ---
 
 # Saving & Output
 
-Captures, pins, long screenshots, GIFs, recordings and table exports all end up somewhere — this page explains where, under what name, and in which format.
+After a capture you either paste it somewhere or keep a file. This page tells you **where files go, what they are called, and how to change it** — plus what each feature hands you.
 
-## Output channels
+## Three ways to take the result
 
-| Channel | Description |
-| --- | --- |
-| Clipboard | Paste straight into chat, docs or a ticket; no file is created |
-| File | Written into the folder configured under Settings → General → Save path |
-| Pin | Shown as an always-on-top window; save from the pin when needed (see [Pin](/en/guide/features/pin)) |
-| Result window | OCR, table recognition and screenshot translation open their own window for copying or exporting (see [OCR & tables](/en/guide/features/ocr-table), [Screenshot translation](/en/guide/features/translate)) |
+| What you want | What to do | You get |
+| --- | --- | --- |
+| Send it into chat or a document | Click "Copy" | It is on the clipboard; no file is created |
+| Keep a file | Click "Save" or press `Alt + S` | It lands in the folder from Settings → General → Save path |
+| Keep it visible | Click "Pin" | An always-on-top window; save a file from it later if needed (see [Pin](/en/guide/features/pin)) |
+| Extract text / tables / a translation | Click OCR, Table or Translate | A result window where you copy or export (see [OCR & tables](/en/guide/features/ocr-table), [Screenshot translation](/en/guide/features/translate)) |
 
-## File naming
+## What files are called
 
-Every saved file uses `name_date_time` (24-hour clock). Saving several files within the same second appends `_1`, `_2`, so **nothing is overwritten**:
+Everything uses `name_date_time` (24-hour clock). Several files in the same second get `_1`, `_2` appended, so **nothing is overwritten**:
 
 | Content | Example |
 | --- | --- |
 | Capture / pin | `koiShot_20261002_153045.png` |
 | Video recording | `koiShot_20261002_153045.mp4` |
 | Long screenshot | `long_20261002_153045.png` |
-| GIF recording | `gif_20261002_153045.gif` |
-| Table export | `table_20261002_153045.xlsx` / `table_20261002_153045.csv` |
+| GIF | `gif_20261002_153045.gif` |
+| Table export | `table_20261002_153045.xlsx` or `.csv` |
 
-## Default location
+## Where they go, and how to change it
 
-- Defaults to a `koiShot` folder inside the system Pictures folder (e.g. `Pictures\koiShot` on Windows);
-- Change it with "Browse" under Settings → General → Save path;
-- Enable "Open folder after save" to open the destination after each save (off by default, so consecutive captures do not steal focus).
+- By default, a `koiShot` folder inside your system Pictures folder;
+- To change it: "Browse" under Settings → General → Save path;
+- To open the folder after every save: enable **"Open folder after save"** (off by default, so consecutive captures do not keep popping windows).
 
-## What each feature writes
+## Does each feature save a file automatically?
 
-| Feature | Auto-save | Notes |
+| Feature | Auto-save? | What you get |
 | --- | --- | --- |
-| Capture (Save / `Alt + S`) | Yes | Writes straight into the save folder; a "Save failed" dialog appears if the write fails — nothing is dropped silently |
+| Capture (Save / `Alt + S`) | Yes | Written straight to the save folder; a failed write shows a message rather than silently dropping it |
 | Capture (Copy) | No | Clipboard only |
-| Pin | On demand | Only when you use "Save annotated image" or "Save original" |
-| Long screenshot | Yes | "Finish" writes `long_*.png` **and** copies it to the clipboard |
-| GIF recording | Yes | "Stop recording" encodes and writes `gif_*.gif` |
-| Video recording | Yes | "Stop recording" exports and writes `koiShot_*.mp4`; honours "Open folder after save" |
-| Table recognition | Yes | "Export Excel" / "Export CSV" writes into the save folder (opened as well when "Open folder after save" is on) |
-| Screenshot translation | No | Creates no file: copy the translation with the button or the context menu |
+| Pin | Only if you ask | "Save annotated image" or right-click "Save original" creates the file |
+| Long screenshot | Yes | "Finish" saves `long_*.png` **and copies it to the clipboard** |
+| GIF | Yes | "Finish recording" produces `gif_*.gif` |
+| Video recording | Yes | "Finish recording" produces `koiShot_*.mp4` |
+| Table recognition | Yes | "Export Excel" / "Export CSV" writes into the save folder |
+| Screenshot translation | No | Translation only — copy it with the button or the context menu |
 
 ## Formats
 
-- Captures, long screenshots and pins are saved as **PNG** (lossless);
-- Video recordings are **MP4** (H.264 video, optional AAC microphone audio);
-- GIF recordings are **GIF**;
-- Table recognition exports **xlsx** (with real merged cells) and **CSV** (UTF-8 BOM), and can copy the whole grid as **TSV** (see [OCR & tables](/en/guide/features/ocr-table)).
+- Captures, long screenshots and pins: **PNG**, lossless, annotations included;
+- Video recordings: **MP4**, optionally with microphone audio, playable in any player;
+- GIF recordings: **GIF**, loops automatically in chat;
+- Tables: **Excel (`.xlsx`, with merged cells)** or **CSV**; you can also copy the whole grid and paste it into Excel / Sheets with the columns already split.
 
 :::tip
-If you usually paste right after capturing, leave "Open folder after save" off; if you archive everything, turn it on to confirm the location after each save.
+If you usually paste right after capturing, leave "Open folder after save" off. If you archive everything, turn it on to see where each file landed.
 :::

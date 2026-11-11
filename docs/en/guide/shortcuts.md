@@ -4,6 +4,8 @@ description: 'koiShot shortcut reference: 5 global hotkeys, in-capture keys, tex
 
 # Shortcuts
 
+Look up keys by what you are doing: starting a capture, working inside it, or using a pin / result window. **Global hotkeys work from any app**, and every one of them can be rebound under Settings → Hotkeys.
+
 ## Global hotkeys
 
 Work from any foreground app (rebind under Settings → Hotkeys, see [Settings & tray](/en/guide/settings#hotkeys)):
@@ -27,7 +29,7 @@ Work from any foreground app (rebind under Settings → Hotkeys, see [Settings &
 | `Enter` | Run the default action (copy / save / pin / record, depending on the entry) |
 | `Esc` | Cancel the capture / close a property popup / discard a text edit |
 | `Ctrl + Z` | Undo annotation |
-| `Ctrl + Shift + Z` | Redo annotation |
+| `Ctrl + Shift + Z` (`Ctrl + Y` also works on Windows) | Redo annotation |
 | Wheel over the selected annotation | Adjust its thickness / size |
 
 On macOS, `Ctrl` maps to `Cmd`.
@@ -50,7 +52,7 @@ Clicking elsewhere, clicking a swatch or switching tools commits instead of disc
 | Drag | Move the pin |
 | Wheel | Zoom (0.3–4.0×) |
 | `Alt` + wheel | Opacity (5%–100%; not while typing) |
-| `Ctrl + Z` / `Ctrl + Shift + Z` | Undo / redo annotation |
+| `Ctrl + Z` / `Ctrl + Shift + Z` (`Ctrl + Y` also works on Windows) | Undo / redo annotation |
 | `Esc` / `Ctrl + W` (`Cmd + W`) | Close the pin (during text editing or QR selection `Esc` exits the mode first) |
 | Drag over text with no tool active | Select text, recognise it and copy to the clipboard |
 | "QR code" → drag a rectangle | Decode the QR code and copy its content (button again or `Esc` to cancel) |

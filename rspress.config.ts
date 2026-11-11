@@ -49,7 +49,7 @@ const pageMetas: Record<string, { title: string; description: string }> = {
   '/guide/features/ocr-table': {
     title: 'OCR 与表格识别 | koiShot 使用文档',
     description:
-      'koiShot 本地离线 OCR 文字识别与表格识别：截图转文字、截图转 Excel、二维码识别，导出 xlsx / CSV 或复制 TSV。',
+      'koiShot 本地文字识别与表格识别：截图转文字、截图转 Excel、二维码识别，导出 Excel / CSV 或整表复制。',
   },
   '/guide/features/translate': {
     title: '截图翻译 | koiShot 使用文档',
@@ -115,7 +115,7 @@ const pageMetas: Record<string, { title: string; description: string }> = {
   '/en/guide/features/ocr-table': {
     title: 'OCR & Tables | koiShot Docs',
     description:
-      'koiShot local offline OCR, table recognition and QR decoding: screenshot to text or Excel (xlsx / CSV, copy as TSV).',
+      'koiShot local OCR, table recognition and QR decoding: screenshot to text or Excel, export xlsx / CSV or copy the whole table.',
   },
   '/en/guide/features/translate': {
     title: 'Screenshot Translation | koiShot Docs',

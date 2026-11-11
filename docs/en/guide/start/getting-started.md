@@ -1,29 +1,29 @@
 ---
-description: 'Get koiShot: Windows installer, macOS DMG and Linux .deb. No build required, OCR and the recording backend included, automatic updates at startup.'
+description: 'Download the installer for your system and double-click to start; install, permissions, autostart, upgrade and uninstall on Windows, macOS and Linux.'
 ---
 
 # Get Started
 
-Download the package for your platform from the release page. Nothing to build or configure — runtime libraries, the OCR engine and the video encoding backend are bundled, so it works right after installation.
+Download the package for your platform from the release page and install it — that is all. The runtime, text recognition and video recording components are bundled, so **there is nothing else to install or configure**.
 
-Once installed, **you never need to check for updates manually**: koiShot queries the latest stable GitHub release at startup, downloads and verifies the full installer in the background; on Windows it installs silently while the system is idle and relaunches automatically, while macOS / Linux open the downloaded package for you to finish in the system wizard. There is no update switch in settings — Settings → About shows progress and a manual retry, see the [FAQ](/en/guide/faq).
+Updates take care of themselves: koiShot downloads and installs new versions in the background. Windows finishes automatically; on macOS / Linux the downloaded package opens and you complete it in the system dialog. There is no update switch — progress is visible under Settings → About.
 
 ## Windows
 
 1. Download `koiShot-<version>-windows-x64-setup.exe` and run it;
-2. Follow the **Simplified Chinese installer**; no administrator rights required;
-3. Keep "Run koiShot" checked on the last page and click Finish — koiShot starts and stays in the system tray.
+2. Follow the **Simplified Chinese installer** — no administrator rights needed;
+3. Keep "Run koiShot" checked and click Finish: it starts and stays in the system tray.
 
-### Installer steps
+### What the installer asks
 
-**Install location**: defaults to the per-user program directory (`%LOCALAPPDATA%\Programs\koiShot`) and can be changed. The installer asks for the install scope first and defaults to "install for the current user only" (no admin rights); you can switch to "install for all users" (requires admin confirmation).
+**Where to install**: defaults to your personal programs folder and can be changed. On a first install it also asks for the scope — "current user only" by default (no admin rights), or "all users" (admin confirmation required).
 
 **Additional tasks**:
 
 ![Additional tasks](/images/install/windows-wizard-tasks.png)
 
-- **Create a desktop shortcut**: off by default;
-- **Start koiShot at login**: on by default. koiShot starts with Windows and stays in the tray; the setting is removed on uninstall.
+- **Create a desktop shortcut**: off by default — tick it if you want one;
+- **Start koiShot at login**: on by default; it then starts with Windows and stays in the tray, and is removed on uninstall.
 
 **Ready to install**:
 
@@ -33,68 +33,68 @@ If koiShot is running (for example during an upgrade), the installer offers to c
 
 ![Closing a running koiShot](/images/install/windows-wizard-close-apps.png)
 
-**Finish**:
-
 ![Finish](/images/install/windows-wizard-finish.png)
 
 ### Upgrade & uninstall
 
-- **Upgrade (default)**: koiShot checks for new releases, downloads and verifies the installer in the background, then — after 2 continuous minutes of system idle time — quits, installs silently and relaunches the new version automatically. No wizard to run, settings are kept;
-- **Manual upgrade (fallback)**: you can also run a newer installer over the old one — no need to uninstall first; settings are kept;
-- **Uninstall**: use Settings → Apps on Windows, or the uninstall entry in the koiShot start-menu folder. Autostart entries and files are removed automatically.
+| What you want | What to do |
+| --- | --- |
+| Upgrade | Nothing — koiShot installs the new version while you are away from the keyboard and reopens, keeping your settings |
+| Manual upgrade (fallback) | Run a newer installer over the old one; no need to uninstall first |
+| Uninstall | Settings → Apps on Windows, or the uninstall entry in the koiShot start-menu folder |
 
 ## macOS
 
-1. Download the image matching your chip and open it: `koiShot-<version>-macos-arm64.dmg` for Apple Silicon, `koiShot-<version>-macos-x86_64.dmg` for Intel (a release may instead ship a single `-macos-universal.dmg`, which runs on both);
-2. Drag **koiShot into the Applications folder** as the window shows:
+1. Download and open the image for your chip: `-macos-arm64.dmg` for Apple Silicon, `-macos-x86_64.dmg` for Intel (a `-macos-universal.dmg` works on both);
+2. Drag **koiShot into Applications** as the window shows:
 
 ![macOS installer: drag koiShot into Applications](/images/install/macos-dmg-install.png)
 
-3. Launch koiShot from Launchpad or Applications.
+3. Launch it from Launchpad or Applications.
 
 ### "Cannot verify the developer" on first launch
 
-macOS blocks un-notarized apps; this is expected. Pick either:
+macOS blocks un-notarized apps; either of these works, once:
 
-- Click "Done" in the dialog, open **System Settings → Privacy & Security**, and click **Open Anyway** next to the koiShot notice;
-- Or right-click koiShot in Applications → **Open**, then confirm. One time only.
+- Click "Done", open **System Settings → Privacy & Security**, then click **Open Anyway** next to the koiShot notice;
+- Or right-click koiShot in Applications → **Open**, then confirm.
 
 ### No Dock icon is normal
 
-koiShot is **tray-only**: no Dock icon, no `⌘ + Tab` entry — just the tray icon in the **menu bar**. If you see the menu-bar icon, the app is running.
+koiShot is tray-only: no Dock icon, no `⌘ + Tab` entry — just the icon in the **menu bar**. If you see it, the app is running.
 
-### System permissions
+### Two permissions to grant
 
-Three independent permissions are involved:
+On first use, enable these under System Settings → Privacy & Security, then **quit and relaunch koiShot** (tray icon → Quit):
 
-| Permission | Where | Symptom when missing |
-| --- | --- | --- |
-| Screen Recording | System Settings → Privacy & Security → Screen Recording | Screenshots are completely black, with no error |
-| Accessibility | System Settings → Privacy & Security → Accessibility | Hover highlight (UI-element selection) never appears; silently falls back to plain selection |
-| Microphone | System Settings → Privacy & Security → Microphone | MP4 recordings have no audio; video is fine |
-
-Enable the switches for koiShot:
+| Permission | Without it |
+| --- | --- |
+| Screen Recording | Screenshots are completely black, with no error |
+| Accessibility | Hovering does not highlight UI elements; you can only drag a selection manually |
 
 ![Enable koiShot under Screen Recording](/images/install/macos-permission-screen-recording.png)
 
 ![Enable koiShot under Accessibility](/images/install/macos-permission-accessibility.png)
 
-Then **quit and relaunch koiShot** (tray icon → Quit). The microphone is only requested when "Record microphone audio" is enabled and you actually record; if denied, koiShot records silently. See [FAQ](/en/guide/faq).
+For recordings with audio, **macOS asks for the microphone the first time you start recording** — allow it. If you deny it, recording still works, just without sound.
 
 ### Start at login
 
-- Installs made with the official packaging script register a **launch agent**, so koiShot starts silently at login; the same script can remove it.
-- Manual drag-and-drop installs: open **System Settings → General → Login Items** and add koiShot.
+Dragging the app from a downloaded DMG into Applications does **not** start it at login. To enable it:
+
+- Open **System Settings → General → Login Items** and add koiShot with "+";
+- To turn autostart off, remove or switch off koiShot in that same pane;
+- Machines installed with the official packaging script already have a login agent, which is managed in the same pane.
 
 ### Upgrade & uninstall
 
-- **Upgrade (default)**: koiShot downloads the new DMG and opens it automatically — drag koiShot into Applications to overwrite; settings are kept. Re-check the permissions above if capture stops working;
-- **Manual upgrade (fallback)**: download the new DMG from the release page yourself and follow the same steps;
+- **Upgrade**: koiShot downloads the new DMG and opens it — drag koiShot into Applications to overwrite; settings are kept. If capture or UI highlighting stops working afterwards, re-check the two permissions above;
+- **Manual upgrade (fallback)**: download the new DMG yourself and repeat the same steps;
 - **Uninstall**: quit from the tray menu, then move koiShot from Applications to the Trash.
 
 ## Linux
 
-A Debian/Ubuntu `.deb` package is provided (`koishot_<version>-1_amd64.deb`):
+Download the Debian/Ubuntu `.deb` package, then run in your downloads folder:
 
 ```bash
 sudo apt install ./koishot_<version>-1_amd64.deb
@@ -102,21 +102,29 @@ sudo apt install ./koishot_<version>-1_amd64.deb
 
 If the system libraries are already present, `sudo dpkg -i koishot_<version>-1_amd64.deb` also works (run `sudo apt -f install` if dependencies are missing).
 
-- Launch koiShot from the application menu, or run `koiShot`; a shortcut icon is also placed on each user's desktop;
-- Qt runtime libraries, OCR models and the **Qt Multimedia / FFmpeg backend needed for video recording** are bundled — no system Qt6 or system ffmpeg required, MP4 recording works out of the box. An "Encoder start timed out" error or a 0-byte file right after Start usually means an older package without that backend — reinstall the current release;
-- A systemd user service **restarts the app 2 seconds after a crash** (a normal quit from the tray is not restarted; after more than 5 crashes within 5 minutes the auto-restart pauses to prevent loops);
-- Uninstall with `sudo dpkg -r koishot` to keep configuration files, or `sudo dpkg -P koishot` (or `apt purge`) to remove configuration and the service as well.
+You can launch koiShot from the application menu afterwards, and a shortcut appears on the desktop. Everything needed for video recording ships with the package — no extra system software. An "Encoder start timed out" message or a 0-byte file usually means an older package: reinstall the current release. After a crash koiShot reopens automatically; a normal quit from the tray does not.
 
-### Upgrade
+### Start at login
 
-Automatic updates download the new `.deb` and hand it to the system's default handler — finish the install in the package manager / administrator prompt while the app keeps running. You can also upgrade manually with `sudo apt install ./koishot_<new-version>-1_amd64.deb`: the running instance is stopped first and configuration files are kept.
+The `.deb` **starts koiShot at login right after installation**, for all users — there is no switch in settings.
+
+| What you want | What to do |
+| --- | --- |
+| Turn autostart off for everyone | Delete the startup entry with admin rights: `sudo rm /etc/xdg/autostart/koishot.desktop` |
+| It did not start after install / re-login | Check that koiShot launches from the application menu, then that the file above exists |
+
+### Upgrade & uninstall
+
+Automatic updates download the new `.deb` and hand it to the system — finish the install in the package manager / admin prompt while the app keeps running. You can also upgrade manually with `sudo apt install ./koishot_<new-version>-1_amd64.deb`; settings are kept.
+
+Uninstall with `sudo dpkg -r koishot` to keep configuration, or `sudo dpkg -P koishot` (or `apt purge`) to remove it as well.
 
 ## First launch
 
-koiShot **only lives in the system tray** after launch and shows no window (there is no persistent main window):
+koiShot **only lives in the system tray** and shows no window:
 
 1. Left-click the tray icon to start a capture;
-2. Check save path, UI language, theme and hotkeys in Settings (all 5 global actions can be rebound);
-3. Optionally run Settings → OCR self-check → "Run self-check" to confirm the recognition environment (usually unnecessary);
-4. For recordings with audio, verify the microphone switch under Settings → General → Recording (MP4) and grant the microphone permission;
-5. To use screenshot translation, enter your Alibaba Cloud machine translation AccessKey under Settings → General → Translation settings ("Test translation" verifies it instantly — see [Screenshot translation](/en/guide/features/translate)).
+2. In Settings, check the save folder, UI language, theme and hotkeys (all 5 global actions can be rebound);
+3. If you are unsure whether recognition is ready, click "Run self-check" under Settings → OCR self-check (usually unnecessary);
+4. For recordings with audio, check the microphone switch under Settings → General → Recording (MP4);
+5. For screenshot translation, enter your Alibaba Cloud machine translation AccessKey under Settings → General → Translation settings and verify with "Test translation" (see [Screenshot translation](/en/guide/features/translate)).

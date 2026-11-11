@@ -1,81 +1,75 @@
 ---
-description: 'koiShot screenshot translation: select foreign text, local OCR, Alibaba Cloud machine translation, side-by-side result window, language switching and copying.'
+description: 'Foreign text on screen? Select it and get a translation: set up credentials, switch languages and copy the result.'
 ---
 
 # Screenshot Translation
 
-Turn foreign text on screen into your language: **select → local OCR → Alibaba Cloud machine translation → side-by-side result window**. Handy for foreign-language UIs, error messages, papers and overseas sites.
+When you hit a foreign-language UI, error message or paper excerpt, select it and get the translation: **select → recognise the text → translate → side-by-side result**. It always uses the original image of the selection; annotations added afterwards are not included.
 
-Translation always uses the **original image of the selection** (annotations are excluded) — annotation strokes only hurt recognition, exactly like OCR and table recognition.
+The result window stays on top, so switching to another app will not hide it while you read along.
 
-## Set up credentials first
+## First time: enter your credentials once
 
-Recognition runs locally; the machine translation calls Alibaba Cloud, so you need to enter credentials once:
+The translation service is provided by Alibaba Cloud, so you need credentials once (recognising the text still happens on your machine):
 
-1. Open **Settings → General → Translation settings** (an Alibaba Cloud account with the machine translation service enabled is required);
-2. Fill in **AccessKey ID** and **AccessKey Secret**: both fields are masked by default — click the "eye" button to reveal them temporarily and click again to mask;
-3. Choose the **target language** (Chinese / English / Japanese / Korean / French / German / Spanish / Russian) as the default for the Translate button;
-4. Click **Save**, then **Test translation** — it sends a real request with one sample sentence and shows the result right in the card.
+1. Open **Settings → General → Translation settings** with an account that has Alibaba Cloud machine translation enabled;
+2. Fill in **AccessKey ID** and **AccessKey Secret** — both are masked by default; click the "eye" to reveal them temporarily;
+3. Pick the **target language** (Chinese / English / Japanese / Korean / French / German / Spanish / Russian) as the default for the result window;
+4. Click **Save**, then **Test translation** — it translates one sample sentence for real and shows the outcome in the card.
 
-Changes take effect **immediately**: no restart, no need to capture again. Credentials are stored **only in the local settings file** (the Secret is written in plain text on your machine); the UI masks them by default and they are never sent with a screenshot or recognised text.
+Changes apply immediately, with no restart and no need to capture again. Credentials stay in the local settings on this computer and are never sent along with a screenshot or recognised text.
 
 ## How to translate
 
-1. Press `F1` and select the region containing the foreign text (keep it tight around the text);
+1. Press `F1` and select the foreign text tightly, without extra surroundings;
 2. Click **Translate** on the toolbar (to the right of OCR);
-3. The overlay closes and the **translation window** opens on the screen where the selection was:
-   - Left: **"Screenshot"**, zoomable and pannable for comparison;
-   - Right: **"Translation"**, with a status line going from "Recognising text…" to "Translating into English…" to "Translated into English (source Japanese)";
-4. Click **Copy translation**, or right-click the translation to copy a selection or everything.
+3. The overlay closes and the **result window** opens: "Screenshot" on the left, "Translation" on the right, with a status line going from "Recognising text…" → "Translating into English…" → "Translated into English (source Japanese)";
+4. Click **Copy translation** at the bottom, or right-click the translation to copy a selection or everything.
 
-## Result window actions
+## What you can do in the result window
 
-| Action | Result |
+| What you want | What to do |
 | --- | --- |
-| Wheel over the left image | Zoom the original **100%–800%**, anchored at the pointer |
-| Right-drag after zooming | Pan the image (the left button stays for window dragging and text selection); the cursor becomes a hand |
-| "Translate to" dropdown | Switch target language; when the source text is already recognised the translation is **redone immediately**, no new capture needed |
-| "Copy translation" | Copies the whole translation and shows a "Copied to clipboard" toast |
-| Right-click the translation | Copy (selection) / Copy all / Select all |
-| Drag the header or empty area | Move the window |
-| Drag the bottom-right corner | Resize the window |
-| Header "×" or `Esc` | Close the window and release the result; the same window is reused next time |
+| Read small print in the image | Wheel over the left image (100%–800%, anchored at the pointer) |
+| Look at another part when zoomed | **Right-drag** to pan |
+| Change the target language | Use the "Translate to" dropdown — once the text is recognised it **re-translates immediately**, no new capture |
+| Copy the translation | Click "Copy translation", or right-click for Copy / Copy all / Select all |
+| Move or resize the window | Drag the header, or the bottom-right corner |
+| Close it | Click × or press `Esc`; the same window is reused next time |
 
-- Zoom and scroll reset to **100%** on a new image or after closing;
-- There are no visible scrollbars — after zooming, pan with the right button;
-- The language dropdown is disabled while OCR is running (switching before the source text exists is pointless).
+Zoom and position reset to 100% for a new image or after closing; there are no scrollbars, so pan with the right button. The language dropdown is greyed out while recognition is running — wait for the source text.
 
-## Status messages
+:::warning
+**Closing the window before the result arrives discards that translation** — it will not pop up again, so click Translate once more. OCR and table recognition behave differently: closing them does not cancel recognition, and the window reopens when the result arrives.
+:::
 
-| Message | Meaning & what to do |
+## What the status line means
+
+| Message | What to do |
 | --- | --- |
-| "Please fill in the Alibaba Cloud AccessKey ID and AccessKey Secret first." | No credentials yet → fill them in under Settings → Translation settings and verify with "Test translation" |
-| "No translatable text was recognised, please select again." | Nothing recognised in the region → select tighter, or check the left image is legible |
-| "Text recognition failed: …" | Local OCR error → run OCR on its own once to see the details |
-| "Translation failed: …" | The service returned an error — usually **text too long** (about 5000 characters per request), credentials without permission / in arrears, or no network |
-| "Translated into English (source Japanese)" | Success; the parentheses show the auto-detected source language |
+| "Please fill in the Alibaba Cloud AccessKey ID and AccessKey Secret first." | Fill them in under Settings → Translation settings and verify with "Test translation" |
+| "No translatable text was recognised, please select again." | Select tighter, or check the left image is legible |
+| "Text recognition failed: …" | Run OCR on its own once to see the details |
+| "Translation failed: …" | Usually text too long, credentials without permission / in arrears, or no network |
+| "Translated into English (source Japanese)" | Success; the parentheses show the detected source language |
 
 ## How it differs from OCR and tables
 
-| Feature | Network | Output | Best for |
-| --- | --- | --- | --- |
-| OCR | No (local) | Result window with line numbers, copy all or one line | Extracting the text on screen |
-| Translation | Yes (text only) | Side-by-side window showing only the translation | Understanding foreign content |
-| Table recognition | No (local) | Editable grid, export xlsx / CSV | Screenshot to Excel |
+| What you want | Use | You get |
+| --- | --- | --- |
+| Extract the text as-is | OCR | Result window with line numbers, copy all or one line |
+| Understand foreign text | Translation | Image and translation side by side, translation only |
+| Turn a table into Excel | Table recognition | Editable grid, export xlsx / CSV |
 
-## Limitations
+## Good to know
 
-- **Text only**: pictures, diagrams and icons are not translated; the output is plain text with no original layout;
-- **One request, no chunking**: the whole recognised text is sent at once and requests above the `TranslateGeneral` limit (about 5000 characters) are rejected — translate long content in several selections;
-- **Original not kept**: the right pane shows only the translation; use the OCR button in a second window when you want the source text side by side;
-- **Quality depends on OCR**: vertical text, decorative fonts, low contrast or occluded text recognise poorly and translate just as poorly — check the left image first;
-- **Network required**: failures are reported without automatic retry; switching language, selecting again or pressing Translate again all start a new request;
+- **Text only**: pictures, diagrams and icons are not translated; the output is plain text without the original layout;
+- **One block per request**: more than about 5000 characters is rejected — translate long content in several selections;
+- **No original in the right pane**: use the OCR button in a second window if you want to compare;
+- **Quality follows recognition**: vertical text, decorative fonts, low contrast and occluded text recognise poorly — check the left image first;
+- **Network required**: failures are reported without an automatic retry; switching language or clicking Translate again starts a new request;
 - Eight target languages are available: Chinese, English, Japanese, Korean, French, German, Spanish, Russian.
 
 :::tip
-Recognition is always local and **images are never uploaded**; only the recognised text is sent to Alibaba Cloud machine translation. Keep that in mind for sensitive content.
-:::
-
-:::tip
-When a translation looks wrong, check the left image first — most "bad translations" start as bad recognition, and a tighter selection usually fixes it.
+Recognition always runs locally and **images are never uploaded**; only the recognised text is sent for translation. Keep that in mind for sensitive content. A translation that looks wrong is usually a recognition error — a tighter, cleaner selection normally fixes it.
 :::

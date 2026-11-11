@@ -1,105 +1,103 @@
 ---
-description: 'koiShot local OCR and table recognition: screenshot to text, screenshot to Excel, result window actions, export formats and tips.'
+description: 'Copy text out of screenshots and turn tables into editable Excel files: how to use OCR, table recognition and QR decoding.'
 ---
 
 # OCR & Table Recognition
 
-koiShot ships a **local, offline** engine (PaddleOCR PP-OCRv6 + ONNX Runtime). Models come with the installer — nothing to download, no network, and images are never uploaded.
+This page covers two jobs: **copying text you cannot select** and **turning a table in a screenshot into an editable Excel file**. Select a region, click a button — no network, no account, and the image never leaves your machine.
 
-To check the environment, open Settings → General → OCR self-check and click **Run self-check**, or "Open models folder" to inspect the bundled models.
+Like a pin, the result window stays on top, so switching to another app will not hide it while you copy. If nothing happens, go to Settings → General → OCR self-check and click **Run self-check**, or "Open models folder" to check the files are there.
 
-## OCR text recognition
+## Copy text out of a picture
 
-1. Press `F1` and select the region containing text;
+1. Press `F1` and select the region with text;
 2. Click **OCR** on the toolbar;
-3. The **"OCR result"** window opens with **line numbers** on the left and recognised text on the right;
-4. Copy what you need: **Copy** copies everything, **double-click a line** copies just that line (line numbers are not copied).
+3. After a moment the result window opens: line numbers on the left, recognised text on the right;
+4. Click **Copy** for everything, or **double-click one line** to copy just that line (line numbers are not copied).
 
-| Action | Result |
+| What you want | What to do |
 | --- | --- |
-| "Copy" button | Copy all recognised text |
-| Double-click a line | Copy only that line |
-| Close button / `Esc` | Close the result window and release the result (closing while recognition is running does not cancel it; the window pops up again when the result arrives) |
-| Recognition failed | A tray balloon reports the failure; retry or select a sharper region |
-
-**Automatic orientation correction (on by default)**: koiShot can correct a whole image rotated by 90°/270° before detection and flip upside-down text lines (0°/180°) individually. Whole-image rotation is enabled by default (turn it off with the environment variable `PADDLEOCR_DOC_ORI=0`), but the helper models are **not bundled with the installer**; desktop screenshots are always upright and rotation is skipped when confidence is low, so it rarely runs in practice. Missing models are skipped silently and normal recognition is unaffected.
-
-Typical uses: extracting text from images, copying non-selectable text (dialogs, scans, video subtitles, PDF screenshots).
-
-When you need to **understand foreign text** rather than extract it, use **Translate** on the toolbar: it reuses the same local OCR and sends the text to Alibaba Cloud machine translation, with the image and the translation side by side (see [Screenshot translation](/en/guide/features/translate)).
-
-## Table recognition (screenshot to Excel)
-
-1. Press `F1` and select the table region (keep the selection tight to the table);
-2. Click **Table** on the toolbar;
-3. The **"Table recognition"** window shows an **editable grid**:
-
-   - **Double-click a cell** to edit its text; column headers show Excel-style **A / B / C** labels matching the exported file;
-   - Select at least two adjacent cells and click **Merge**; select a merged area and click **Split**. **Merge cannot be undone**: texts of merged cells are concatenated into the top-left cell — check before merging;
-   - **Low-confidence** cells get a tinted background with a "Confidence x, please verify" tooltip; the rating is driven by the least certain fragment inside the cell, and cells you edited or filled yourself are no longer flagged.
-4. Export any way you like:
-
-   | Button | Result |
-   | --- | --- |
-   | Copy TSV | Copies the grid as TSV; pasting into Excel / Sheets splits it into columns automatically |
-   | Export Excel | Writes `table_date_time.xlsx`, preserving **real merged cells** |
-   | Export CSV | Writes `table_date_time.csv` (UTF-8 BOM, opens cleanly in Excel) |
-
-- Files go into the folder set under Settings → General → Save path; with "Open folder after save" enabled the folder is opened as well (see [Saving & output](/en/guide/features/output));
-- **What you export is what the window currently shows** — your edits and merges are included, not the raw recognition result.
-
-### How it works & limits
-
-Three recovery strategies are tried in order of authority; the first one that produces a grid wins:
-
-1. **Structure model** (optional, off by default): recognises complex table structure; skipped when the model is absent;
-2. **Line detection** (on by default): detects horizontal/vertical rules and derives cells and merges — best for ruled tables;
-3. **Geometric fallback**: clusters text into rows and columns, works without rules but cannot express merges.
-
-The feature aims to give you a **usable first draft** for three things: **text, merges and size** (column widths and row heights follow the source image at 100% zoom). Font family/size, exact colours, formula semantics and conditional formats are out of scope.
-
-### Known boundaries
-
-- A table needs **at least 2 rows and 2 columns** to be recognised (no upper limit);
-- Diagonal headers, nested sub-tables and vertical text are not supported (they get flattened or merged);
-- Complex backgrounds (dark themes, gradients, colour blocks) and low-contrast rules are handled with background normalisation, dark-theme inversion and local-contrast line detection, so even very light grey rules are picked up; only lines whose signal is genuinely too weak are missed, causing a silent fallback to geometric recovery, which cannot express merges;
-- Exported Excel stores **numbers as text**: order IDs, phone numbers and leading zeros are preserved; values that parse cleanly (thousands separators, percentages, currency, dates) are converted to real numbers.
+| Copy all the text | Click "Copy" |
+| Only one line | Double-click that line |
+| Close the window | Click × or press `Esc`; if recognition is still running, the window reopens when the result arrives |
+| Recognition failed | A tray notification appears — select a sharper region and retry |
 
 :::tip
-The cleaner the table and its rules, the better the result. Complex backgrounds (dark themes, gradients, colour blocks) are normalised before line detection, but always verify before exporting; skewed or perspective-distorted tables should be captured straight on.
+If the text is upside down, vertical or rotated, straighten the picture and keep the selection tight before recognising — it makes a big difference. Text in everyday desktop screenshots is upright, so you normally need to do nothing.
 :::
 
-## QR code recognition
+Handy for dialogs, scans, video subtitles and PDF screenshots where the text cannot be selected.
 
-Decode QR codes in the selection and copy the content **straight to the clipboard** — no result window.
+When you need to **understand** foreign text rather than extract it, click **Translate** on the toolbar: it translates the recognised text and shows the image next to the result (see [Screenshot translation](/en/guide/features/translate)).
+
+## Turn a table screenshot into Excel
+
+1. Press `F1` and select the table tightly, without extra content around it;
+2. Click **Table** on the toolbar;
+3. The result window shows a **grid you can edit**:
+
+   - Double-click a cell to change its text; column headers are **A / B / C**, matching the exported file;
+   - Select at least two cells → click **Merge** (their text is joined into the top-left cell); select a merged cell → click **Split** to undo the merge. **Merge cannot be undone**, so check first;
+   - Uncertain cells get a tinted background with a "please verify" tooltip; cells you edited yourself are no longer flagged.
+4. When it looks right, pick how to take it away:
+
+   | Click | What you get |
+   | --- | --- |
+   | Copy TSV | The whole table on the clipboard; pasting into Excel / Sheets splits it into columns |
+   | Export Excel | `table_date_time.xlsx`, with real merged cells preserved |
+   | Export CSV | `table_date_time.csv`, opens cleanly in Excel |
+
+Files land in the folder from Settings → General → Save path; with "Open folder after save" on, that folder opens automatically (see [Saving & output](/en/guide/features/output)). **The export is exactly what the window shows** — your edits, merges and splits included.
+
+### When table recognition works best
+
+- Regular tables with clear rules are the most accurate, including merged cells;
+- Tables without rules still produce a grid from the text positions, but you have to add merges yourself;
+- Dark themes, gradients and colour blocks are handled automatically, but verify before exporting;
+- You get an **editable first draft**: text, merges and column/row sizes follow the image. Fonts, exact colours and formulas are not restored.
+
+### Good to know
+
+- A table needs **at least 2 rows and 2 columns**;
+- Diagonal headers, nested tables and vertical text get flattened or merged;
+- Excel exports store numbers as text, so order IDs, phone numbers and leading zeros survive;
+- Straighten a skewed or perspective-distorted table before capturing it.
+
+:::tip
+A tight selection with clear rules saves the most work. For complex backgrounds or tilted tables, spend half a minute checking the grid before exporting.
+:::
+
+## Scan a QR code
+
+Select a QR code, click one button, and the content is on your clipboard — no result window.
 
 ### During a capture
 
-1. Press `F1` and select the region containing the QR code;
+1. Press `F1` and select the code;
 2. Click **QR code** on the toolbar (to the right of OCR and Translate);
-3. Decoding uses the **original image** at capture time (annotations are not included). On success a toast shows the decoded content and the capture overlay closes automatically; the content is already on your clipboard.
+3. A toast shows the decoded content and the overlay closes — **just paste it**. Annotations added afterwards are not included.
 
 ### In a pin window
 
-1. Click **QR code** on the pin toolbar to enter selection mode (crosshair cursor);
-2. Drag a rectangle around the QR code and release to decode and copy;
-3. Click the button again or press `Esc` to exit the mode; a barely-moved drag is treated as accidental and ignored.
+1. Click **QR code** on the pin toolbar — the cursor becomes a crosshair;
+2. Drag a box around the code and release to decode and copy;
+3. Click the button again or press `Esc` to leave the mode. A tiny box will not decode — frame the whole code.
 
-### Behaviour & limits
+### Good to know
 
-- **Multiple codes** in the selection are all decoded; contents are joined line by line and the count is reported; duplicates are removed;
-- Only the **QR family** is supported (including Micro QR / Rectangle QR); 1D barcodes and DataMatrix / Aztec / PDF417 are not;
-- Content is copied **as raw text**: URLs, Wi-Fi credentials and contact cards are not parsed and no links are opened;
-- Very small codes are upscaled automatically before decoding;
-- On failure the reason is shown and the previous clipboard content is **not overwritten**;
-- If the build ships without the decoding component, the button remains and reports "QR code recognition is not enabled in this build".
+- **Multiple codes** in one selection are all decoded, joined line by line, with duplicates removed;
+- Only the **QR family** is supported (including Micro QR) — 1D barcodes and DataMatrix are not;
+- You get the raw text: no links are opened and Wi-Fi / contact cards are not parsed;
+- Very small codes are enlarged automatically before decoding;
+- On failure the reason is shown and your existing clipboard content is **not overwritten**;
+- If this build lacks the component, the button says "QR code recognition is not enabled in this build".
 
-## Quick troubleshooting
+## If it didn't work
 
-| Symptom | What to do |
+| What you see | Try this |
 | --- | --- |
-| Slow first recognition | Models are loaded on first use and then stay resident; the overlay preloads them, so normally nothing to do |
-| "Model unavailable" | Run Settings → OCR self-check, inspect the models folder, reinstall if files are missing |
-| Garbled OCR output | Only PP-OCRv6 models are supported; older model files in the folder cause an explicit error — remove them |
-| Rows/columns wrong, merges lost | Select tighter around the table and fix with Merge / Split before exporting |
-| QR code not decoded | Make sure it is a QR-family code (1D barcodes / DataMatrix are not supported); frame the code completely and avoid extra surrounding content |
+| First recognition is slow | Models load on first use and then stay ready — normally nothing to do |
+| "Model unavailable" | Run Settings → OCR self-check → "Run self-check", or open the models folder; reinstall if files are missing |
+| Garbled text | Older model files in the folder are the usual cause — remove them |
+| Wrong rows/columns or lost merges | Select tighter around the table, then fix it with Merge / Split |
+| QR code not decoded | Make sure it is a QR-family code, frame it completely, avoid extra surroundings |
