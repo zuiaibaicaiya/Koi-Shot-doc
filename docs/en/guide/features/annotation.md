@@ -49,6 +49,12 @@ The colours and thickness steps are the same ones in Settings → Annotation. Ch
 
 Drag with the left button; each stroke is one undo step. A stroke **cannot be selected later** — undo with `Ctrl + Z` and redraw.
 
+**For a perfectly straight line**: hold `Shift` while drawing and the stroke becomes a horizontal or vertical line starting at the current pen tip. The first direction you drag locks it in — it will not switch axes while `Shift` is held. You can draw freely first and press `Shift` midway; the line starts where the freehand part ends. Release `Shift` to keep drawing freehand from the line's end; the straight part stays. To change direction, release `Shift` and hold it again. **The highlighter works the same way**, in capture and in pin windows.
+
+::::tip
+`Shift` means "straight line" for Pen / Highlighter, "square / circle" for Rectangle / Ellipse, and "square selection" before you select a region — it follows what you are doing.
+::::
+
 ### Rectangle / Ellipse
 
 Drag to draw; hold `Shift` for a **square / circle** (pressing or releasing mid-drag works immediately). On release the shape is selected with eight handles:

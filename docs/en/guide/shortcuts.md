@@ -24,6 +24,7 @@ Work from any foreground app (rebind under Settings → Hotkeys, see [Settings &
 | --- | --- |
 | Drag | Select a region |
 | `Shift` + drag | Square selection (toggles live) |
+| Hold `Shift` + drag while drawing (Pen / Highlighter) | Horizontal or vertical line from the current stroke end, direction locked; release `Shift` to keep drawing freehand |
 | Single click | Select the highlighted UI element |
 | Drag inside the selection | Move the selection |
 | `Enter` | Run the default action (copy / save / pin / record, depending on the entry) |

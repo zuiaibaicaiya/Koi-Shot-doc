@@ -43,7 +43,7 @@ The UI comes in Chinese and English with light / dark themes, all 5 global hotke
 | macOS | Grant Screen Recording on first use and Accessibility for UI-element highlight; macOS asks for the microphone when you record with audio (denial just means no sound). Video recording needs macOS 12.3+ — see the [FAQ](/en/guide/faq) |
 | Linux | A `.deb` package is provided; hotkeys need an X11 session (Wayland is not supported yet), and it starts at login after install |
 
-Only **screenshot translation** needs your own Alibaba Cloud machine translation AccessKey and network access (setup: [Screenshot translation](/en/guide/features/translate)). Text, table and QR recognition are fully local — no account needed.
+Only **screenshot translation** needs network access and your own account credentials: pick Alibaba Cloud Machine Translation or Baidu Translate and enter the matching AccessKey or APP ID / API Key (setup: [Screenshot translation](/en/guide/features/translate)). Text, table and QR recognition are fully local — no account needed.
 
 ## Three moves to get going
 

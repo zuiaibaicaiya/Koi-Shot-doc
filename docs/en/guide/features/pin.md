@@ -34,7 +34,7 @@ The toolbar finds its own place: normally below the image, flipping above when t
 
 | Button | Purpose |
 | --- | --- |
-| Nine annotation tools | Keep annotating on the pin, same as during capture — see [Annotation](/en/guide/features/annotation) |
+| Nine annotation tools | Keep annotating on the pin, same as during capture (including `Shift` for straight lines) — see [Annotation](/en/guide/features/annotation) |
 | Undo / Redo | Step back or forward through annotations |
 | Copy | Copy the original image (no annotations) to the clipboard |
 | QR code | Enter selection mode; box a QR code to decode and copy it |

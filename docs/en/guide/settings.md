@@ -16,7 +16,7 @@ Change the UI language, theme, save folder, hotkeys or the colours your annotati
 | Open the folder after saving | Save path → Open folder after save | Off by default; turn it on to have the folder pop open after each save |
 | GIF quality / frame rate | GIF recording | Size preset High quality / Balanced / Small size, 5–30 fps (default 15) — see [GIF recording](/en/guide/features/long-capture-gif#gif-recording) |
 | Video frame rate / audio | Recording (MP4) | 10–60 fps (default 30), microphone on by default; change it on the recording bar before starting and it applies to that recording |
-| Translation account | Translation | Enter your Alibaba Cloud machine translation AccessKey ID / Secret, pick a target language, Save, then verify with "Test translation" — see [Screenshot translation](/en/guide/features/translate) |
+| Translation account | Translation | Pick a provider (Alibaba Cloud Machine Translation / Baidu Translate), then enter its credentials — Alibaba Cloud AccessKey ID / Secret, or Baidu APP ID / API Key. Choose a target language, Save, then verify with "Test translation" — see [Screenshot translation](/en/guide/features/translate) |
 | Whether recognition is healthy | OCR self-check | Click "Run self-check", or "Open models folder" to inspect the files |
 
 ## Hotkeys
@@ -59,7 +59,7 @@ Factory values: [Annotation defaults](/en/guide/features/annotation#annotation-d
 About information lives only in **tray → Settings → the fourth sidebar page, About**; there is no separate "About" tray item. On that page you will find:
 
 - The **version number** (matching the installer name); the full build version also appears at the bottom of the sidebar;
-- **One status line** telling you whether you are up to date, a new version was found, it is downloading, it is waiting for idle time to install, or the update failed;
+- **One status line** telling you whether you are up to date, a new version was found, it is downloading, it is waiting for idle time, it is installing and restarting, or the update failed; when you start the check yourself, the download line also says it will install and restart automatically when ready;
 - **"Check for updates / Check again"** to check right now; "Retry" resumes a failed download instead of starting over; "Open release page" downloads manually;
 - **QQ group 1134581312** — click the number to copy it, or scan the QR code;
 - **"Open-source licenses"** — a read-only window listing the third-party components and links to their full licenses (opened in your browser); close with `Esc` or the button.
@@ -70,7 +70,7 @@ About information lives only in **tray → Settings → the fourth sidebar page,
 
 | Your system | How the update finishes |
 | --- | --- |
-| Windows | Once downloaded, koiShot installs while you are away from the keyboard and reopens — no wizard to run |
+| Windows | **Found in the background**: after the download, koiShot waits until you have been away from the keyboard and mouse for two continuous minutes, then installs and reopens — no wizard to run. **You clicked "Check for updates / Check again / Retry"**: it installs and restarts as soon as the download is verified, without waiting — save your work before clicking |
 | macOS / Linux | The downloaded package is handed to the system; finish it in the system dialog while the app keeps running |
 
 :::tip

@@ -52,7 +52,7 @@ Not in this version — there is no switch and no "notify only" option. Offline 
 
 ### Windows restarts the app automatically — what if I'm using it?
 
-Installation waits until you have been **away from the keyboard and mouse for two continuous minutes**, then koiShot reopens. It stays fully usable while waiting; save any work in progress before it starts.
+It depends on who found the update. For a version **found in the background**, installation waits until you have been away from the keyboard and mouse for two continuous minutes; koiShot stays fully usable until then. If **you clicked "Check for updates / Check again / Retry"** in Settings → About, it installs and restarts as soon as the download is verified (the download status line says so). Save any work in progress before you click.
 
 ### Does macOS / Linux finish the install too?
 
@@ -64,7 +64,7 @@ Progress is not lost when you lose the connection or quit the app — the next l
 
 ### Can I check right now or upgrade manually?
 
-Click "Check for updates / Check again" in Settings → About. Running a newer installer over the existing one also works on every platform and keeps your settings.
+Click "Check for updates / Check again" in Settings → About; on Windows an update you start this way installs and restarts as soon as it is downloaded, without waiting for idle time. Running a newer installer over the existing one also works on every platform and keeps your settings.
 
 ## Permissions (macOS)
 
@@ -177,7 +177,7 @@ The engine and models ship with the installer. Run Settings → General → OCR 
 
 ### Recognition feels slow or uses a lot of memory?
 
-Models are loaded in advance when a capture opens, so some resident memory use **is normal, not a leak**; a temporary spike during recognition is normal too. If it still feels wrong:
+Models are loaded in the background shortly after koiShot starts, so some resident memory use **is normal, not a leak**; a temporary spike during recognition is normal too. The first capture after launch does not wait for the models either, so the overlay appears quickly. If it still feels wrong:
 
 1. Quit koiShot completely from the tray and reopen it;
 2. Confirm the self-check reports a healthy environment;
@@ -192,16 +192,16 @@ Models are loaded in advance when a capture opens, so some resident memory use *
 
 ## Screenshot translation
 
-### Translate says "Please fill in the AccessKey ID and AccessKey Secret first"?
+### Translation asks me to "fill in the credentials first"?
 
-Translation needs your own credentials: Settings → General → Translation settings, enter the AccessKey ID / Secret, click **Save**, then **Test translation**. Changes apply immediately.
+Translation needs your own credentials. Under Settings → General → Translation settings, check which **provider** is selected: Alibaba Cloud uses AccessKey ID / Secret, Baidu Translate uses APP ID / API Key. Click **Save**, then **Test translation**. Changes apply immediately, and both sets of credentials are kept when you switch providers.
 
 ### Translation failed?
 
 The status line on the right gives the reason. The usual ones:
 
-1. **Text too long**: about 5000 characters per request — translate the screen in a few smaller selections;
-2. **Invalid credentials / service not enabled / account in arrears**: verify with "Test translation";
+1. **Text too long**: about 5000 characters on Alibaba Cloud, and Baidu recommends under 2000 — translate the screen in a few smaller selections;
+2. **Invalid credentials / service not enabled / account in arrears**: check that the selected provider's account has translation enabled, and verify with "Test translation";
 3. **No network**: failures are not retried automatically — switch language or click Translate again.
 
 ### Does translation upload my image?
@@ -243,7 +243,7 @@ Straight into the save folder (no save dialog), named like `table_20261002_15304
 | Linux video | May run at about 10 fps; recording components ship with the package |
 | Long screenshots | Animations / videos can misalign |
 | Table recognition | No fonts, exact colours or formulas; no diagonal headers, nested tables or vertical text; at least 2×2 cells |
-| Translation | Needs your own Alibaba Cloud AccessKey and network; about 5000 characters per request; translation only |
+| Translation | Needs your own Alibaba Cloud or Baidu Translate credentials and network; about 5000 characters per request (Baidu recommends under 2000); translation only |
 | Automatic updates | No switch, no confirmation; Windows finishes automatically, macOS / Linux need the system dialog |
 | AI features | Image editing and visual Q&A are not available yet — nothing to click in the interface |
 

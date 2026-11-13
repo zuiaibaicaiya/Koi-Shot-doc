@@ -127,4 +127,4 @@ koiShot **only lives in the system tray** and shows no window:
 2. In Settings, check the save folder, UI language, theme and hotkeys (all 5 global actions can be rebound);
 3. If you are unsure whether recognition is ready, click "Run self-check" under Settings → OCR self-check (usually unnecessary);
 4. For recordings with audio, check the microphone switch under Settings → General → Recording (MP4);
-5. For screenshot translation, enter your Alibaba Cloud machine translation AccessKey under Settings → General → Translation settings and verify with "Test translation" (see [Screenshot translation](/en/guide/features/translate)).
+5. For screenshot translation, pick a provider (Alibaba Cloud / Baidu Translate) under Settings → General → Translation settings, enter its credentials and verify with "Test translation" (see [Screenshot translation](/en/guide/features/translate)).
