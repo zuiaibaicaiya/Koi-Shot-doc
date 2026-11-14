@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://koishot.example.com/sitemap.xml
+Sitemap: https://zuiaibaicaiya.github.io/Koi-Shot-doc/sitemap.xml
