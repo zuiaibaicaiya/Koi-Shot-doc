@@ -15,8 +15,9 @@ Change the UI language, theme, save folder, hotkeys or the colours your annotati
 | Where files are saved | Save path → Save path | One folder for captures, long screenshots, GIFs, recordings and table exports; defaults to `koiShot` under Pictures. Click "Browse" to change it |
 | Open the folder after saving | Save path → Open folder after save | Off by default; turn it on to have the folder pop open after each save |
 | GIF quality / frame rate | GIF recording | Size preset High quality / Balanced / Small size, 5–30 fps (default 15) — see [GIF recording](/en/guide/features/long-capture-gif#gif-recording) |
+| Rapid capture frame rate | Rapid capture | 10–60 fps (default 30); you can also change it on the capture bar before clicking Start capture, and it applies to that run — see [Rapid capture](/en/guide/features/long-capture-gif#rapid-capture) |
 | Video frame rate / audio | Recording (MP4) | 10–60 fps (default 30), microphone on by default; change it on the recording bar before starting and it applies to that recording |
-| Translation account | Translation | Pick a provider (Alibaba Cloud Machine Translation / Baidu Translate), then enter its credentials — Alibaba Cloud AccessKey ID / Secret, or Baidu APP ID / API Key. Choose a target language, Save, then verify with "Test translation" — see [Screenshot translation](/en/guide/features/translate) |
+| Translation account | Translation | Pick a provider: Alibaba Cloud Machine Translation, Baidu Translate, DeepSeek, Zhipu GLM or Qwen. Enter the matching credentials (Alibaba Cloud AccessKey ID / Secret; Baidu APP ID / API Key; an API Key for the other three, with optional model and endpoint). Choose a target language, Save, then verify with "Test translation" — see [Screenshot translation](/en/guide/features/translate) |
 | Whether recognition is healthy | OCR self-check | Click "Run self-check", or "Open models folder" to inspect the files |
 
 ## Hotkeys

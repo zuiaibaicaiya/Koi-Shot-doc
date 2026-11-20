@@ -27,6 +27,7 @@ Work from any foreground app (rebind under Settings → Hotkeys, see [Settings &
 | Hold `Shift` + drag while drawing (Pen / Highlighter) | Horizontal or vertical line from the current stroke end, direction locked; release `Shift` to keep drawing freehand |
 | Single click | Select the highlighted UI element |
 | Drag inside the selection | Move the selection |
+| Once the selection is set, right-drag over text | Recognise and copy the dragged text, with no result window (see [OCR & tables](/en/guide/features/ocr-table#drag-across-text-after-selecting)) |
 | `Enter` | Run the default action (copy / save / pin / record, depending on the entry) |
 | `Esc` | Cancel the capture / close a property popup / discard a text edit |
 | `Ctrl + Z` | Undo annotation |
@@ -58,14 +59,14 @@ Clicking elsewhere, clicking a swatch or switching tools commits instead of disc
 | Drag over text with no tool active | Select text, recognise it and copy to the clipboard |
 | "QR code" → drag a rectangle | Decode the QR code and copy its content (button again or `Esc` to cancel) |
 
-## While recording (long screenshot / GIF / video)
+## While capturing (long screenshot / GIF / rapid capture / video)
 
 | Key / action | Result |
 | --- | --- |
-| `Esc` | Long screenshot: stop and produce the image; GIF / video: cancel the recording (captured frames are discarded); ready state: cancel |
-| Control / recording bar buttons | Long screenshot: Start ▶ / Finish ✓ / Cancel ✕; GIF and video first require confirming "Start recording"; video also has Pause ❚❚ / Resume ▶ while recording. Buttons are icons — hover to see the name |
-| Recording-bar frame-rate dropdown (GIF / video ready state) | Change the frame rate directly; locked once recording starts |
-| Drag inside the region (ready state) | Move the recording region (move only, no resize; cannot leave the current screen; also applies to long capture) |
+| `Esc` | Long screenshot: stop and produce the image; GIF / video / rapid capture: cancel and discard what was captured; ready state: cancel. During rapid-capture saving the overlay stays until saving finishes |
+| Control / recording bar buttons | Long screenshot: Start ▶ / Finish ✓ / Cancel ✕; GIF and video require "Start recording" first, rapid capture requires "Start capture"; video also has Pause ❚❚ / Resume ▶ while recording. Buttons are icons — hover to see the name |
+| Bar frame-rate dropdown (GIF / video / rapid capture, ready state) | Change the frame rate directly; locked once capture starts |
+| Drag inside the region (ready state) | Move the region (move only, no resize; cannot leave the current screen; also applies to long capture) |
 
 ## Result windows
 

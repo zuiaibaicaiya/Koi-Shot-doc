@@ -1,5 +1,5 @@
 ---
-description: 怎么开始截图、怎么框得准、工具栏上每颗按钮做什么，以及怎么完成或取消。
+description: 怎么开始截图、怎么框得准、框选后怎么直接划选文字复制、工具栏上每颗按钮做什么，以及怎么完成或取消。
 ---
 
 # 截图
@@ -55,6 +55,16 @@ description: 怎么开始截图、怎么框得准、工具栏上每颗按钮做�
 
 框选时移动鼠标，屏幕角落会出现放大镜：放大光标附近的像素、显示像素栅格，下面还有 **RGB 色值**和坐标。想精确对齐边界或顺便取个颜色，看它就行。
 
+### 框选后直接划选文字
+
+选区定好、工具栏出现后，先别画标注：画面里可以识别的文字会淡淡亮起。对着文字**按住右键划过**，松手就把划到的字识别并复制到剪贴板，提示条会显示复制了几行和一小段内容；提示停一会儿后截图界面自动收起，直接粘贴即可。
+
+- 左键仍然是移动 / 调整选区；这一步只用右键；
+- 已经画过标注就不再提供这个入口，想识别文字请点工具栏「OCR」；
+- 划得太短会被当成误点，没识别到字会提示重新完整框住文字。
+
+详细步骤和排障见 [OCR 与表格识别](/zh/guide/features/ocr-table#框选后直接划选文字)。
+
 ### 左侧的快捷键提示
 
 屏幕左列有一块半透明面板，列出**当前这一步能按哪些键**：
@@ -62,7 +72,7 @@ description: 怎么开始截图、怎么框得准、工具栏上每颗按钮做�
 | 阶段 | 面板上写什么 |
 | --- | --- |
 | 还没框选 | 拖拽框选 · Shift+拖拽 正方形 · 单击选区块 · Esc 取消 |
-| 选区已定、工具栏出现 | 拖选区移动 / 调整 · 滚轮调标注粗细 · Ctrl+Z 撤销 · Enter 完成 · Esc 取消 |
+| 选区已定、工具栏出现 | 拖选区移动 / 调整 · 右键拖动识别文字并复制 · 滚轮调标注粗细 · Ctrl+Z 撤销 · Enter 完成 · Esc 取消 |
 
 面板优先待在左下角，左下被挡才换到左上；两个角都被选区、工具栏之类压住时会暂时让路。拖拽过程中会隐藏，松手恢复；GIF / 录屏录制时不显示。
 
@@ -79,9 +89,10 @@ description: 怎么开始截图、怎么框得准、工具栏上每颗按钮做�
 | 输出 | 翻译 | 把外文翻成译文，左图右文对照 | [截图翻译](/zh/guide/features/translate) |
 | 输出 | 二维码识别 | 解码二维码，内容进剪贴板 | [OCR 与表格识别](/zh/guide/features/ocr-table) |
 | 输出 | 表格 | 把表格变成能改的网格，导出 Excel | [OCR 与表格识别](/zh/guide/features/ocr-table) |
-| 输出 | 长截图 | 滚动页面自动拼成长图 | [长截图、GIF 与录屏](/zh/guide/features/long-capture-gif) |
-| 输出 | 录制 GIF | 把框选区域录成动图 | [长截图、GIF 与录屏](/zh/guide/features/long-capture-gif) |
-| 输出 | 录屏 | 把框选区域录成 MP4（可带声音） | [长截图、GIF 与录屏](/zh/guide/features/long-capture-gif) |
+| 输出 | 长截图 | 滚动页面自动拼成长图 | [长截图、GIF、快速截屏与录屏](/zh/guide/features/long-capture-gif) |
+| 输出 | 录制 GIF | 把框选区域录成动图 | [长截图、GIF、快速截屏与录屏](/zh/guide/features/long-capture-gif) |
+| 输出 | 快速截屏 | 按帧率连续抓取选区画面，得到一组 PNG 帧 | [长截图、GIF、快速截屏与录屏](/zh/guide/features/long-capture-gif#快速截屏) |
+| 输出 | 录屏 | 把框选区域录成 MP4（可带声音） | [长截图、GIF、快速截屏与录屏](/zh/guide/features/long-capture-gif) |
 | 收尾 | 保存 / 取消 / 复制 | 存到文件夹、放弃、复制到剪贴板（最右边） | [保存与输出](/zh/guide/features/output) |
 
 按钮都是图标，**把鼠标停一下就会显示名字**；靠近屏幕底边时提示会翻到按钮上方，灰色按钮不显示提示。当前选中的工具会高亮，再点一次它能打开属性弹窗。
@@ -102,5 +113,5 @@ description: 怎么开始截图、怎么框得准、工具栏上每颗按钮做�
 也可以直接点「复制」/「保存」/「贴图」等按钮；点「取消」或按 `Esc` 放弃（正在输入文字标注时，`Esc` 只退出输入，不会关掉整张截图）。
 
 :::tip
-标注见[标注与编辑](/zh/guide/features/annotation)；OCR、表格、二维码与翻译见[OCR 与表格识别](/zh/guide/features/ocr-table)和[截图翻译](/zh/guide/features/translate)；长截图、GIF 与录屏见[长截图、GIF 与录屏](/zh/guide/features/long-capture-gif)；文件存哪、叫什么见[保存与输出](/zh/guide/features/output)。
+标注见[标注与编辑](/zh/guide/features/annotation)；OCR、表格、二维码与翻译见[OCR 与表格识别](/zh/guide/features/ocr-table)和[截图翻译](/zh/guide/features/translate)；长截图、GIF、快速截屏与录屏见[长截图、GIF、快速截屏与录屏](/zh/guide/features/long-capture-gif)；文件存哪、叫什么见[保存与输出](/zh/guide/features/output)。
 :::

@@ -25,6 +25,7 @@ Everything uses `name_date_time` (24-hour clock). Several files in the same seco
 | Video recording | `koiShot_20261002_153045.mp4` |
 | Long screenshot | `long_20261002_153045.png` |
 | GIF | `gif_20261002_153045.gif` |
+| Rapid capture | `rapidshot_20261002_153045/` (with `frame_000001.png`, `frame_000002.png`, …) |
 | Table export | `table_20261002_153045.xlsx` or `.csv` |
 
 ## Where they go, and how to change it
@@ -42,6 +43,7 @@ Everything uses `name_date_time` (24-hour clock). Several files in the same seco
 | Pin | Only if you ask | "Save annotated image" or right-click "Save original" creates the file |
 | Long screenshot | Yes | "Finish" saves `long_*.png` **and copies it to the clipboard** |
 | GIF | Yes | "Finish recording" produces `gif_*.gif` |
+| Rapid capture | Yes | "End capture" produces a `rapidshot_date_time` folder and opens it automatically, regardless of "Open folder after save" |
 | Video recording | Yes | "Finish recording" produces `koiShot_*.mp4` |
 | Table recognition | Yes | "Export Excel" / "Export CSV" writes into the save folder |
 | Screenshot translation | No | Translation only — copy it with the button or the context menu |
@@ -51,6 +53,7 @@ Everything uses `name_date_time` (24-hour clock). Several files in the same seco
 - Captures, long screenshots and pins: **PNG**, lossless, annotations included;
 - Video recordings: **MP4**, optionally with microphone audio, playable in any player;
 - GIF recordings: **GIF**, loops automatically in chat;
+- Rapid capture: a set of numbered **PNG frames**, ready for frame-by-frame inspection or further processing;
 - Tables: **Excel (`.xlsx`, with merged cells)** or **CSV**; you can also copy the whole grid and paste it into Excel / Sheets with the columns already split.
 
 :::tip

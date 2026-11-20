@@ -29,7 +29,7 @@ features:
     icon: 📌
     link: /en/guide/features/pin
   - title: Long Screenshot & Recording
-    details: Scroll a whole page into one image; record a few seconds as a GIF, or use MP4 for audio and longer clips — even HDR screens stay readable.
+    details: Scroll a whole page into one image; record a few seconds as a GIF, save raw frames with rapid capture, or use MP4 for audio and longer clips.
     icon: 🎞️
     link: /en/guide/features/long-capture-gif
   - title: Text & Tables

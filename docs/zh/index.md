@@ -29,7 +29,7 @@ features:
     icon: 📌
     link: /zh/guide/features/pin
   - title: 长截图与录制
-    details: 滚动页面自动拼成一张长图；几秒的演示录成 GIF，需要声音或更长时间就录 MP4，HDR 屏幕也不会一片白。
+    details: 滚动页面自动拼成一张长图；几秒的演示录成 GIF，要逐帧素材就快速截屏，需要声音或更长时间就录 MP4。
     icon: 🎞️
     link: /zh/guide/features/long-capture-gif
   - title: 识别文字与表格

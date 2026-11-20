@@ -126,7 +126,7 @@ With a pin focused, `Esc` (or `Ctrl/⌘ + W`) closes it by design; while typing 
 
 Not in this version — only zoom and opacity.
 
-## Long screenshot / GIF / video
+## Long screenshot / GIF / rapid capture / video
 
 ### "No valid scrolling detected"?
 
@@ -143,6 +143,10 @@ Click **Cancel** (✕) on the control bar: everything captured is discarded, no 
 ### GIF recording stopped by itself?
 
 A GIF runs about 30 seconds at most, and less for a large region. At the limit it stops and exports what it has. Use video for longer clips.
+
+### Where did my rapid capture go? Why was there no success dialog?
+
+After you click **End capture**, the frames are written to a `rapidshot_date_time` folder inside the save folder, named `frame_000001.png` and so on. That folder **opens automatically** when saving finishes, so there is no "saved N frames" dialog; this happens regardless of the "Open folder after save" setting. To discard a run, click **Cancel capture** on the bar — all frames captured so far are deleted.
 
 ### Video recording stopped at 10 minutes?
 
@@ -165,15 +169,19 @@ After stopping, the video has to be written to disk — longer clips and larger 
 
 On Windows, koiShot handles HDR so highlights no longer blow out. If it still looks washed out, check the system HDR switch and your graphics driver, or compare another region / app. On older machines video may still look washed out, but recording is not interrupted. Changing the system HDR switch mid-recording can leave this clip blank — record it once more.
 
-### GIF or video?
+### GIF, rapid capture or video?
 
-GIF for a few seconds that loops in chat or tickets; video when you need audio, more than 30 seconds, or better quality.
+GIF for a few seconds that loops in chat or tickets; rapid capture when you need raw frames for another tool; video when you need audio, more than 30 seconds, or better quality.
 
 ## OCR & tables
 
 ### Recognition isn't working?
 
 The engine and models ship with the installer. Run Settings → General → OCR self-check → "Run self-check" first; if it reports a problem, open the models folder to check the files, or reinstall.
+
+### Right-dragging over text after selecting didn't copy anything?
+
+This shortcut works only on a freshly committed selection with no annotations drawn. The left button still moves / resizes the selection. Drag further along the text and check the toast for "Copied N lines" or a failure reason; once you have drawn an annotation, use the toolbar **OCR** button instead. See [Drag across text after selecting](/en/guide/features/ocr-table#drag-across-text-after-selecting).
 
 ### Recognition feels slow or uses a lot of memory?
 
@@ -194,14 +202,14 @@ Models are loaded in the background shortly after koiShot starts, so some reside
 
 ### Translation asks me to "fill in the credentials first"?
 
-Translation needs your own credentials. Under Settings → General → Translation settings, check which **provider** is selected: Alibaba Cloud uses AccessKey ID / Secret, Baidu Translate uses APP ID / API Key. Click **Save**, then **Test translation**. Changes apply immediately, and both sets of credentials are kept when you switch providers.
+Translation needs your own credentials. Under Settings → General → Translation settings, check which **provider** is selected: Alibaba Cloud uses AccessKey ID / Secret, Baidu Translate uses APP ID / API Key, and DeepSeek / Zhipu GLM / Qwen each use an API Key (their model and endpoint fields can stay at the defaults unless you need something else). Click **Save**, then **Test translation**. Changes apply immediately, and each provider keeps its own credentials.
 
 ### Translation failed?
 
 The status line on the right gives the reason. The usual ones:
 
-1. **Text too long**: about 5000 characters on Alibaba Cloud, and Baidu recommends under 2000 — translate the screen in a few smaller selections;
-2. **Invalid credentials / service not enabled / account in arrears**: check that the selected provider's account has translation enabled, and verify with "Test translation";
+1. **Text too long**: about 5000 characters on Alibaba Cloud, Baidu recommends under 2000, and LLM providers have their own limits — translate the screen in a few smaller selections;
+2. **Invalid credentials / service not enabled / account in arrears**: check that the selected provider's account is usable, and verify with "Test translation";
 3. **No network**: failures are not retried automatically — switch language or click Translate again.
 
 ### Does translation upload my image?
@@ -221,7 +229,7 @@ No. Change the "Translate to" dropdown and the same source text is translated ag
 ### Where are my screenshots?
 
 1. Settings → General → Save path (defaults to a `koiShot` folder under Pictures);
-2. Files are named `name_date_time` — captures `koiShot_…png`, long screenshots `long_…`, GIFs `gif_…`, videos `koiShot_….mp4`, tables `table_…`;
+2. Files are named `name_date_time` — captures `koiShot_…png`, long screenshots `long_…`, GIFs `gif_…`, rapid captures `rapidshot_…` folders, videos `koiShot_….mp4`, tables `table_…`;
 3. Enable "Open folder after save" to have the folder pop open. See [Saving & output](/en/guide/features/output).
 
 ### Where does the table export go?
@@ -243,7 +251,7 @@ Straight into the save folder (no save dialog), named like `table_20261002_15304
 | Linux video | May run at about 10 fps; recording components ship with the package |
 | Long screenshots | Animations / videos can misalign |
 | Table recognition | No fonts, exact colours or formulas; no diagonal headers, nested tables or vertical text; at least 2×2 cells |
-| Translation | Needs your own Alibaba Cloud or Baidu Translate credentials and network; about 5000 characters per request (Baidu recommends under 2000); translation only |
+| Translation | Needs your own Alibaba Cloud / Baidu / DeepSeek / Zhipu GLM / Qwen credentials and network; long text must be split; translation only |
 | Automatic updates | No switch, no confirmation; Windows finishes automatically, macOS / Linux need the system dialog |
 | AI features | Image editing and visual Q&A are not available yet — nothing to click in the interface |
 

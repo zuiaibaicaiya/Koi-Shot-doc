@@ -1,5 +1,5 @@
 ---
-description: 'What koiShot is and what it helps you do: capture and annotate, pin, long screenshots, recording, text recognition, translation and tables.'
+description: 'What koiShot is and what it helps you do: capture and annotate, pin, long screenshots, rapid capture, recording, text recognition, translation and tables.'
 ---
 
 # Introduction
@@ -18,7 +18,8 @@ Once installed it only leaves an icon in the system tray / menu bar — no windo
 | Work while looking at a reference | Pin: keep a screenshot on top, zoom it and fade it |
 | Capture a whole page or chat log | Long screenshot: scroll and get one stitched image |
 | Show someone how something works | GIF (a few seconds, loops) or MP4 recording (with audio, up to 10 minutes) |
-| Copy text you cannot select | OCR, copy everything or just one line |
+| Keep raw frames of an action | Rapid capture: numbered PNG images saved at a chosen frame rate |
+| Copy text you cannot select | OCR (copy everything or one line), or right-drag across text right after selecting |
 | Understand a foreign UI or error | Screenshot translation, image and translation side by side, switch languages any time |
 | Turn a table screenshot into Excel | Table recognition, export `.xlsx` / `.csv` |
 | Read a QR code | QR decoding, content straight to the clipboard |
@@ -43,7 +44,7 @@ The UI comes in Chinese and English with light / dark themes, all 5 global hotke
 | macOS | Grant Screen Recording on first use and Accessibility for UI-element highlight; macOS asks for the microphone when you record with audio (denial just means no sound). Video recording needs macOS 12.3+ — see the [FAQ](/en/guide/faq) |
 | Linux | A `.deb` package is provided; hotkeys need an X11 session (Wayland is not supported yet), and it starts at login after install |
 
-Only **screenshot translation** needs network access and your own account credentials: pick Alibaba Cloud Machine Translation or Baidu Translate and enter the matching AccessKey or APP ID / API Key (setup: [Screenshot translation](/en/guide/features/translate)). Text, table and QR recognition are fully local — no account needed.
+Only **screenshot translation** needs network access and your own account credentials: pick Alibaba Cloud Machine Translation, Baidu Translate, DeepSeek, Zhipu GLM or Qwen, then enter the matching credentials (setup: [Screenshot translation](/en/guide/features/translate)). Text, table and QR recognition are fully local — no account needed.
 
 ## Three moves to get going
 

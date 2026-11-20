@@ -12,9 +12,9 @@ const BASE_PATH = '/Koi-Shot-doc/';
 /** 每个路由的 SEO 标题与描述（覆盖中英文所有页面） */
 const pageMetas: Record<string, { title: string; description: string }> = {
   '/': {
-    title: 'koiShot 使用文档：截图、标注、贴图、长截图、60fps 录屏、OCR 与表格识别',
+    title: 'koiShot 使用文档：截图、标注、贴图、长截图、快速截屏、录屏、OCR 与表格识别',
     description:
-      'koiShot 跨平台截图工具使用文档：截图标注、贴图、长截图、GIF 录制、最高 60 帧的 MP4 录屏、本地离线 OCR 文字识别与表格识别（截图转 Excel），无水印无广告。',
+      'koiShot 跨平台截图工具使用文档：截图标注、贴图、长截图、GIF 录制、快速截屏逐帧 PNG、最高 60 帧的 MP4 录屏、本地离线 OCR 文字识别与表格识别（截图转 Excel），无水印无广告。',
   },
   '/guide/start/introduction': {
     title: '产品介绍 | koiShot',
@@ -29,7 +29,7 @@ const pageMetas: Record<string, { title: string; description: string }> = {
   '/guide/features/capture': {
     title: '截图 | koiShot 使用文档',
     description:
-      'koiShot 截图使用说明：框选、正方形选区、界面控件高亮点选、放大镜取色、快捷键提示面板与截图工具栏。',
+      'koiShot 截图使用说明：框选、正方形选区、界面控件高亮点选、框选后右键划选文字复制、放大镜取色、快捷键提示面板与截图工具栏。',
   },
   '/guide/features/annotation': {
     title: '标注与编辑 | koiShot 使用文档',
@@ -42,24 +42,24 @@ const pageMetas: Record<string, { title: string; description: string }> = {
       'koiShot 贴图功能：截图固定在桌面置顶显示，支持缩放、透明度调节、继续标注与框选识别文字。',
   },
   '/guide/features/long-capture-gif': {
-    title: '长截图、GIF 与 MP4 录屏 | koiShot 使用文档',
+    title: '长截图、GIF、快速截屏与 MP4 录屏 | koiShot 使用文档',
     description:
-      'koiShot 长截图滚动自动拼接、GIF 录制与框选 MP4 录屏教程：控制条与录制条按钮、取消与完成、时长与体积上限、帧率 10–60 与体积预设，适合网页、聊天记录与操作演示。',
+      'koiShot 长截图滚动自动拼接、GIF 录制、快速截屏逐帧 PNG 与框选 MP4 录屏教程：控制条与录制条按钮、取消与完成、时长与体积上限、帧率 10–60 与体积预设，适合网页、聊天记录与操作演示。',
   },
   '/guide/features/ocr-table': {
     title: 'OCR 与表格识别 | koiShot 使用文档',
     description:
-      'koiShot 本地文字识别与表格识别：截图转文字、截图转 Excel、二维码识别，导出 Excel / CSV 或整表复制。',
+      'koiShot 本地文字识别与表格识别：截图转文字、框选后右键划选复制、截图转 Excel、二维码识别，导出 Excel / CSV 或整表复制。',
   },
   '/guide/features/translate': {
     title: '截图翻译 | koiShot 使用文档',
     description:
-      'koiShot 截图翻译：框选外文 → 本地 OCR → 阿里云或百度翻译（设置里切换），左图右文结果窗，滚轮缩放、右键拖动、目标语言随时切换重翻。',
+      'koiShot 截图翻译：框选外文 → 本地 OCR → 阿里云、百度、DeepSeek、智谱 GLM 或通义千问翻译（设置里切换），左图右文结果窗，滚轮缩放、右键拖动、目标语言随时切换重翻。',
   },
   '/guide/settings': {
     title: '设置与托盘 | koiShot 使用文档',
     description:
-      'koiShot 设置说明：界面语言、主题、保存路径、GIF 与录屏参数、OCR 自检、快捷键、标注默认值、关于页自动更新与开源许可、系统托盘。',
+      'koiShot 设置说明：界面语言、主题、保存路径、GIF、快速截屏与录屏参数、翻译服务商与凭据、OCR 自检、快捷键、标注默认值、关于页自动更新与开源许可、系统托盘。',
   },
   '/guide/shortcuts': {
     title: '快捷键总表 | koiShot 使用文档',
@@ -78,9 +78,9 @@ const pageMetas: Record<string, { title: string; description: string }> = {
   },
   '/en/': {
     title:
-      'koiShot Docs: Capture, Pin, Long Screenshot, 60 fps Recording, OCR & Tables',
+      'koiShot Docs: Capture, Pin, Long Screenshot, Rapid Capture, Recording, OCR & Tables',
     description:
-      'koiShot documentation: screenshot annotation, pin to desktop, long screenshots, GIF and up to 60 fps MP4 recording, local offline OCR and table recognition — no ads or watermarks.',
+      'koiShot documentation: screenshot annotation, pin to desktop, long screenshots, GIF, rapid PNG frame capture and up to 60 fps MP4 recording, local offline OCR and table recognition — no ads or watermarks.',
   },
   '/en/guide/start/introduction': {
     title: 'Introduction | koiShot',
@@ -95,7 +95,7 @@ const pageMetas: Record<string, { title: string; description: string }> = {
   '/en/guide/features/capture': {
     title: 'Capture | koiShot Docs',
     description:
-      'koiShot capture guide: region selection, square selection, UI element highlight, magnifier, shortcut hint panel and toolbar.',
+      'koiShot capture guide: region selection, square selection, UI element highlight, right-drag text copying, magnifier, shortcut hint panel and toolbar.',
   },
   '/en/guide/features/annotation': {
     title: 'Annotation | koiShot Docs',
@@ -108,24 +108,24 @@ const pageMetas: Record<string, { title: string; description: string }> = {
       'koiShot pin guide: keep a screenshot always on top, zoom, opacity, on-pin annotation and drag-to-copy text with OCR.',
   },
   '/en/guide/features/long-capture-gif': {
-    title: 'Long Screenshot, GIF & MP4 Recording | koiShot Docs',
+    title: 'Long Screenshot, GIF, Rapid Capture & MP4 Recording | koiShot Docs',
     description:
-      'koiShot long screenshot stitching, GIF recording and region MP4 video recording: control and recording bar buttons, cancel vs finish, duration and size limits, 10–60 fps settings.',
+      'koiShot long screenshot stitching, GIF recording, rapid PNG frame capture and region MP4 video recording: control and recording bar buttons, cancel vs finish, duration and size limits, 10–60 fps settings.',
   },
   '/en/guide/features/ocr-table': {
     title: 'OCR & Tables | koiShot Docs',
     description:
-      'koiShot local OCR, table recognition and QR decoding: screenshot to text or Excel, export xlsx / CSV or copy the whole table.',
+      'koiShot local OCR, right-drag text copying, table recognition and QR decoding: screenshot to text or Excel, export xlsx / CSV or copy the whole table.',
   },
   '/en/guide/features/translate': {
     title: 'Screenshot Translation | koiShot Docs',
     description:
-      'koiShot screenshot translation: select foreign text, local OCR, Alibaba Cloud or Baidu Translate (switch in settings), side-by-side result window with zoom, pan and instant language switching.',
+      'koiShot screenshot translation: select foreign text, local OCR, Alibaba Cloud, Baidu, DeepSeek, Zhipu GLM or Qwen (switch in settings), side-by-side result window with zoom, pan and instant language switching.',
   },
   '/en/guide/settings': {
     title: 'Settings & Tray | koiShot Docs',
     description:
-      'koiShot settings: language, theme, save path, GIF and recording options, OCR self-check, hotkeys, annotation defaults, About page automatic updates and open-source licenses, tray menu.',
+      'koiShot settings: language, theme, save path, GIF, rapid capture and recording options, translation providers and credentials, OCR self-check, hotkeys, annotation defaults, About page automatic updates and open-source licenses, tray menu.',
   },
   '/en/guide/shortcuts': {
     title: 'Shortcuts | koiShot Docs',
@@ -170,8 +170,8 @@ function urlFor(route: { routePath: string }): string {
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
   base: BASE_PATH,
-  title: 'koiShot：截图、标注、贴图、长截图、OCR 与表格识别',
-  description: 'koiShot 使用文档：截图、标注、贴图、长截图、OCR 与表格识别。',
+  title: 'koiShot：截图、标注、贴图、长截图、快速截屏、OCR 与表格识别',
+  description: 'koiShot 使用文档：截图、标注、贴图、长截图、快速截屏、OCR 与表格识别。',
   logoText: 'koiShot',
   lang: 'zh',
   icon: '/favicon.ico',
@@ -185,7 +185,7 @@ export default defineConfig({
       {
         name: 'keywords',
         content:
-          'koiShot,截图工具,截图软件,贴图,长截图,滚动截图,OCR,文字识别,表格识别,截图转Excel,GIF录制,标注,screenshot tool,pin to desktop,OCR,table recognition',
+          'koiShot,截图工具,截图软件,贴图,长截图,滚动截图,快速截屏,逐帧截图,OCR,文字识别,表格识别,截图转Excel,GIF录制,标注,screenshot tool,pin to desktop,rapid capture,OCR,table recognition',
       },
     ],
     ['meta', { name: 'author', content: 'koiShot' }],
@@ -239,17 +239,17 @@ export default defineConfig({
     {
       lang: 'zh',
       label: '简体中文',
-      title: 'koiShot：截图、标注、贴图、长截图、OCR 与表格识别',
+      title: 'koiShot：截图、标注、贴图、长截图、快速截屏、OCR 与表格识别',
       description:
-        'koiShot 使用文档：截图、标注、贴图、长截图、OCR 与表格识别。',
+        'koiShot 使用文档：截图、标注、贴图、长截图、快速截屏、OCR 与表格识别。',
     },
     {
       lang: 'en',
       label: 'English',
       title:
-        'koiShot: Capture, Annotation, Pin, Long Screenshot, OCR & Table Recognition',
+        'koiShot: Capture, Annotation, Pin, Long Screenshot, Rapid Capture, OCR & Table Recognition',
       description:
-        'koiShot documentation: capture, annotation, pin, long screenshot, OCR and table recognition.',
+        'koiShot documentation: capture, annotation, pin, long screenshot, rapid capture, OCR and table recognition.',
     },
   ],
   themeConfig: {

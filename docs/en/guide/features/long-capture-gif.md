@@ -1,8 +1,8 @@
 ---
-description: 'Long screenshots for pages that do not fit, GIFs for short demos, MP4 for audio or longer clips: how to use all three.'
+description: 'Long screenshots for pages that do not fit, GIFs for short demos, rapid capture for raw frames, MP4 for audio or longer clips: how to use all four.'
 ---
 
-# Long Screenshot, GIF & Recording
+# Long Screenshot, GIF, Rapid Capture & Recording
 
 Use this page when one screen is not enough, or when you need to show someone how something works. Pick one first:
 
@@ -10,9 +10,10 @@ Use this page when one screen is not enough, or when you need to show someone ho
 | --- | --- |
 | Save a whole web page or chat log as one image | **Long screenshot** |
 | Record a few seconds to drop into chat or a ticket | **GIF** (loops automatically, small file) |
+| Save consecutive original frames for later frame-by-frame work | **Rapid capture** (PNG sequence) |
 | Audio, narration, or more than 30 seconds | **Video (MP4)** |
 
-All three start the same way: select a region, click a toolbar button, then click Finish — the result is saved automatically.
+All four start the same way: select a region, click a toolbar button, then confirm — the result is saved automatically.
 
 ## Long screenshot
 
@@ -75,6 +76,27 @@ The bar sits centred below the selection, flips above near the screen bottom, an
   | Size preset | "High quality" for clarity, "Balanced" for everyday use, "Small size" when a chat or ticket limits attachments (smaller picture, fewer frames, smallest file) |
 
 - The bar also has a frame-rate dropdown: **change it before pressing Start recording and it applies right away**. Once recording starts it is locked. Changing it in Settings only sets the default for the next recording.
+
+## Rapid capture
+
+When you need the **raw frames (PNG sequence)** of an action — for example as material for an animation or to check steps one by one — use **Rapid capture**. It produces a set of numbered PNG images, not a video or GIF.
+
+### How to use it
+
+1. Press `F1` and select the region to capture;
+2. Click **Rapid capture** on the toolbar — a bar appears near the selection with the current frame rate;
+3. Before starting, you can drag the selection to reposition it, or choose a different frame rate on the bar (**10–60 fps, default 30**). Your choice applies to this run; once capture starts it is locked. The "Rapid capture → Frame rate" setting only sets the default for next time;
+4. Click **Start capture**. The bar shows "Capturing", elapsed time and the number of frames taken (`N frames`);
+5. When you are done, click **End capture**. The bar shows "Saving"; when saving finishes, **the save folder opens automatically** — there is no success dialog to confirm;
+6. To throw the run away, click **Cancel capture**; all frames captured so far are deleted.
+
+### What you get
+
+A `rapidshot_date_time` folder is added inside the save folder, containing `frame_000001.png`, `frame_000002.png` and so on. The folder opens automatically after **every** rapid capture, regardless of the "Open folder after save" setting.
+
+::::tip
+Keep the selection on one monitor. A smaller region and a lower frame rate save faster and use less disk space. Wait for the folder to appear before moving on while saving is in progress.
+::::
 
 ## Video recording (MP4)
 

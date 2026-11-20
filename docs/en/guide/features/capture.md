@@ -1,5 +1,5 @@
 ---
-description: 'How to start a capture, select exactly the right area, what every toolbar button does, and how to finish or cancel.'
+description: 'How to start a capture, select exactly the right area, drag across text to copy it, use every toolbar button, and finish or cancel.'
 ---
 
 # Capture
@@ -55,6 +55,16 @@ Before you drag a selection, hovering over a window, button or image outlines it
 
 While selecting, a magnifier appears in a screen corner: it zooms the pixels next to the cursor, shows a pixel grid, and gives you the **RGB value** and coordinates below — handy for aligning edges or picking a colour.
 
+### Drag across text right after selecting
+
+Once the selection is set and the toolbar is up, **before drawing any annotation**, recognisable text on the image is faintly highlighted. Hold the **right button** over the text and drag across what you need; on release the text is recognised and copied to the clipboard. A toast shows the number of lines and a short preview, then the overlay closes on its own — just paste.
+
+- The left button still moves / resizes the selection; this shortcut uses the right button only;
+- Once you have drawn an annotation, this entry is no longer offered — use the toolbar **OCR** button instead;
+- A tiny drag counts as a mis-click; if nothing is recognised, the toast asks you to drag across the full text.
+
+Steps and troubleshooting: [OCR & table recognition](/en/guide/features/ocr-table#drag-across-text-after-selecting).
+
 ### Shortcut hints on the left
 
 A translucent panel in the **left column of the screen** lists the keys available at this moment:
@@ -62,7 +72,7 @@ A translucent panel in the **left column of the screen** lists the keys availabl
 | Phase | What it says |
 | --- | --- |
 | Before selecting | Drag to select · Shift+drag for a square · Click a UI element · Esc to cancel |
-| Selection committed (toolbar visible) | Drag the selection to move/resize · Wheel adjusts the annotation · Ctrl+Z undo · Enter finish · Esc cancel |
+| Selection committed (toolbar visible) | Drag the selection to move/resize · Right-drag over text to recognise and copy · Wheel adjusts the annotation · Ctrl+Z undo · Enter finish · Esc cancel |
 
 It prefers the bottom-left, moves to the top-left when that is blocked, and hides when both left corners are occupied by other overlays. It hides while you drag and returns on release; it is not shown during GIF / video recording.
 
@@ -79,9 +89,10 @@ After you release the mouse, the toolbar appears below the selection. Buttons fr
 | Output | Translate | Translate foreign text into a side-by-side window | [Screenshot translation](/en/guide/features/translate) |
 | Output | QR code | Decode a QR code and copy its content | [OCR & tables](/en/guide/features/ocr-table) |
 | Output | Table | Turn a table into an editable grid, export to Excel | [OCR & tables](/en/guide/features/ocr-table) |
-| Output | Long capture | Scroll and stitch a whole page into one image | [Long screenshot, GIF & recording](/en/guide/features/long-capture-gif) |
-| Output | Record GIF | Record the region as an animated GIF | [Long screenshot, GIF & recording](/en/guide/features/long-capture-gif) |
-| Output | Record video | Record the region as MP4 (with optional audio) | [Long screenshot, GIF & recording](/en/guide/features/long-capture-gif) |
+| Output | Long capture | Scroll and stitch a whole page into one image | [Long screenshot, GIF, rapid capture & recording](/en/guide/features/long-capture-gif) |
+| Output | Record GIF | Record the region as an animated GIF | [Long screenshot, GIF, rapid capture & recording](/en/guide/features/long-capture-gif) |
+| Output | Rapid capture | Save consecutive frames of the region as PNG images | [Long screenshot, GIF, rapid capture & recording](/en/guide/features/long-capture-gif#rapid-capture) |
+| Output | Record video | Record the region as MP4 (with optional audio) | [Long screenshot, GIF, rapid capture & recording](/en/guide/features/long-capture-gif) |
 | Finish | Save / Cancel / Copy | Save to the configured folder, discard, or copy (rightmost) | [Saving & output](/en/guide/features/output) |
 
 Buttons are icons — **hover to see their names**; near the bottom of the screen the hint flips above the button, and greyed-out buttons show none. The active tool is highlighted; clicking it again opens its property popup.
@@ -102,5 +113,5 @@ The toolbar sits below the selection by default, flips above when there is no ro
 You can also click Copy / Save / Pin directly. Cancel or `Esc` discards the capture (while editing a text annotation, `Esc` only leaves the editor).
 
 :::tip
-Annotation: [Annotation](/en/guide/features/annotation). Text, tables, QR codes and translation: [OCR & tables](/en/guide/features/ocr-table) and [Screenshot translation](/en/guide/features/translate). Long captures, GIF and video: [Long screenshot, GIF & recording](/en/guide/features/long-capture-gif). Where files go: [Saving & output](/en/guide/features/output).
+Annotation: [Annotation](/en/guide/features/annotation). Text, tables, QR codes and translation: [OCR & tables](/en/guide/features/ocr-table) and [Screenshot translation](/en/guide/features/translate). Long captures, GIF, rapid capture and video: [Long screenshot, GIF, rapid capture & recording](/en/guide/features/long-capture-gif). Where files go: [Saving & output](/en/guide/features/output).
 :::

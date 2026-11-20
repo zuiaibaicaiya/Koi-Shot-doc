@@ -28,6 +28,22 @@ If the text is upside down, vertical or rotated, straighten the picture and keep
 
 Handy for dialogs, scans, video subtitles and PDF screenshots where the text cannot be selected.
 
+### Drag across text after selecting
+
+When you just want to grab a passage quickly and do not need to pick lines one by one, skip the result window:
+
+1. Press `F1` and select the region with text. Once the toolbar appears, **do not draw an annotation yet**;
+2. Recognisable text is faintly highlighted. Hold the **right button** over the text and drag across what you need — what lights up is what gets recognised;
+3. Release: a toast reports "Copied N lines: …" and the text is on your clipboard. The overlay closes after a short pause, with no result window.
+
+| What you see | What to do |
+| --- | --- |
+| Left-drag does nothing | The left button moves / resizes the selection; use the right button for this shortcut |
+| Nothing was copied | Once an annotation has been drawn, this entry is no longer offered — use the toolbar **OCR** button, or cancel and retry |
+| Barely moved the mouse | Treated as a mis-click — drag further along the text |
+| "No text recognised" | Drag across the text more completely, or check the selection is legible |
+| "Recognising, please wait…" | Let the previous recognition finish, then try again |
+
 When you need to **understand** foreign text rather than extract it, click **Translate** on the toolbar: it translates the recognised text and shows the image next to the result (see [Screenshot translation](/en/guide/features/translate)).
 
 ## Turn a table screenshot into Excel
